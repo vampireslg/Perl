@@ -1,0 +1,37 @@
+#! /usr/bin/perl
+# Author : gaoang; 
+# Just for fun 
+use warnings ;
+use strict ;
+print "Nothing\n";
+
+our (@primes, @ns_to_check) ;
+@primes = (2);
+
+@ns_to_check = (2..1000000);
+my ($start , $end);
+$start = time;
+
+MAIN_LOOP:
+    foreach my $num (@ns_to_check){
+	foreach (@primes){
+	    if ($num % $_ == 0){
+		next MAIN_LOOP ;
+	    }
+	}
+	# If algo reached this point ,means this number is a prime
+	push @primes , $num ;
+    }
+
+open (WRITE_FILE, "> primes.txt");
+print WRITE_FILE "@primes\n" ;
+close (WRITE_FILE) ;
+$end = time() ;
+my $dur = time - $start ;
+print "Time consumed : $dur s\n";
+
+=kut
+foreach (@primes){
+    print "--- This is $_ , a prime ----- \n";
+}
+=cut

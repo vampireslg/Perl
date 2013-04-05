@@ -1,0 +1,23 @@
+#! /usr/bin/perl
+# Chapter_6
+# April_4_2013
+use warnings;
+use strict ;
+@ARGV = qw /chapter_6/;
+print reverse <>;
+# Here is for fun
+#print "PATH is $ENV{PATH}\n";
+#----- 7
+my %family_name = (
+    "fred" => "flintstone",
+    "barney" => "rubble",
+    "betty" => "flintstone",
+);
+
+print "Whose name you would like to know ?\n";
+chomp (my $name = <STDIN>);
+if(exists $family_name{$name}){
+    print "The one you want to know is : ".$family_name{$name} ."\n";
+}else{
+    print "Yo,son ! No such stone ,can't help you .\n";
+}

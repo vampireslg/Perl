@@ -1,0 +1,150 @@
+#! /usr/bin/perl
+# Just for fun , no explicit meaning 
+# A.C.God Mar_31_2013
+use warnings;
+use strict;
+use 5.010;
+
+my @rocks = qw /flintStone slate rubble/;
+print "quartz @rocks limeStone \n";
+print "There are rocks :@rocks.\n";
+my @empty=();
+print "There's nothing in the parents (@empty) here.\n";
+
+my $y = 2*4 ;
+print $y."\n";
+
+##----
+my $rocks = "right" ;
+print "this is $rocks[2]\n";
+print "this is $rocks"."[2]\n";
+# --
+foreach my $rock (@rocks){
+    $rock = "\t$rock";
+    $rock .= "\n";
+}
+print "The rocks are: \n", @rocks;
+
+$_ = "Abracadabra Abracada Abraca Abra\n";
+print;
+
+print "I have " ,scalar @rocks, " rocks!\n" ;
+
+###Perl_5, Page_79___Practice_1.:
+
+print "Now Enter something ! Then press Ctrl-D :\n";
+
+
+###Perl_5, Page_79___Practice_2.:
+my @names = qw/fred betty barney dino wilma pebbles bamm-bamm/;
+print "Enter some numbers !\n";
+#chomp(my @numbers = <STDIN>);
+=Begin
+foreach (@numbers){
+    if($_ > 7 || $_ < 1){
+	print "Wrong number ,buddy !\n";
+    }
+    else{
+	print "$names[$_ - 1]\n";
+    }
+}
+
+###Perl_5, Page_79___Practice_3.:;
+print "Enter something , I will print them in sorted way !\n";
+print sort <STDIN>;
+=cut
+
+my $result = &which_element_is("\tslate\n", @rocks);
+sub which_element_is{
+    my ($what, @array) = @_;
+    foreach(0..$#array){
+	if($what eq $array[$_]){
+	    return $_;
+	}
+    }
+    -1;
+}
+print $result."\n" ;
+
+
+    
+sub total{
+    my $sum =0 ;
+    foreach (@_){
+	$sum += $_;
+    }
+    $sum;
+}
+
+sub above_average{
+    my $total = total(@_);
+    my $count = 0 ;
+    my @rray;
+    foreach (@_){
+	$count ++ ;
+    }
+    if ($count == 0){
+	return ;
+    }
+    $count = $total / $count ;
+    foreach (@_){
+	if($_ > $count){
+	    push @rray, $_;
+	}
+    }
+    @rray ;
+}
+
+
+my @fred = qw/1 3 5 7 9/;
+my $fred_total = total(@fred);
+my @above_average = above_average(@fred);
+print "My fred total \@fred is : $fred_total .\n"
+    ."Those above average are : @above_average .\n";
+print "Enter numbers on seperate line.\n" ;
+my $use_total = total (1..1000);
+print "The total of there numbers is : $use_total .\n";
+
+my @barney = above_average(100, 1..10);
+print "\@barney is @barney\n" . "(Should be just 100)\n";
+
+#------Lovely cutting Line-----------------
+=for
+A greet program ,count each guest and told him who came before him .
+=cut
+print "\n---------\n";    
+
+greet ('fred');
+greet ('T-Dog');
+greet ('Margerita');
+greet ('Owell');
+sub greet{
+    our @rray_guests;
+    my $last_person = shift;
+    print "Hey ,$last_person \n";
+    if(@rray_guests){
+	print "\t I have seen @rray_guests \n";
+    }
+    else{
+	print "\t You are the first one here \n";
+    }
+
+    push @rray_guests, $last_person;
+
+}
+print "\n----------------\n";
+@ARGV = qw /README.md/;
+while(<>){
+    chomp;
+    print "$_\n";
+}
+my $user = "Margerita";
+my $days_to_die = 100000;
+printf "Hello ,%s; your password would expires in %d days \n", $user, $days_to_die ;
+printf "The rocks are \n".("%10s" x @rocks), @rocks ;
+
+
+say "Hello";
+#-----
+
+
