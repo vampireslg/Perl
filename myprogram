@@ -146,5 +146,8 @@ printf "The rocks are \n".("%10s" x @rocks), @rocks ;
 
 say "Hello";
 #-----
+# What's wrong with PWD ?;
 
-
+for(<*>){
+    print `pwd`, chdir $_ ,print `pwd` if (-d);
+}

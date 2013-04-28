@@ -1,0 +1,34 @@
+#! /usr/bin/perl
+# chapter_11
+# author : abracadabra
+# April_13_2013
+use warnings;
+use strict ;
+use File::Basename;
+use File::Spec;
+use CGI qw(:all);
+#--
+my $dir = ".";
+print "Bellow is your files(dirs) in $dir\n\n";
+for(sort <.* *>){
+    print;
+    print "\n";
+}
+
+#----
+=ccut
+print "Please enter a filename: ";
+chomp(my $old_name = <STDIN>);
+my $dirname = dirname $old_name;
+my $basename = basename $old_name;
+$basename =~ s/^/not/;
+my $new_name = File::Spec->catfile($dirname, $basename);
+
+rename($old_name, $new_name)
+    or warn "Can't rename '$old_name' to '$new_name':$! ";
+=cut
+#--
+print header("text/plain");
+foreach $param(param()){
+    print "$param: " .param($param) ."\n";
+}

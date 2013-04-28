@@ -1,0 +1,57 @@
+#! /usr/bin/perl
+# Chapter_6
+# April_4_2013
+use warnings;
+use strict ;
+@ARGV = qw /chapter_6/;
+#print reverse <>;
+# Here is for fun
+#print "PATH is $ENV{PATH}\n";
+#----- 7
+my %family_name = (
+    "fred" => "flintstone",
+    "barney" => "rubble",
+    "betty" => "flintstone",
+);
+
+print "Whose name you would like to know ?\n";
+chomp (my $name = "fredd");
+print "Oh, you want to know about $name , ha ? \n";
+if(exists $family_name{$name}){
+    print "The one you want to know is : ".$family_name{$name} ."\n";
+}else{
+    print "Yo,son ! No such stone ,can't help you .\n";
+}
+
+#----- 8
+print "Get input some words \n";
+chomp (my @markers = "STDIN" );
+my (%hash, $word) ;
+foreach (@markers){
+    $hash{$_} += 1;
+}
+print "\n";
+foreach $word (sort keys %hash){
+    print "$word has occurs for $hash{$word} times \n";
+}
+
+#----- 9
+my $len = 0 ;
+foreach (sort keys %ENV){
+    my $key_len = length($_);
+    $len = $key_len if $key_len > $len ;
+}
+
+foreach (sort keys %ENV){
+    printf "%-${len}s %s\n", $_, $ENV{$_};
+
+}
+
+
+
+
+
+
+
+
+print "\n";

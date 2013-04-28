@@ -1,0 +1,21 @@
+#! /usr/bin/perl -w
+#
+use threads ;
+use 5.010;
+
+my @rray = ("A","B","c","d");
+my @thr;
+for(@rray){
+    push @thr,threads->create(\&sleep, $_) ;
+}
+
+=ccut
+for(@thr){
+    $_->join();
+}
+=cut
+sub sleep{
+    say "@_, sleep:";
+    sleep(rand(10));
+    say "$_ WakeUp";
+}

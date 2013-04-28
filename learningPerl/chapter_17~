@@ -1,0 +1,8 @@
+#! /usr/bin/perl
+# chapter_17
+# author : abracadabra
+# April_27_2013
+use warnings;
+use strict ;
+#--
+print "Some powers of two are :\n", map "\t" . (2 ** $_) . "\n Stupid .",0..15;

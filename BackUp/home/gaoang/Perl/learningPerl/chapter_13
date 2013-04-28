@@ -1,0 +1,20 @@
+#! /usr/bin/perl
+# chapter_13
+# author : abracadabra
+# April_12_2013
+use warnings;
+use strict ;
+#--
+print "Which directory ?(Defalut is your home directory )\n";
+chomp (my$dir = <STDIN>);
+if($dir =~ /\A\s*\Z/){
+    chdir or die "Cannot chdir to home directory .\n";
+}else{
+    chdir $dir or die "Cannot chdir \n";
+}
+
+print "Bellow is your files(dirs) in $dir\n\n";
+for(sort <.* *>){
+    print;
+    print "\n";
+}

@@ -1,0 +1,66 @@
+#! /usr/bin/perl
+# Author : abracadabra;
+# Toos for something cool ;
+# Remember to remove useless things ;
+
+system "ls| grep *~ | wc -l > ~.~";
+open FILE_0,'<',"~.~" ;
+system "rm *~" if (<FILE_0> == 0);
+close FILE_0;
+
+system "perl perl_obfuscation_4 ; clear ";
+sleep(2);
+
+our %loc ;our $line = 0;
+open FILE_2,'<', "perl_obfuscation";
+while(<FILE_2>){
+    if(length $_ == 1){
+	print "\n
+-- >> - Here is an old story ... \n";sleep(2);
+	print "-- >> - Long long ago ... \n";
+	sleep(3);
+	print "-- >> - Story Loading ... \n";
+	foreach (1..7){
+	    printf "%-1s \n", " ... " ;
+	    sleep(1);
+	}
+	print "\nBazinga ! No story to tell .\n\n";
+	sleep(3);
+	print "Now Keep you eyes sharp ! \n\n";
+	sleep(3);
+	system "clear";
+	last ;
+    }
+    sleep(rand(2));
+    print ;
+}
+
+close FILE_2;
+
+open FILE ,'<' , "perl_obfuscation_4" or die "Cannot open such file: $!";
+<FILE>; <FILE>;
+while(<FILE>){
+    sleep(rand(1));
+    print;
+}
+print "\n";
+printf "%35s \n", "ENJOY!";sleep(3);
+system "perl perl_obfuscation";
+$line -= 1;
+foreach (sort keys %loc){
+    #printf "%5s %20s\n", $_, $loc{$_}; 
+}
+
+##-- reconstruct ;
+foreach (sort keys %loc){
+    my @rray = split '-' ,$loc{$_};
+    my $even = 0;
+    foreach my $spa (@rray){
+	$even ++ ;
+	printf "1"  x $spa if ($even % 2 == 0);
+	printf " "  x $spa  if ($even % 2 == 1);	    
+    }
+    print "\n";
+}
+
+print "\n";

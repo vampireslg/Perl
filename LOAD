@@ -1,0 +1,24 @@
+#! /usr/bin/perl -w
+# To synchronized with Laptop_gaoang;
+use strict ;
+#exit 0 unless (@ARGV);
+print "Now Clone Files from Servers. \n\n";
+
+system
+    "scp -r gaoang\@192.168.1.30:/home/gaoang/BackUp/perlupdate.tar.gz . ;
+tar xzvf perlupdate.tar.gz ;
+cp -a home/gaoang/Perl/* .;
+rm -r home/;
+rm perlupdate.tar.gz;
+";
+
+    
+
+
+
+## remove ~
+my $dir = "." ;
+opendir DIR ,$dir or die "Oops : $! \n";
+for(readdir DIR){
+    unlink $_ if($_ =~ /\~$/);
+}

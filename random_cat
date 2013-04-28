@@ -1,15 +1,20 @@
 #! /usr/bin/perl
 # a.c.God
 # cat all the file in this dir and output a line after a random second 
-# April_2_2013   
+# April_2_2013
+use Encode;
 use warnings ;
 use strict ;
-@ARGV = qw /myprogram chapter_5/;
-foreach (@ARGV){
-    open(FILE,$_)||die "Cannot open file :$!";
-    while(defined(my $line = <FILE>)){
-	print ($line);
-	sleep (rand(3));
+system "ls > rm.txt";
+open FILE, '<', "rm.txt";
+foreach (<FILE>){
+    open(FILE_R,$_)||die "Cannot open file :$!";
+    while(defined(my $line = <FILE_R>)){
+	print (s/perl|[a,e,i,o,u]/\0/ig, $_) foreach($line);
+	sleep (rand(10));
     }
 }
+system "rm rm.txt";
+close FILE_R;
+close FILE;
 

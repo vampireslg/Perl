@@ -1,0 +1,43 @@
+#! /usr/bin/perl
+# Chapter_9
+# April_5_2013
+use warnings;
+use strict ;
+open FILE, "README.md" or die "Can't open 'README.md' : $!";
+my $lines = join '', <FILE>;
+$lines =~ s/^README.md://gm;
+#print $lines;
+close FILE;
+my $date = localtime ;
+$^I = ".bak";
+#@ARGV = qw/README.md/;
+=kut
+while(<>){
+    #s/^/--/;
+    s/^Author:.*/Author: a.c.God/;
+    s/^Date:.*/Date: $date/;
+    print;
+}
+=cut
+
+#----- 7
+my $what = "what" ;
+#chomp ($_ = <STDIN>);
+#print if($_ =~ /($what){3,}/);
+print "\n";
+
+#----- 8
+my $input = $ARGV[0];
+if(! defined $input ){
+    die "Usage : $0 filename";
+}
+open FILE ,'<', $input or die "Cannot open file $!";
+open WRITE_FILE , '>', "$input.out" or die "Cannot write such file $!";
+while(<FILE>){
+    s/Fred/\0/ig;
+    s/Larry/Fred/ig;
+    s/\0/Larry/ig;
+    print WRITE_FILE $_;
+}
+close WRITE_FILE;
+close FILE;

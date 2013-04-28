@@ -1,0 +1,41 @@
+#! /usr/bin/perl
+# Chapter_7
+# April_4_2013
+use warnings;
+use strict ;
+$_ = "yabba dabba dhba";
+if(/y((.)(.)\3\2) d\1/){
+    print "It matches . \n";
+}
+# --- 10
+chomp (@ARGV = <STDIN>);
+while(<>){
+    if(/fred/){
+	chomp;
+	#print "$_ \n";
+    }
+    if(/\./){
+	chomp;
+	#print "$_ \n";
+    }
+    if(/[A-Z][a-z]+/){
+	chomp;
+	#print "$_ \n";
+    }
+    if(/(\S)\1/){
+	chomp;
+	#print "$_ \n";
+    }
+    if(/wilma.*fred|fred.*wilma/){
+	chomp;
+	print "$_ \n";
+    }
+}
+
+
+
+
+
+
+
+print "\n";

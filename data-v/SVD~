@@ -1,0 +1,195 @@
+#! /usr/bin/perl -w 
+# April_18 13
+# To analysis the training set data  
+# Abracadabra
+use 5.010;
+use strict ;
+use Math::MatrixReal ;
+#----
+#`perl user_movie_producer`;
+say "\nLet's Rock and Roll ................ OK ";
+
+my $timestart = time();
+open TRAIN,'<', 'training_random.txt';
+
+my (%user_hash,%movie_hash,%usr_movie,%hash_user,%hash_movie);
+my (@users, @movies, $usr_count,$movie_count,$count,$average,@ol);
+
+for(<TRAIN>){
+    chomp;
+    next if /^\s+$/;
+    @ol = split;
+
+	
+    $count += 1;
+    $average += $ol[2];
+    
+    unless(exists ($user_hash{$ol[0]})){
+	$usr_count += 1 ;
+	$hash_user{$ol[0]} = $usr_count ;
+    }
+        
+    unless (exists ($movie_hash{$ol[1]})){
+	$movie_count += 1 ;
+	$hash_movie{$ol[1]} = $movie_count;
+    }
+    
+    $user_hash{$ol[0]} += 1; # How many movies this user scored .
+    $movie_hash{$ol[1]} += 1; # How many users scored this movie .
+    $usr_movie{$ol[0].".".$ol[1]} = $ol[2];
+    
+}
+
+$average /= $count;
+say "Totally $usr_count users\n"
+    ,"Totally $movie_count movies\n"
+    ,"Totally $count  line \n"
+    ,"Average $average\n";
+
+{
+    #$K based on what 
+    #abs_R : Number of elements in R whose value is not 0 ;ita : learning rate ; K : factor
+    # iter_n : iterate times ;
+    #
+    my ($abs_R,$ita, $lamda, $K, $rmse,$iter_n) =
+	($count, 0.005, 0.005, 3, 1, 0);
+
+    my $R = Math::MatrixReal->new($usr_count,$movie_count);
+    my ($Pu, $Qm) = (&init_Pu($usr_count,$K), &init_Qm($K,$movie_count));
+
+    {#// Init R ;
+	for(keys %usr_movie){
+	    my @rc = split(/\./);
+	    $R->assign($hash_user{$rc[0]}, $hash_movie{$rc[1]},$usr_movie{$_});
+	}
+	say "Initiation Completed ........" ,
+	" Time Consumed : " ,time - $timestart, " Seconds" ;
+    }
+
+    my $old_rmse = 2;
+    while(abs($rmse - $old_rmse) > 11){
+	$old_rmse = $rmse;
+	($Pu,$Qm) = &update($Pu, $Qm, $R, $ita, $lamda, $K);
+	$rmse = &RMSE($R,$Pu,$Qm,$abs_R);
+	say "RMSE: ",$rmse if(($iter_n++) % 2 == 0);
+    }
+    
+    say	"The final residual : $rmse" ;
+	
+    
+    my $Predicate = $Pu->multiply($Qm);
+    #say "The predicate array :\n", $Predicate;
+    
+    push @ARGV, 'mypredict.txt';
+    $^I = '.bak';
+    while(<>){
+	chomp ;
+	next if m/^\s$/;
+	@ol = split;
+	
+	#ita is row ,and lamda is column ,just to save time ,abs_R represent the score
+	($ita, $lamda) = ($hash_user{$ol[0]}, $hash_movie{$ol[1]});
+	$abs_R = $Predicate->element($ita, $lamda);
+	s/\t(\d{4})(.*)/\t$1\t$abs_R /g;
+	print;
+    }
+
+    #-- Time 
+    my $dur = time - $timestart;
+    say "Time consumed : $dur s ";
+   
+}
+
+sub update{
+    my ($Pu, $Qm, $R, $ita, $lamda, $factor, $elem, $rows, $cols, $residual) =
+	(shift, shift, shift, shift, shift, shift, 0 ,0, 0, 0);
+    ($rows, $cols) = $R->dim();
+    
+    for my $u (1..$rows){
+	for my $k (1..$factor){
+	    for my $m (1..$cols){
+		$elem = $R->element($u, $m);
+		if($elem > 0){
+		    $residual = $elem - &inner_product($Pu->row($u), $Qm->column($m));
+		}else{
+		    $residual = 0 ;
+		}
+		$Pu->assign($u, $k, $Pu->element($u, $k) +
+			    $ita *($residual * $Qm->element($k,$m)
+					  - $lamda * $Pu->element($u,$k)));
+		$Qm->assign($k, $m, $Qm->element($k,$m) +
+			    $ita *($residual * $Pu->element($u,$k)
+					  - $lamda * $Qm->element($k,$m)));
+	    }
+	}
+    }
+    
+    return ($Pu, $Qm);
+    
+}
+sub RMSE{
+    my ($r,$pu,$qm,$abs_r) = (shift, shift, shift, shift);
+    my ($rows, $cols, $res,$elem) = (0,0,0,0);
+    ($rows, $cols) = $r->dim();
+
+    for my $u (1..$rows){
+	for my $m (1..$cols){
+	    $elem = $r->element($u, $m);
+	    if($elem > 0){
+		$res += ($elem - &inner_product($pu->row($u), $qm->column($m))) ** 2;
+	    }
+	}
+    }
+    
+    $res /= $abs_r;
+}
+
+
+sub init_Pu{
+    my ($rows,$cols) = (shift,shift);
+    my $Pu = Math::MatrixReal->new($rows,$cols);
+    for my $r (1..$rows){
+	for my $c (1..$cols){
+	    $Pu->assign($r,$c,(0.1 * rand(1) / sqrt($cols)));
+	}
+    }
+    $Pu;
+}
+
+
+sub init_Qm{
+    my ($rows,$cols) = (shift,shift);
+    my $Qm = Math::MatrixReal->new($rows,$cols);
+    for my $r (1..$rows){
+	for my $c (1..$cols){
+	    $Qm->assign($r,$c,(0.1 * rand(1) / sqrt($rows)));
+	}
+    }
+    $Qm;
+}
+
+
+
+sub inner_product{
+    my ($sum, $rows);
+    my ($a,$b) = @_;
+    $rows = ($a->dim());
+
+    for(my $i = 1; $i <= $rows ; $i ++ ){
+	$sum += $a->element(1,$i) * $b->element($i,1);
+    }
+
+    return $sum;
+}
+
+
+
+
+
+
+
+
+
+
+
+

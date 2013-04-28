@@ -1,0 +1,110 @@
+#! /usr/bin/perl -w 
+# April_18 13
+# To analysis the training set data  
+# Abracadabra
+use 5.010;
+#----
+=ccut
+open TRAIN,'<', 'training_set.txt';
+my (%hash_user,%hash_movie,%usr_movie);
+my (@users, @movies, $usr_count,$movie_count,$count,$average,@ol);
+
+for(<TRAIN>){
+    chomp;
+
+    @ol = split(/\s/,$_);
+    $count += 1;
+    $average += $ol[2];
+    
+    unless(exists ($hash_user{$ol[0]})){
+	$usr_count += 1 ;
+    }
+    
+    unless (exists ($hash_movie{$ol[1]})){
+	$movie_count += 1 ;
+    }
+    
+    $hash_user{$ol[0]} += 1; # How many movies this user scored .
+    $hash_movie{$ol[1]} += 1; # How many users scored this movie .
+    $usr_movie{$ol[0]} .= "_$ol[1]"."_$ol[2]";
+    #$usr_movie{$ol[0]} .= "_$ol[2]_";
+
+}
+$average /= $count;
+say "Totally $usr_count users\n"
+    ,"Totally $movie_count movies\n"
+    ,"Totally $count  line \n"
+    ,"Average $average\n";
+
+say "Here is top 10 users' data ";
+
+$count = 0 ;
+
+for(reverse sort values %hash_user){
+    say "Top $count : $_ " if($count++ < 10);
+}
+
+
+#-- Show if any usr has not MARkED any movie 
+#-- Show if any movei in predict.txt has not been stored in for any user
+#-- Show if any usr MARKED movie in training ?
+$count = 0 ;
+#open PRED,'<', 'predict_.txt';
+push @ARGV, "predict_.txt";
+$^I = ".bak";
+
+while(<>){
+    @ol = split(/\s/);
+
+    if ($usr_movie{$ol[0]} =~ /$ol[1]/){
+	my $score = $3 if($usr_movie{$ol[0]} =~ /($ol[1])(_)(\d+\.\d+)/);
+	(s/\s(\d{6})/$&\t$score/);
+	$count ++ ;
+    }
+    print ;
+    next ;
+=ccut    
+    unless ($hash_movie{$ol[1]}){
+	say "No usr has MARED $ol[2] before" ;
+    }
+    unless ($hash_user{$ol[0]}){
+	say "Usr $ol[0] has MARED no movie before" ;
+    }
+    #say "Hit : $ol[0] MARKED $ol[1] before, $ol[0],$ol[1] "
+    if ($usr_movie{$ol[0]} =~ /$ol[1]/){
+	#say "Hit : $ol[0] MARKED $ol[1] before";
+    }
+
+}
+
+say $count;
+
+=cut
+@rray1 = (1,2,3);
+@rray2 = (2,3,4);
+say &inner_product(\@rray2,\@rray1);
+my $K = 30 ;#Based from db
+
+
+
+
+sub inner_product{
+    my ($sum,$c);
+    my ($a,$b) = @_;
+    for(@$a){
+	$sum += @$b[$c ++]*$_;
+    }
+    $sum;
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,74 @@
+#! /usr/bin/perl
+# Chapter_7
+# April_4_2013
+use 5.010 ;
+use warnings;
+use strict ;
+use File::Find;
+
+system "ls > files" ;
+open FILE ,'<', "files";
+my @old_files;
+my @original_files ;
+for (<FILE>){
+    chomp;
+    push @original_files, $_;
+    push @old_files, $_
+	if -s $_ >10 and -A $_ > 1;
+}
+
+for(@original_files){
+    push @old_files, $_
+	if -s $_ >10 and -A $_ > 1;
+}
+for(@old_files){
+    print $_, "\n" if -x ;
+}
+
+for (@ARGV){
+    my $attibuts = &attribute($_); 
+    printf "%25s %20s", "$_ :", "$attibuts \n";
+}
+    
+sub attribute{
+    my $file = shift @_;
+    return "Does not existed " unless -e $file;
+
+    my @attrib;
+    push @attrib, "readable" if -r $file;
+    push @attrib, "writable" if -w $file;
+    push @attrib, "executable" if -x $file;
+    return "existed" unless @attrib;
+    my $last_a = $attrib[$#attrib];
+    ('is '. join " ," , @attrib[0..$#attrib-1]). ' and '. $last_a ;
+
+}
+#=----
+die "Oops! Get input some file .\n" unless @ARGV ;
+my ($old_age, %files);
+$old_age = 0 ;
+for(@ARGV){
+    $files{-M $_} = $_;
+    $old_age = $old_age > -M $_ ? $old_age : -M $_;
+}
+print "The oldest file in this directory is $files{$old_age} ,\nit's been here for $old_age days .\n";
+##
+print "\nWay's another :\n";
+my ($old_file, $old_age_2);
+$old_age_2 = 0;
+for(@ARGV){
+    ($old_age_2, $old_file) = (-M $_, $_)
+	if -M $_ > $old_age_2 ;
+}
+printf "The old_file is this idrectory is %s, \nand it was %.2f days old .\n", $old_file, $old_age_2 ;
+
+
+#------
+
+say "Looking for files that are readabel and writable .\n";
+die "Oops! Get input some file .\n" unless @ARGV ;
+for(sort @ARGV){
+    printf "%25s  %1s\n", $_ ,"is readabel and writable" if (-o -r -w $_);
+}
+
+print "\n";

@@ -1,0 +1,62 @@
+#! /usr/bin/perl
+# Author : abracadabra;
+# Toos for something cool ;
+# Remember to remove useless things ;
+use strict ;
+use File::Basename;
+use File::Spec::Functions;
+
+##
+open PHI_NEW, '>',".phi_new" or die "Oops :$! ";
+#open PHI_LOG, '>', ".philog" or die "Oops :$! ";
+open PHI, '<', ".phi" or die "Oops :$! ";
+
+my $dir = ".";
+my %hash;
+#opendir DIR ,$dir or die "Oops ! :$! \n";
+for(<PHI>){
+    chomp;
+    /\s/
+	&& ($hash{"$'"} = $`);
+}
+
+&checkout();
+sub checkout{
+
+    for(sort <.* *>){
+	if(-f){
+	    next if(/^.phi/);
+	    my $dirname = File::Spec->rel2abs($_);
+	    my(@info) = stat($_);
+	    
+	    # write new timelog to .phi 
+	    print PHI_NEW "$info[9] $dirname\n" if -f ;	
+	    if($hash{$dirname} != $info[9]){
+		printf  "%25s, %-1s",  "$_:",
+		"<old,new> modified time: < $hash{$_},$info[9] > \n";
+		push @ARGV, $dirname;
+	    }
+	}
+
+	chdir $_ ,&checkout() ,chdir '..' if(-d && !($_ =~ /^\./));
+    }
+}
+
+if(@ARGV){
+    chdir "/home/gaoang/Perl" or die "Oops again--ain.. $!";
+    system "tar czf update.tar.gz @ARGV";
+    chdir '/';
+    system "ls";
+    #system "scp -r update.tar.gz gaoang\@192.168.1.30:/home/gaoang/BackUp/Perl/ ";
+    unlink ".phi","update.tar.gz" or die "Can't unlink : $! ";
+    rename ".phi_new", ".phi" or die "Cannot rename : $!";
+    exit 0;
+}
+
+print
+    "******************************\n".
+    "No file was modified !\n".
+    "******************************";
+
+
+print "\n";

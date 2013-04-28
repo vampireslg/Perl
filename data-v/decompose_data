@@ -1,0 +1,157 @@
+#! /usr/bin/perl -w 
+# April_18 13
+# To analysis the training set data  
+# Abracadabra
+use 5.010;
+#----
+open TRAIN,'<', 'training_set.txt';
+my (%hash_user,%hash_movie,%usr_movie);
+my (@users, @movies, $usr_count,$movie_count,$count,$average,@ol);
+
+for(<TRAIN>){
+    chomp;
+
+    @ol = split(/\s/,$_);
+    $count += 1;
+    $average += $ol[2];
+    
+    unless(exists ($hash_user{$ol[0]})){
+	$usr_count += 1 ;
+    }
+    
+    unless (exists ($hash_movie{$ol[1]})){
+	$movie_count += 1 ;
+    }
+    
+    $hash_user{$ol[0]} += 1; # How many movies this user scored .
+    $hash_movie{$ol[1]} += 1; # How many users scored this movie .
+    $usr_movie{$ol[0]} .= "_$ol[1]"."_$ol[2]";
+    #$usr_movie{$ol[0]} .= "_$ol[2]_";
+
+}
+$average /= $count;
+say "Totally $usr_count users\n"
+    ,"Totally $movie_count movies\n"
+    ,"Totally $count  line \n"
+    ,"Average $average\n";
+
+$count = 0 ;
+
+my ($c1000plus, $c500plus, $c100plus, $c10plus, $c1plus, $c1only);
+for(reverse sort{ $a <=> $b } values %hash_user){
+    $c1000plus ++ ,next if $_ >= 1000 ;
+    $c500plus ++ ,next if $_ >= 500 ;
+    $c100plus ++ ,next if $_ >= 100 ;
+    $c10plus ++ ,next if $_ >= 10 ;
+    $c1plus ++ ,next if $_ > 1 ;
+    $c1only ++ ,next if $_ == 1 ;
+}
+say "Statics as followed :";
+printf "%27s %1s \n" x 6 ,
+    "1000++ movies scorer: ", $c1000plus ,
+    "500++ movies scorer: ", $c500plus ,
+    "100++ movies scorer: ", $c100plus ,
+    "10++ movies scorer: ", $c10plus ,
+    "1++ movies scorer: ", $c1plus,
+    "1 movies scorer: ", $c1only ;
+
+open PREDI,'<', 'predict.txt';
+(%hash_user, %hash_movie, %usr_movie) = () ;
+($count, $usr_count, $movie_count) = ();
+for(<PREDI>){
+    chomp;
+
+    @ol = split(/\s/,$_);
+    $count += 1;
+    
+    unless(exists ($hash_user{$ol[0]})){
+	$usr_count += 1 ;
+    }
+    
+    unless (exists ($hash_movie{$ol[1]})){
+	$movie_count += 1 ;
+    }
+    
+    $hash_user{$ol[0]} += 1; # How many movies this user scored .
+    $hash_movie{$ol[1]} += 1; # How many users scored this movie .
+    $usr_movie{$ol[0]} .= "_$ol[1]";
+
+}
+
+say "Predict Static ";
+say "Totally $usr_count users\n"
+    ,"Totally $movie_count movies\n"
+    ,"Totally $count  line \n";
+
+
+$count = 0 ;
+($c1only, $c1plus, $c10plus, $c100plus, $c500plus, $c1000plus) = (0,0,0,0,0,0);
+for(reverse sort{ $a <=> $b } values %hash_user){
+    $c1000plus ++ ,next if $_ >= 1000 ;
+    $c500plus ++ ,next if $_ >= 500 ;
+    $c100plus ++ ,next if $_ >= 100 ;
+    $c10plus ++ ,next if $_ >= 10 ;
+    $c1plus ++ ,next if $_ > 1 ;
+    $c1only ++ ,next if $_ == 1 ;
+}
+say "Statics as followed :";
+printf "%27s %1s \n" x 6 ,
+    "1000++ movies scorer: ", $c1000plus ,
+    "500++ movies scorer: ", $c500plus ,
+    "100++ movies scorer: ", $c100plus ,
+    "10++ movies scorer: ", $c10plus ,
+    "1++ movies scorer: ", $c1plus,
+    "1 movies scorer: ", $c1only ;
+
+
+#-- Show if any usr has not MARkED any movie 
+#-- Show if any movei in predict.txt has not been stored in for any user
+#-- Show if any usr MARKED movie in training ?
+$count = 0 ;
+#open PRED,'<', 'predict_.txt';
+push @ARGV, "predict_.txt";
+$^I = ".bak";
+
+while(<>){
+    @ol = split(/\s/);
+
+    if ($usr_movie{$ol[0]} =~ /$ol[1]/){
+	my $score = $3 if($usr_movie{$ol[0]} =~ /($ol[1])(_)(\d+\.\d+)/);
+	#(s/\s(\d{6})/$&\t$score/);
+	$count ++ ;
+    }
+    print ;
+    next ;
+=ccut    
+    unless ($hash_movie{$ol[1]}){
+	say "No usr has MARED $ol[2] before" ;
+    }
+    unless ($hash_user{$ol[0]}){
+	say "Usr $ol[0] has MARED no movie before" ;
+    }
+    #say "Hit : $ol[0] MARKED $ol[1] before, $ol[0],$ol[1] "
+    if ($usr_movie{$ol[0]} =~ /$ol[1]/){
+	#say "Hit : $ol[0] MARKED $ol[1] before";
+    }
+=cut    
+}
+
+say $count;
+
+
+
+sub inner_product{
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+

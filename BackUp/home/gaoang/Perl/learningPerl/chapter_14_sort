@@ -1,0 +1,52 @@
+#! /usr/bin/perl
+# chapter_14_sort
+# author : abracadabra
+# April_14_2013
+use warnings;
+use strict ;
+#--
+my @rray = qw/17 1000 04 1.50 3.14159 -10 1.5 4 2001 90210 666/;
+for(@rray){
+    push @ARGV, $_;
+}
+printf "%10g \n" x @rray, my @nubmers = reverse sort {$a <=> $b} @ARGV ;
+
+#--
+my %last_name = qw{
+fred flintstone Wilma Flintstone Barney Rubble
+betty rubble Bamm-Bamm Rubble PEBBLES FLINTSTONE
+};
+
+printf "%10s \n" x (keys %last_name) ,my @sorted_names = sort {
+    "\L$last_name{$b}" cmp "\L$last_name{$a}"
+	or
+    "\L$b" cmp "\L$a"
+}keys %last_name;
+
+#--
+my $str = "Thisisatest";
+#chomp,print index($str, $_),"\n" while(<STDIN>);
+{
+    $_ = "is";
+    for(my $val = -1; ;){
+	$val = index($str,$_,$val+1);
+	last if $val == -1 ;
+	print $val, " ";
+    }
+    print "\n";
+}
+##--- obfuscation
+my @places;
+my $sub = "is";
+for(my $pos =-1, -1 !=
+    ($pos = index
+     +$str,
+     +$sub,
+     +$pos
+     +1
+    );
+    push @places, ((((+$pos))))){
+	'for ($pos != 1;# ;$pos ++){
+print "position $pos\n";#;';#'}pop @places;
+    }
+     

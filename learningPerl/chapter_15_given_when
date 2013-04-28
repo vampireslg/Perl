@@ -1,0 +1,26 @@
+#! /usr/bin/perl
+# chapter_14
+# author : abracadabra
+# April_14_2013
+use warnings;
+use 5.010001;
+use strict ;
+#--
+push @ARGV, 105;
+given( $ARGV[0]){
+    when($_ % 3 == 0) {print "Fizz "; continue}
+    when($_ % 5 == 0) {print "Bin "; continue}
+    when($_ % 7 == 0) {print "Sausage ";}
+}
+print "\n";
+
+#--
+chomp (my $dir = <STDIN>);
+opendir DIR , $dir or die "Oops !dude $!";
+for(readdir DIR){
+    say "Processing $_";
+    when (! -e){say "\tFile does not exist !"}
+    when(-x _){say "\tExecutable"; continue}
+    when(-r _){say "\tReadable"; continue}
+    when(-w _){say "\tWritable";}
+}

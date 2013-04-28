@@ -1,0 +1,11 @@
+#! /usr/bin/perl -w
+#
+use threads ;
+
+sub sum{
+    my $sum = 0 ;
+    for(@_){
+    $sum += $_; 
+    }
+    return $sum;
+}

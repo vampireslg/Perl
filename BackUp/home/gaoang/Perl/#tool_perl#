@@ -1,0 +1,34 @@
+#! /usr/bin/perl
+# Author : abracadabra;
+# Toos for something cool ;
+# Remember to remove useless things ;
+
+system "ls| grep *~ | wc -l > ~.~";
+open FILE_0,'<',"~.~" ;
+system "rm *~" if (<FILE_0> == 0);
+close FILE_0;
+
+
+
+open FILE ,'<' , "perl_obfuscation_4" or die "Cannot open such file: $!";
+<FILE>; <FILE>;
+while(<FILE>){
+    sleep(rand(1));
+    print;
+}
+print "\n";
+printf "%35s \n", "ENJOY!";sleep(1);
+
+ckout{
+    my $dir = ".";
+    opendir DIR ,$dir or die "Oops ! :$! \n";
+    open FILE, '>', ".phi" or die "Oops :$! ";
+    for(sort readdir DIR){
+	my $ti = -C;
+	my(@info) = stat($_);
+	print FILE "$info[9] $_\n";
+	#print "The last time modified $_ is  $ti days ago \n";# if (-M -f $_  < 1);
+    }
+}
+
+print "\n";

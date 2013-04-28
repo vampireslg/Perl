@@ -1,0 +1,57 @@
+#! /usr/bin/perl
+# Author : abracadabra;
+# Toos for something cool ;
+# Remember to remove useless things ;
+use strict ;
+#----Remove files with ~~~;
+system "ls| grep *~ | wc -l > ~.~";
+open FILE_0,'<',"~.~" ;
+system "rm *~" if (<FILE_0> == 0);
+close FILE_0;
+
+##
+open PHI_NEW, '>', ".phi_new" or die "Oops :$! ";
+open PHI_LOG, '>', ".philog" or die "Oops :$! ";
+open PHI, '<', ".phi" or die "Oops :$! ";
+&checkout();
+sub checkout{
+    my $dir = ".";
+    my %hash;
+    my $any_change;
+    opendir DIR ,$dir or die "Oops ! :$! \n";
+  
+    for(<PHI>){
+	chomp;
+	/\s/
+	    && ($hash{"$'"} = $`);
+    }
+
+    for(sort readdir DIR){
+	my(@info) = stat($_);
+	next if(-f && /^.phi/);
+	
+	if(-f && $hash{$_} != $info[9]){
+	    $any_change = 1;
+	    printf PHI_LOG "%15s, %-1s",  "$_:",
+	    "<old,new> modified time: < $hash{$_},$info[9] > \n";
+	    printf  "%25s, %-1s",  "$_:",
+	    "<old,new> modified time: < $hash{$_},$info[9] > \n";
+	    push @ARGV, $_;
+	}
+	# write new timelog to .phi 
+	print PHI_NEW "$info[9] $_\n" if -f ;
+    }
+    
+    unless($any_change == 0){
+	system "tar czf update.tar.gz @ARGV ";
+	#system "scp update.tar.gz gaoang\@192.168.1.30:/home/gaoang/8_14_Back_Up/Perl/ ";
+	unlink "update.tar.gz";
+	unlink ".phi";
+	rename ".phi_new",".phi";
+    }
+    
+}
+
+
+
+print "\n";

@@ -1,0 +1,25 @@
+#! /usr/bin/perl
+# Chapter_10
+# April_10_2013
+use warnings;
+use strict ;
+
+my $r = int rand(25);
+print "Guess a number between 0 and $r , man .\n";
+$r = int rand( ++ $r);
+while(<>){
+    chomp ;
+    last if ($_ =~ m/exit|quit|\A\s*\z/i);
+    print "Hey ,Press quit to exit. Don't do anything stupid .\n" if
+	($_ =~ m/\D+/i);
+    if($_ =~ m/\d/i){
+	if ($_ == $r){
+	    print "Yo, man . Nice guess .\n";
+	    last ;
+	}elsif ($_ < $r){
+	    print "Too low !\n";
+	}else{
+	    print "Too high !\n" if ($_ > $r);
+	}
+    }
+}

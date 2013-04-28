@@ -1,0 +1,13 @@
+#! perl -w
+# it's like this Just another perl hacker J a p h flashs for some time
+# and in the end all of them be stead .
+use strict;use Time::HiRes"usleep";sub o
+($){hex$_[0]}++$|;my@t=(q,4a75737420,.qq
+;616E6f74686572205065726c206861636B65;.q
+,722c,)=~m,(..),xg;our($0,@c)=qq;%X;;sub
+_{print(qq,\r,,join('',map{chr hex}@c));
+usleep(274**2)}sub r{sprintf($0,int(rand
+0x5e)+040);}$c[$_]=r for+0..$#t;_;my@z=(
+-0..$#c);sub n{my($O)=@z;do{$O++if(o$c[$
+_]==o$t[$_])}for@z;$O}do{for(@z){$c[$_]=
+r unless(o$c[$_]==o$t[$_])}},_ while@t>n

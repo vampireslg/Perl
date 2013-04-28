@@ -1,0 +1,64 @@
+#! /usr/bin/perl -w 
+# April_19 2013
+# Produce user_movie pair with scores
+# You can change the dim from command line , e.g p usr_m_producer 5, 5
+# or you can change it manually 
+# Abracadabra
+use 5.010;
+use strict ;
+
+#----
+my %usr_movie = &produce_um(10,8);
+if(@ARGV){
+    my @dim = split(/,|\s/, shift);
+    %usr_movie = &produce_um($dim[0], $dim[1]);
+}
+
+#say "Empty hash " if (keys %usr_movie ~~ 0);
+open WRITE, '>', "training_random.txt" or die "Oopas ! $!";
+for(keys %usr_movie){
+    chomp;
+    my @rray = split(/_/,$usr_movie{$_});
+    #say @rray ;
+
+    for my $elem (@rray){
+	if(length($elem) == 4){
+	    print WRITE $_ ,"\t $elem" ;
+	    next ;
+	}else{
+	    print WRITE "\t $elem\n" ;
+	    next ;
+	}
+    }
+}
+
+sub produce_um{ #input usr num and movie number
+    my ($usr, $movie, $base_usrID, $base_movieID) = (shift, shift, 1111, 2111);
+    my ($rand, %hash, $score);
+
+    for(1..$usr){
+	$base_movieID = 2111;
+	for(1..$movie){
+	    $score = &roll();
+	    $rand = rand(10);
+	    $hash{$base_usrID} .= "_".($base_movieID)."_".$score
+		if($rand > 3);
+	    $base_movieID ++ ;
+	}
+	$base_usrID ++ ;
+    }
+    %hash ;
+}
+
+sub roll{
+    #With Probability 35% 3 and 4 , 10 % for 2 ,5 ,1;
+    my ($rand,$roll) ;
+    $rand = rand(100);
+    $roll = 3 if $rand <= 35 ;
+    $roll = 4 if $rand > 35 && $rand <= 70 ;
+    $roll = 1 if $rand > 70 && $rand <= 80 ;
+    $roll = 2 if $rand > 80 && $rand <= 90 ;
+    $roll = 5 if $rand > 90 && $rand <= 100 ;
+    return $roll;
+}
+

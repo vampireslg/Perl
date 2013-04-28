@@ -1,0 +1,57 @@
+#! /usr/bin/perl -w 
+# April_18 13
+#
+# Abracadabra
+use 5.010;
+#----
+open TRAIN,'<', 'testtraining.txt';
+my %hash;
+my @oneline;
+my (@users, @movies, $usr_count,$movie_count,$count);
+
+for(<TRAIN>){
+    chomp;
+    $count += 1;
+    @oneline = split(/\s/,$_);
+    
+    unless(exists ($hash{$oneline[0]})){
+	$usr_count += 1 ;
+    }
+    
+    unless (exists ($hash{$oneline[1]})){
+	$movie_count += 1 ;
+    }
+
+    $hash{$oneline[0]} += 1; # How many movies this user scored .
+    $hash{$oneline[1]} += 1; # How many users scored this movie .
+
+}
+
+print "Totally $usr_count users \n";
+print "Totally $movie_count movies \n";
+print "Totally $count  line \n";
+
+say "Here is top 50 users' data ";
+$count = 0 ;
+
+while(($key, $value) = each %hash){
+    say "User $key has grade $value movies" if(length($key) == 7 && $count++ < 10);
+}
+
+my $say = keys %hash;
+
+
+
+open TRAIN,'<', 'training_set.txt';
+for (<TRAIN>){
+    #print if(/^6679521/);
+}
+
+
+for(1..10){
+    #exit 0, &dosomething() if ($_ > 8);
+}
+
+sub dosomething{
+    print "dosomething,";
+}
