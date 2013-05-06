@@ -1,7 +1,0 @@
-#! /usr/bin/perl
-# Chapter_5
-# April_2_2013
-use warnings;
-use strict ;
-print reverse <>;
-#-----8
