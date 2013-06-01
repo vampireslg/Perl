@@ -1,0 +1,2118 @@
+Script started on Tue 28 May 2013 10:56:10 AM CST
+]0;gaoang@Gaoang: 10:56:11~/workspace/VeriTrace2Margerita--[~/workspace/VeriTrace2]$ sudo [K[K[K[K[Kupdat[K[K[K[K[Kghciexitperl perl_script c[Kperl perl_script 
+Can't open perl script "perl_script": No such file or directory
+]0;gaoang@Gaoang: 10:56:34~/workspace/VeriTrace2Margerita--[~/workspace/VeriTrace2]$ perl perl_script ghci[Kexitperl perl_script c[Kbyobu;byobu[1Pbyobuc[Kperl perl_script exit[Kghciperl perl_script [Kperl ch15/6[K[K[K[K15/[K[K[K[K[K[K[K[K[K[Kcpl
+]0;gaoang@Gaoang: 10:56:51~/PerlMargerita--[~/Perl]$ cd intermediate-perl/
+]0;gaoang@Gaoang: 10:56:54~/Perl/intermediate-perlMargerita--[~/Perl/intermediate-perl]$ perl chapter6 seeWhat 
+$VAR1 = [
+          'one',
+          'won',
+          [
+            'two',
+            'too',
+            'to',
+            []
+          ]
+        ];
+$VAR1->[2][3] = $VAR1;
+$VAR2 = $VAR1->[2];
+
+---
+professor.hut:
+  gilligan.crew.hut: 1250
+  lovey.howell.hut: 1360
+student.juit.bit:
+  bei.at.jiji: 390
+thurston.howell.hut:
+  lovey.howell.hut: 2559
+vicePresent.master.hit:
+  shang.at.gogo: 1230
+vicePresent.student.buffer:
+  gogo.shang.at: 2310
+
+]0;gaoang@Gaoang: 10:56:58~/Perl/intermediate-perlMargerita--[~/Perl/intermediate-perl]$ [H[2J]0;gaoang@Gaoang: 10:56:58~/Perl/intermediate-perlMargerita--[~/Perl/intermediate-perl]$ perl chapter6 seeWhat 
+$VAR1 = [
+          'one',
+          'won',
+          [
+            'two',
+            'too',
+            'to',
+            []
+          ]
+        ];
+$VAR1->[2][3] = $VAR1;
+$VAR2 = $VAR1->[2];
+
+---
+professor.hut:
+  gilligan.crew.hut: 1250
+  lovey.howell.hut: 1360
+student.juit.bit:
+  bei.at.jiji: 390
+thurston.howell.hut:
+  lovey.howell.hut: 2559
+vicePresent.master.hit:
+  shang.at.gogo: 1230
+vicePresent.student.buffer:
+  gogo.shang.at: 2310
+
+]0;gaoang@Gaoang: 11:00:50~/Perl/intermediate-perlMargerita--[~/Perl/intermediate-perl]$ perl chapter6 seeWhat 
+$VAR1 = [
+          'one',
+          'won',
+          [
+            'two',
+            'too',
+            'to',
+            []
+          ]
+        ];
+$VAR1->[2][3] = $VAR1;
+$VAR2 = $VAR1->[2];
+
+---
+professor.hut:
+  gilligan.crew.hut: 1250
+  lovey.howell.hut: 1360
+student.juit.bit:
+  bei.at.jiji: 390
+thurston.howell.hut:
+  lovey.howell.hut: 2559
+vicePresent.master.hit:
+  shang.at.gogo: 1230
+vicePresent.student.buffer:
+  gogo.shang.at: 2310
+
+]0;gaoang@Gaoang: 11:01:38~/Perl/intermediate-perlMargerita--[~/Perl/intermediate-perl]$ less ponyo 
+"ponyo" may be a binary file.  See it anyway? 
+[?1049h[?1h=pst0[7m^D^H^H[27m12345678[7m^D^H^H^H^B^B^@^@^@^D^B^C^@^@^@[27m
+[7m^C[27mone
+[7m^C[27mwon[7m^D^B^D^@^@^@[27m
+[7m^C[27mtwo
+[7m^C[27mtoo
+[7m^B[27mto[7m^D^@^@^@^@^B^D^@^@^@^@^F[27m
+[7mponyo (END)[27m[K[K[?1l>[?1049l]0;gaoang@Gaoang: 11:01:48~/Perl/intermediate-perlMargerita--[~/Perl/intermediate-perl]$ [H[2J]0;gaoang@Gaoang: 11:01:48~/Perl/intermediate-perlMargerita--[~/Perl/intermediate-perl]$ less ponyo 
+"ponyo" may be a binary file.  See it anyway? 
+]0;gaoang@Gaoang: 11:02:54~/Perl/intermediate-perlMargerita--[~/Perl/intermediate-perl]$ 
+]0;gaoang@Gaoang: 11:02:54~/Perl/intermediate-perlMargerita--[~/Perl/intermediate-perl]$ less ponyo [11@perl chapter6 seeWhat[C
+$VAR1 = [
+          'one',
+          'won',
+          [
+            'two',
+            'too',
+            'to',
+            []
+          ]
+        ];
+$VAR1->[2][3] = $VAR1;
+$VAR2 = $VAR1->[2];
+
+---
+professor.hut:
+  gilligan.crew.hut: 1250
+  lovey.howell.hut: 1360
+student.juit.bit:
+  bei.at.jiji: 390
+thurston.howell.hut:
+  lovey.howell.hut: 2559
+vicePresent.master.hit:
+  shang.at.gogo: 1230
+vicePresent.student.buffer:
+  gogo.shang.at: 2310
+
+---
+- &1
+  - one
+  - won
+  - &2
+    - two
+    - too
+    - to
+    - *1
+- *2
+
+]0;gaoang@Gaoang: 11:03:00~/Perl/intermediate-perlMargerita--[~/Perl/intermediate-perl]$ [H[2J]0;gaoang@Gaoang: 11:03:00~/Perl/intermediate-perlMargerita--[~/Perl/intermediate-perl]$ perl chapter6 seeWhat 
+Number found where operator expected at chapter6 line 28, near "Section 3"
+	(Do you need to predeclare Section?)
+Semicolon seems to be missing at chapter6 line 29.
+Can't modify negation (-) in predecrement (--) at chapter6 line 28, near "Section 3"
+syntax error at chapter6 line 28, near "Section 3"
+Execution of chapter6 aborted due to compilation errors.
+]0;gaoang@Gaoang: 11:03:30~/Perl/intermediate-perlMargerita--[~/Perl/intermediate-perl]$ [H[2J]0;gaoang@Gaoang: 11:03:30~/Perl/intermediate-perlMargerita--[~/Perl/intermediate-perl]$ perl chapter6 seeWhat 
+$VAR1 = [
+          'one',
+          'won',
+          [
+            'two',
+            'too',
+            'to',
+            []
+          ]
+        ];
+$VAR1->[2][3] = $VAR1;
+$VAR2 = $VAR1->[2];
+
+---
+professor.hut:
+  gilligan.crew.hut: 1250
+  lovey.howell.hut: 1360
+student.juit.bit:
+  bei.at.jiji: 390
+thurston.howell.hut:
+  lovey.howell.hut: 2559
+vicePresent.master.hit:
+  shang.at.gogo: 1230
+vicePresent.student.buffer:
+  gogo.shang.at: 2310
+
+---------------------------------------------Section 3
+---
+- &1
+  - one
+  - won
+  - &2
+    - two
+    - too
+    - to
+    - *1
+- *2
+
+]0;gaoang@Gaoang: 11:03:41~/Perl/intermediate-perlMargerita--[~/Perl/intermediate-perl]$ [H[2J]0;gaoang@Gaoang: 11:03:41~/Perl/intermediate-perlMargerita--[~/Perl/intermediate-perl]$ perl chapter6 seeWhat 
+---------------------------------------------Section 1
+$VAR1 = [
+          'one',
+          'won',
+          [
+            'two',
+            'too',
+            'to',
+            []
+          ]
+        ];
+$VAR1->[2][3] = $VAR1;
+$VAR2 = $VAR1->[2];
+
+---------------------------------------------Section 2
+---
+professor.hut:
+  gilligan.crew.hut: 1250
+  lovey.howell.hut: 1360
+student.juit.bit:
+  bei.at.jiji: 390
+thurston.howell.hut:
+  lovey.howell.hut: 2559
+vicePresent.master.hit:
+  shang.at.gogo: 1230
+vicePresent.student.buffer:
+  gogo.shang.at: 2310
+
+---------------------------------------------Section 3
+---
+- &1
+  - one
+  - won
+  - &2
+    - two
+    - too
+    - to
+    - *1
+- *2
+
+]0;gaoang@Gaoang: 11:04:33~/Perl/intermediate-perlMargerita--[~/Perl/intermediate-perl]$ perl chapter6 seeWhat 
+---------------------------------------------Section 1
+$VAR1 = [
+          'one',
+          'won',
+          [
+            'two',
+            'too',
+            'to',
+            []
+          ]
+        ];
+$VAR1->[2][3] = $VAR1;
+$VAR2 = $VAR1->[2];
+
+---------------------------------------------Section 2
+---
+professor.hut:
+  gilligan.crew.hut: 1250
+  lovey.howell.hut: 1360
+student.juit.bit:
+  bei.at.jiji: 390
+thurston.howell.hut:
+  lovey.howell.hut: 2559
+vicePresent.master.hit:
+  shang.at.gogo: 1230
+vicePresent.student.buffer:
+  gogo.shang.at: 2310
+
+---------------------------------------------Section 3
+---
+- &1
+  - one
+  - won
+  - &2
+    - two
+    - too
+    - to
+    - *1
+- *2
+
+]0;gaoang@Gaoang: 11:05:02~/Perl/intermediate-perlMargerita--[~/Perl/intermediate-perl]$ [K]0;gaoang@Gaoang: 11:05:02~/Perl/intermediate-perlMargerita--[~/Perl/intermediate-perl]$ perl chapter6 seeWhat 
+---------------------------------------------Section 1
+$VAR1 = [
+          'one',
+          'won',
+          [
+            'two',
+            'too',
+            'to',
+            []
+          ]
+        ];
+$VAR1->[2][3] = $VAR1;
+$VAR2 = $VAR1->[2];
+
+---------------------------------------------Section 2
+---
+professor.hut:
+  gilligan.crew.hut: 1250
+  lovey.howell.hut: 1360
+student.juit.bit:
+  bei.at.jiji: 390
+thurston.howell.hut:
+  lovey.howell.hut: 2559
+vicePresent.master.hit:
+  shang.at.gogo: 1230
+vicePresent.student.buffer:
+  gogo.shang.at: 2310
+
+---------------------------------------------Section 3
+---
+- &1
+  - one
+  - won
+  - &2
+    - two
+    - too
+    - to
+    - *1
+- *2
+
+]0;gaoang@Gaoang: 11:05:07~/Perl/intermediate-perlMargerita--[~/Perl/intermediate-perl]$ [K]0;gaoang@Gaoang: 11:05:07~/Perl/intermediate-perlMargerita--[~/Perl/intermediate-perl]$ [H[2J]0;gaoang@Gaoang: 11:05:07~/Perl/intermediate-perlMargerita--[~/Perl/intermediate-perl]$ perl chapter6 seeWhat 
+---------------------------------------------Section1
+$VAR1 = [
+          'one',
+          'won',
+          [
+            'two',
+            'too',
+            'to',
+            []
+          ]
+        ];
+$VAR1->[2][3] = $VAR1;
+$VAR2 = $VAR1->[2];
+
+---------------------------------------------Section2
+---
+professor.hut:
+  gilligan.crew.hut: 1250
+  lovey.howell.hut: 1360
+student.juit.bit:
+  bei.at.jiji: 390
+thurston.howell.hut:
+  lovey.howell.hut: 2559
+vicePresent.master.hit:
+  shang.at.gogo: 1230
+vicePresent.student.buffer:
+  gogo.shang.at: 2310
+
+---------------------------------------------Section3
+---
+- &1
+  - one
+  - won
+  - &2
+    - two
+    - too
+    - to
+    - *1
+- *2
+
+]0;gaoang@Gaoang: 11:07:31~/Perl/intermediate-perlMargerita--[~/Perl/intermediate-perl]$ [H[2J]0;gaoang@Gaoang: 11:07:31~/Perl/intermediate-perlMargerita--[~/Perl/intermediate-perl]$ perl chapter6 seeWhat 
+---------------------------------------------Section1
+$VAR1 = [
+          'one',
+          'won',
+          [
+            'two',
+            'too',
+            'to',
+            []
+          ]
+        ];
+$VAR1->[2][3] = $VAR1;
+$VAR2 = $VAR1->[2];
+
+---------------------------------------------Section2
+---
+professor.hut:
+  gilligan.crew.hut: 1250
+  lovey.howell.hut: 1360
+student.juit.bit:
+  bei.at.jiji: 390
+thurston.howell.hut:
+  lovey.howell.hut: 2559
+vicePresent.master.hit:
+  shang.at.gogo: 1230
+vicePresent.student.buffer:
+  gogo.shang.at: 2310
+
+---------------------------------------------Section3
+---
+- &1
+  - one
+  - won
+  - &2
+    - two
+    - too
+    - to
+    - *1
+- *2
+
+]0;gaoang@Gaoang: 11:08:20~/Perl/intermediate-perlMargerita--[~/Perl/intermediate-perl]$ c[Kc ../4fun/
+]0;gaoang@Gaoang: 11:31:58~/Perl/4funMargerita--[~/Perl/4fun]$ ll
+total 12
+drwxrwxr-x  2 gaoang gaoang 4096 May 27 22:38 [0m[01;34m.[0m/
+drwxr-xr-x 10 gaoang gaoang 4096 May 27 22:38 [01;34m..[0m/
+-rw-rw-r--  1 gaoang gaoang  578 May 27 22:38 prime_problems
+]0;gaoang@Gaoang: 11:31:59~/Perl/4funMargerita--[~/Perl/4fun]$ e,[Km prime_problems 
+[?1049h[?12;25h[?1h=[H[2J[55d[K[?1l>[?12l[?25h[?1049l[39;49m[?1049h[?12;25h[?1h=[H[2J[54d[?25l[7m-UUU:----F1  [0m[39;49m[27m[7m[1m*scratch*   [0m[39;49m[27m[7m   All L1     (Fundamental)--------------------------------------------[0m[39;49m[27m
+[A[H[?12l[?25h[?12;25h[55d[?25lLoading 00debian-vars...[K[H
+[?12l[?25h[?12;25h[55;25H[?25ldone[H
+[?12l[?25h[?12;25h[55;9H[?25l/etc/emacs/site-start.d/50dictionaries-common.el (source)...[H
+[?12l[?25h[?12;25h[55;9H[?25ldebian-ispell...[K[H
+[?12l[?25h[?12;25h[55;9H[?25l/var/cache/dictionaries-common/emacsen-ispell-default.el (source)...[H
+[?12l[?25h[?12;25h[55;77H[?25ldone[H
+[?12l[?25h[?12;25h[55;9H[?25ldebian-ispell...done[K[H
+[?12l[?25h[?12;25h[55;9H[?25l/var/cache/dictionaries-common/emacsen-ispell-dicts.el (source)...[H
+[?12l[?25h[?12;25h[55;75H[?25ldone[H
+[?12l[?25h[?12;25h[55;10H[?25letc/emacs/site-start.d/50dictionaries-common[6P[H
+[?12l[?25h[?12;25h[55;35H[?25llatex-cjk-common.el (source)...[K[H
+[?12l[?25h[?12;25h[55;9H[?25lcjk-enc...[K[H
+[?12l[?25h[?12;25h[55;19H[?25ldone[H
+[?12l[?25h[?12;25h[55;9H[?25l/etc/emacs/site-start.d/50latex-cjk-common.el (source)...done[H
+[?12l[?25h[?12;25h[55;45H[?25lthai.el (source)...[K[H
+[?12l[?25h[?12;25h[55;64H[?25ldone[H
+[?12l[?25h[?12;25h[55;35H[?25lthailatex.el (source)...[K[H
+[?12l[?25h[?12;25h[55;59H[?25ldone[H
+[?12l[?25h[?12;25h[>0c[55d[?25lLoading /etc/emacs/site-start.d/50thailatex.el (source)...done[K[H[7mFile Edit Options Buffers Tools Lisp-Interaction Help                                           [0m[39;49m[27m
+[A
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[7m-UUU:----F1  [0m[39;49m[27m[7m[1m*scratch*   [0m[39;49m[27m[7m   All L1     (Lisp Interaction)---------------------------------------[0m[39;49m[27m
+[A[2d[?12l[?25h[?12;25h[55d[?25lFor information about GNU Emacs and the GNU system, type C-h C-a.[H
+[?12l[?25h[?12;25h[55d[?25lLoading vc-git...[K[H
+[?12l[?25h[?12;25h[55;18H[?25ldone[H
+[?12l[?25h[?12;25h[55d[?25lLoading vc-git...done[K[H[7mFile Edit Options Buffers Tools Help                                                            [0m[39;49m[27m
+[A
+[31m#!/usr/bin/perl -w                                                                              [39;49m
+[A
+[1m[36muse[0m[39;49m [35m5[39;49m.010;[K
+[1m[36muse[0m[39;49m [35mstrict[39;49m ;[K
+[32mmy[39;49m $[33mtime[0m[39;49m = time ;[K
+[K
+[32mmy[39;49m $[33mpine[0m[39;49m = 0 ;[K
+[32mmy[39;49m $[33mbud[0m[39;49m = 3;[K
+[1m[36mwhile[0m[39;49m($[33mbud[0m[39;49m < 1000000){[K
+    $[33mpine[0m[39;49m ++ [1m[36mif[0m[39;49m isPrime($[33mbud[0m[39;49m) && isPrime($[33mbud[0m[39;49m+2) ;[K
+    $[33mbud[0m[39;49m += 2;[K
+}[K
+say $[33mpine[0m[39;49m;[K
+[K
+[1m[36msub[0m[39;49m [1m[34misPrime[0m[39;49m{[K
+    [32mmy[39;49m $[33mpine[0m[39;49m = shift;[K
+    [1m[36mreturn[0m[39;49m 1 [1m[36mif[0m[39;49m $[33mpine[0m[39;49m == 2 || $[33mpine[0m[39;49m == 3;[K
+    [32mmy[39;49m $[33malpaca[0m[39;49m = 0 ;[K
+[K
+    map{[K
+        [1m[36mreturn[0m[39;49m 0 [1m[36mif[0m[39;49m $[33mpine[0m[39;49m % $[33m_[0m[39;49m == 0 ;[K
+    }(2..int sqrt($[33mpine[0m[39;49m));[K
+[K
+    [1m[36mreturn[0m[39;49m 1;[K
+}[K
+[K
+[1m[36msub[0m[39;49m [1m[34mprimes_under_N[0m[39;49m{[K
+    [32mmy[39;49m $[33malpaca[0m[39;49m = shift;[K
+    [32mmy[39;49m @[4m[33mponyo[0m[39;49m;[K
+    map{[K
+        push @[4m[33mponyo[0m[39;49m, $[33m_[0m[39;49m [1m[36mif[0m[39;49m isPrime($[33m_[0m[39;49m);[K
+    }(2..$[33malpaca[0m[39;49m);[K
+    [1m[36mreturn[0m[39;49m @[4m[33mponyo[0m[39;49m;[K
+}[K
+[K
+[K
+say [32m"Time elapsed : "[39;49m, (time - $[33mtime[0m[39;49m), [32m" seconds ."[39;49m ;[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[7m-UU-:----F1  [0m[39;49m[27m[7m[1mprime_problems[0m[39;49m[27m[7m   All L1     (Perl)-------------------------------------------------[0m[39;49m[27m
+[A[2d[?12l[?25h[?12;25h[55d[K[54;36H[?25l[7m2[0m[39;49m[27m[H
+
+[?12l[?25h[?12;25h[54;36H[?25l[7m3[0m[39;49m[27m[4;1H[?12l[?25h[?12;25h[54;36H[?25l[7m4[0m[39;49m[27m[5;1H[?12l[?25h[?12;25h[54;36H[?25l[7m5[0m[39;49m[27m[6;1H[?12l[?25h[?12;25h[54;36H[?25l[7m6[0m[39;49m[27m[7;1H[?12l[?25h[?12;25h[54;36H[?25l[7m7[0m[39;49m[27m[8;1H[?12l[?25h[?12;25h[54;36H[?25l[7m8[0m[39;49m[27m[9;1H[?12l[?25h[?12;25h[9;6H[9;11H[9;21H[9;14H[C		[C[?25l_000){[54;6H[7m**[0m[39;49m[27m[9;19H[?12l[?25h[?12;25h[55;1H[?25lSaving file /home/gaoang/Perl/4fun/prime_problems...[9;19H[?12l[?25h[?12;25h[55;1H[?25lWrote /home/gaoang/Perl/4fun/prime_problems[K[9;19H[?12l[?25h[?12;25h[54;6H[?25l[7m--[0m[39;49m[27m[9;19H[?12l[?25h[?12;25h[55;1H[K[9;19H[55;1H[?25l(No files need saving)[9;19H[?12l[?25h[?12;25h[55;1H[K[?1l>[?12l[?25h[?1049l[39;49m]0;gaoang@Gaoang: 11:32:12~/Perl/4funMargerita--[~/Perl/4fun]$ perl prime_problems
+^C
+]0;gaoang@Gaoang: 11:32:19~/Perl/4funMargerita--[~/Perl/4fun]$ perl prime_problems[1Pem prime_problems 
+[?1049h[?12;25h[?1h=[H[2J[55d[K[?1l>[?12l[?25h[?1049l[39;49m[?1049h[?12;25h[?1h=[H[2J[54d[?25l[7m-UUU:----F1  [0m[39;49m[27m[7m[1m*scratch*   [0m[39;49m[27m[7m   All L1     (Fundamental)--------------------------------------------[0m[39;49m[27m
+[A[H[?12l[?25h[?12;25h[55d[?25lLoading 00debian-vars...[K[H
+[?12l[?25h[?12;25h[55;25H[?25ldone[H
+[?12l[?25h[?12;25h[55;9H[?25l/etc/emacs/site-start.d/50dictionaries-common.el (source)...[H
+[?12l[?25h[?12;25h[55;9H[?25ldebian-ispell...[K[H
+[?12l[?25h[?12;25h[55;9H[?25l/var/cache/dictionaries-common/emacsen-ispell-default.el (source)...[H
+[?12l[?25h[?12;25h[55;77H[?25ldone[H
+[?12l[?25h[?12;25h[55;9H[?25ldebian-ispell...done[K[H
+[?12l[?25h[?12;25h[55;9H[?25l/var/cache/dictionaries-common/emacsen-ispell-dicts.el (source)...[H
+[?12l[?25h[?12;25h[55;75H[?25ldone[H
+[?12l[?25h[?12;25h[55;10H[?25letc/emacs/site-start.d/50dictionaries-common[6P[H
+[?12l[?25h[?12;25h[55;35H[?25llatex-cjk-common.el (source)...[K[H
+[?12l[?25h[?12;25h[55;9H[?25lcjk-enc...[K[H
+[?12l[?25h[?12;25h[55;19H[?25ldone[H
+[?12l[?25h[?12;25h[55;9H[?25l/etc/emacs/site-start.d/50latex-cjk-common.el (source)...done[H
+[?12l[?25h[?12;25h[55;45H[?25lthai.el (source)...[K[H
+[?12l[?25h[?12;25h[55;64H[?25ldone[H
+[?12l[?25h[?12;25h[55;35H[?25lthailatex.el (source)...[K[H
+[?12l[?25h[?12;25h[55;59H[?25ldone[H
+[?12l[?25h[?12;25h[>0c[55d[?25lLoading /etc/emacs/site-start.d/50thailatex.el (source)...done[K[H[7mFile Edit Options Buffers Tools Lisp-Interaction Help                                           [0m[39;49m[27m
+[A
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[7m-UUU:----F1  [0m[39;49m[27m[7m[1m*scratch*   [0m[39;49m[27m[7m   All L1     (Lisp Interaction)---------------------------------------[0m[39;49m[27m
+[A[2d[?12l[?25h[?12;25h[55d[?25lFor information about GNU Emacs and the GNU system, type C-h C-a.[H
+[?12l[?25h[?12;25h[55d[?25lLoading vc-git...[K[H
+[?12l[?25h[?12;25h[55;18H[?25ldone[H
+[?12l[?25h[?12;25h[55d[?25lLoading vc-git...done[K[H[7mFile Edit Options Buffers Tools Help                                                            [0m[39;49m[27m
+[A
+[31m#!/usr/bin/perl -w                                                                              [39;49m
+[A
+[1m[36muse[0m[39;49m [35m5[39;49m.010;[K
+[1m[36muse[0m[39;49m [35mstrict[39;49m ;[K
+[32mmy[39;49m $[33mtime[0m[39;49m = time ;[K
+[K
+[32mmy[39;49m $[33mpine[0m[39;49m = 0 ;[K
+[32mmy[39;49m $[33mbud[0m[39;49m = 3;[K
+[1m[36mwhile[0m[39;49m($[33mbud[0m[39;49m < 1000_000){[K
+    $[33mpine[0m[39;49m ++ [1m[36mif[0m[39;49m isPrime($[33mbud[0m[39;49m) && isPrime($[33mbud[0m[39;49m+2) ;[K
+    $[33mbud[0m[39;49m += 2;[K
+}[K
+say $[33mpine[0m[39;49m;[K
+[K
+[1m[36msub[0m[39;49m [1m[34misPrime[0m[39;49m{[K
+    [32mmy[39;49m $[33mpine[0m[39;49m = shift;[K
+    [1m[36mreturn[0m[39;49m 1 [1m[36mif[0m[39;49m $[33mpine[0m[39;49m == 2 || $[33mpine[0m[39;49m == 3;[K
+    [32mmy[39;49m $[33malpaca[0m[39;49m = 0 ;[K
+[K
+    map{[K
+        [1m[36mreturn[0m[39;49m 0 [1m[36mif[0m[39;49m $[33mpine[0m[39;49m % $[33m_[0m[39;49m == 0 ;[K
+    }(2..int sqrt($[33mpine[0m[39;49m));[K
+[K
+    [1m[36mreturn[0m[39;49m 1;[K
+}[K
+[K
+[1m[36msub[0m[39;49m [1m[34mprimes_under_N[0m[39;49m{[K
+    [32mmy[39;49m $[33malpaca[0m[39;49m = shift;[K
+    [32mmy[39;49m @[4m[33mponyo[0m[39;49m;[K
+    map{[K
+        push @[4m[33mponyo[0m[39;49m, $[33m_[0m[39;49m [1m[36mif[0m[39;49m isPrime($[33m_[0m[39;49m);[K
+    }(2..$[33malpaca[0m[39;49m);[K
+    [1m[36mreturn[0m[39;49m @[4m[33mponyo[0m[39;49m;[K
+}[K
+[K
+[K
+say [32m"Time elapsed : "[39;49m, (time - $[33mtime[0m[39;49m), [32m" seconds ."[39;49m ;[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[7m-UU-:----F1  [0m[39;49m[27m[7m[1mprime_problems[0m[39;49m[27m[7m   All L1     (Perl)-------------------------------------------------[0m[39;49m[27m
+[A[2d[?12l[?25h[?12;25h[55d[K[54;36H[?25l[7m2[0m[39;49m[27m[H
+
+[?12l[?25h[?12;25h[54;36H[?25l[7m3[0m[39;49m[27m[4;1H[?12l[?25h[?12;25h[54;36H[?25l[7m4[0m[39;49m[27m[5;1H[?12l[?25h[?12;25h[54;36H[?25l[7m5[0m[39;49m[27m[6;1H[?12l[?25h[?12;25h[54;36H[?25l[7m6[0m[39;49m[27m[7;1H[?12l[?25h[?12;25h[54;36H[?25l[7m7[0m[39;49m[27m[8;1H[?12l[?25h[?12;25h[54;36H[?25l[7m8[0m[39;49m[27m[9;1H[?12l[?25h[?12;25h[54;36H[?25l[7m9[0m[39;49m[27m[10;1H[?12l[?25h[?12;25h[54;36H[?25l[7m10[0m[39;49m[27m[11;1H[?12l[?25h[?12;25h[54;37H[?25l[7m1[0m[39;49m[27m[12;1H[?12l[?25h[?12;25h[54;37H[?25l[7m2[0m[39;49m[27m[13;1H[?12l[?25h[?12;25h[54;37H[?25l[7m3[0m[39;49m[27m[14;1H[?12l[?25h[?12;25h[54;37H[?25l[7m4[0m[39;49m[27m[15;1H[?12l[?25h[?12;25h[54;37H[?25l[7m5[0m[39;49m[27m[16;1H[?12l[?25h[?12;25h[54;37H[?25l[7m6[0m[39;49m[27m[17;1H[?12l[?25h[?12;25h[54;37H[?25l[7m7[0m[39;49m[27m[18;1H[?12l[?25h[?12;25h[54;37H[?25l[7m8[0m[39;49m[27m[19;1H[?12l[?25h[?12;25h[54;37H[?25l[7m9[0m[39;49m[27m[20;1H[?12l[?25h[?12;25h[54;36H[?25l[7m20[0m[39;49m[27m[21;1H[?12l[?25h[?12;25h[54;36H[?25l[7m19[0m[39;49m[27m[20;1H[?12l[?25h[?12;25h[54;37H[?25l[7m8[0m[39;49m[27m[19;1H[?12l[?25h[?12;25h[54;37H[?25l[7m7[0m[39;49m[27m[18;1H[?12l[?25h[?12;25h[54;37H[?25l[7m6[0m[39;49m[27m[17;1H[?12l[?25h[?12;25h[54;37H[?25l[7m5[0m[39;49m[27m[16;1H[?12l[?25h[?12;25h[54;37H[?25l[7m4[0m[39;49m[27m[15;1H[?12l[?25h[?12;25h[54;37H[?25l[7m3[0m[39;49m[27m[14;1H[?12l[?25h[?12;25h[54;37H[?25l[7m2[0m[39;49m[27m[13;1H[?12l[?25h[?12;25h[54;37H[?25l[7m1[0m[39;49m[27m[12;1H[?12l[?25h[?12;25h[54;37H[?25l[7m0[0m[39;49m[27m[11;1H[?12l[?25h[?12;25h[54;36H[?25l[7m9 [0m[39;49m[27m[10;1H[?12l[?25h[?12;25h	[C	[54;36H[?25l[7m10[0m[39;49m[27m[11;15H[?12l[?25h[?12;25h[54;36H[?25l[7m9 [0m[39;49m[27m[10;16H[?12l[?25h[?12;25h	[C			[10;29H[C[K[54;6H[?25l[7m**[0m[39;49m[27m[10;30H[?12l[?25h[?12;25h[?25l;[?12l[?25h[?12;25h[54;36H[?25l[7m10[0m[39;49m[27m[11;15H[?12l[?25h[?12;25h[54;37H[?25l[7m1[0m[39;49m[27m[12;2H[?12l[?25h[?12;25h[54;37H[?25l[7m0[0m[39;49m[27m[11;15H[?12l[?25h[?12;25h[K[1;53r[13;1H[1M[1;55r[11;1H[?25l}
+say $[33mpine[0m[39;49m;[53;1H[K[11d[?12l[?25h[?12;25h[54;36H[?25l[7m9 [0m[39;49m[27m[10;1H[?12l[?25h[?12;25h[54;36H[?25l[7m8[0m[39;49m[27m[9;1H[?12l[?25h[?12;25h[54;36H[?25l[7m7[0m[39;49m[27m[8;1H[?12l[?25h[?12;25h[8;3H	[8;12H[?25l;[K[?12l[?25h[?12;25h[?25l2;[?12l[?25h[?12;25h[55;1H[?25lSaving file /home/gaoang/Perl/4fun/prime_problems...[8;12H[?12l[?25h[?12;25h[55;1H[?25lWrote /home/gaoang/Perl/4fun/prime_problems[K[8;12H[?12l[?25h[?12;25h[54;6H[?25l[7m--[0m[39;49m[27m[8;12H[?12l[?25h[?12;25h[55;1H[K[54;36H[?25l[7m8[0m[39;49m[27m[9;12H[?12l[?25h[?12;25h[54;36H[?25l[7m9[0m[39;49m[27m[10;12H[?12l[?25h[?12;25h			[1;37r[11;1H[1L[1;55r[11;1H[K[54;6H[?25l[7m**--F1  [0m[39;49m[27m[7m[1mprime_problems[0m[39;49m[27m[7m   All L10[0m[39;49m[27m[11;5H[?12l[?25h[?12;25h[?25l$[?12l[?25h[?12;25h[?25l[33mb[0m[39;49m[?12l[?25h[?12;25h[?25l[33mu[0m[39;49m[?12l[?25h[?12;25h[?25l[33md[0m[39;49m[?12l[?25h[?12;25h[C[?25l+[?12l[?25h[?12;25h[?25l+[?12l[?25h[?12;25h[C[?25l;[?12l[?25h[?12;25h[55;1H[?25lSaving file /home/gaoang/Perl/4fun/prime_problems...[11;14H[?12l[?25h[?12;25h[55;1H[?25lWrote /home/gaoang/Perl/4fun/prime_problems[K[11;14H[?12l[?25h[?12;25h[54;6H[?25l[7m--[0m[39;49m[27m[11;14H[?12l[?25h[?12;25h[55;1H[K[54;37H[?25l[7m1[0m[39;49m[27m[12;2H[?12l[?25h[?12;25h[54;37H[?25l[7m2[0m[39;49m[27m[13;11H[?12l[?25h[?12;25h[55;1H[?25l(No files need saving)[13;11H[?12l[?25h[?12;25h[55;1H[K[?1l>[?12l[?25h[?1049l[39;49m]0;gaoang@Gaoang: 11:33:05~/Perl/4funMargerita--[~/Perl/4fun]$ [H[2J]0;gaoang@Gaoang: 11:33:05~/Perl/4funMargerita--[~/Perl/4fun]$ em prime_problems perl prime_problems
+^C
+]0;gaoang@Gaoang: 11:33:31~/Perl/4funMargerita--[~/Perl/4fun]$ perl prime_problems[1Pem prime_problems 
+[?1049h[?12;25h[?1h=[H[2J[55d[K[?1l>[?12l[?25h[?1049l[39;49m[?1049h[?12;25h[?1h=[H[2J[54d[?25l[7m-UUU:----F1  [0m[39;49m[27m[7m[1m*scratch*   [0m[39;49m[27m[7m   All L1     (Fundamental)--------------------------------------------[0m[39;49m[27m
+[A[H[?12l[?25h[?12;25h[55d[?25lLoading 00debian-vars...[K[H
+[?12l[?25h[?12;25h[55;25H[?25ldone[H
+[?12l[?25h[?12;25h[55;9H[?25l/etc/emacs/site-start.d/50dictionaries-common.el (source)...[H
+[?12l[?25h[?12;25h[55;9H[?25ldebian-ispell...[K[H
+[?12l[?25h[?12;25h[55;9H[?25l/var/cache/dictionaries-common/emacsen-ispell-default.el (source)...[H
+[?12l[?25h[?12;25h[55;77H[?25ldone[H
+[?12l[?25h[?12;25h[55;9H[?25ldebian-ispell...done[K[H
+[?12l[?25h[?12;25h[55;9H[?25l/var/cache/dictionaries-common/emacsen-ispell-dicts.el (source)...[H
+[?12l[?25h[?12;25h[55;75H[?25ldone[H
+[?12l[?25h[?12;25h[55;10H[?25letc/emacs/site-start.d/50dictionaries-common[6P[H
+[?12l[?25h[?12;25h[55;35H[?25llatex-cjk-common.el (source)...[K[H
+[?12l[?25h[?12;25h[55;9H[?25lcjk-enc...[K[H
+[?12l[?25h[?12;25h[55;19H[?25ldone[H
+[?12l[?25h[?12;25h[55;9H[?25l/etc/emacs/site-start.d/50latex-cjk-common.el (source)...done[H
+[?12l[?25h[?12;25h[55;45H[?25lthai.el (source)...[K[H
+[?12l[?25h[?12;25h[55;64H[?25ldone[H
+[?12l[?25h[?12;25h[55;35H[?25lthailatex.el (source)...[K[H
+[?12l[?25h[?12;25h[55;59H[?25ldone[H
+[?12l[?25h[?12;25h[>0c[55d[?25lLoading /etc/emacs/site-start.d/50thailatex.el (source)...done[K[H[7mFile Edit Options Buffers Tools Lisp-Interaction Help                                           [0m[39;49m[27m
+[A
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[7m-UUU:----F1  [0m[39;49m[27m[7m[1m*scratch*   [0m[39;49m[27m[7m   All L1     (Lisp Interaction)---------------------------------------[0m[39;49m[27m
+[A[2d[?12l[?25h[?12;25h[55d[?25lFor information about GNU Emacs and the GNU system, type C-h C-a.[H
+[?12l[?25h[?12;25h[55d[?25lLoading vc-git...[K[H
+[?12l[?25h[?12;25h[55;18H[?25ldone[H
+[?12l[?25h[?12;25h[55d[?25lLoading vc-git...done[K[H[7mFile Edit Options Buffers Tools Help                                                            [0m[39;49m[27m
+[A
+[31m#!/usr/bin/perl -w                                                                              [39;49m
+[A
+[1m[36muse[0m[39;49m [35m5[39;49m.010;[K
+[1m[36muse[0m[39;49m [35mstrict[39;49m ;[K
+[32mmy[39;49m $[33mtime[0m[39;49m = time ;[K
+[K
+[32mmy[39;49m $[33mpine[0m[39;49m = 0 ;[K
+[32mmy[39;49m $[33mbud[0m[39;49m = 2;[K
+[1m[36mwhile[0m[39;49m($[33mbud[0m[39;49m < 1000_000){[K
+    $[33mpine[0m[39;49m ++ [1m[36mif[0m[39;49m isPrime($[33mbud[0m[39;49m);[K
+    $[33mbud[0m[39;49m ++ ;[K
+}[K
+say $[33mpine[0m[39;49m;[K
+[K
+[1m[36msub[0m[39;49m [1m[34misPrime[0m[39;49m{[K
+    [32mmy[39;49m $[33mpine[0m[39;49m = shift;[K
+    [1m[36mreturn[0m[39;49m 1 [1m[36mif[0m[39;49m $[33mpine[0m[39;49m == 2 || $[33mpine[0m[39;49m == 3;[K
+    [32mmy[39;49m $[33malpaca[0m[39;49m = 0 ;[K
+[K
+    map{[K
+        [1m[36mreturn[0m[39;49m 0 [1m[36mif[0m[39;49m $[33mpine[0m[39;49m % $[33m_[0m[39;49m == 0 ;[K
+    }(2..int sqrt($[33mpine[0m[39;49m));[K
+[K
+    [1m[36mreturn[0m[39;49m 1;[K
+}[K
+[K
+[1m[36msub[0m[39;49m [1m[34mprimes_under_N[0m[39;49m{[K
+    [32mmy[39;49m $[33malpaca[0m[39;49m = shift;[K
+    [32mmy[39;49m @[4m[33mponyo[0m[39;49m;[K
+    map{[K
+        push @[4m[33mponyo[0m[39;49m, $[33m_[0m[39;49m [1m[36mif[0m[39;49m isPrime($[33m_[0m[39;49m);[K
+    }(2..$[33malpaca[0m[39;49m);[K
+    [1m[36mreturn[0m[39;49m @[4m[33mponyo[0m[39;49m;[K
+}[K
+[K
+[K
+say [32m"Time elapsed : "[39;49m, (time - $[33mtime[0m[39;49m), [32m" seconds ."[39;49m ;[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[7m-UU-:----F1  [0m[39;49m[27m[7m[1mprime_problems[0m[39;49m[27m[7m   All L1     (Perl)-------------------------------------------------[0m[39;49m[27m
+[A[2d[?12l[?25h[?12;25h[55d[K[54;36H[?25l[7m2[0m[39;49m[27m[H
+
+[?12l[?25h[?12;25h[54;36H[?25l[7m3[0m[39;49m[27m[4;1H[?12l[?25h[?12;25h[54;36H[?25l[7m4[0m[39;49m[27m[5;1H[?12l[?25h[?12;25h[54;36H[?25l[7m5[0m[39;49m[27m[6;1H[?12l[?25h[?12;25h[54;36H[?25l[7m6[0m[39;49m[27m[7;1H[?12l[?25h[?12;25h[54;36H[?25l[7m7[0m[39;49m[27m[8;1H[?12l[?25h[?12;25h[54;36H[?25l[7m8[0m[39;49m[27m[9;1H[?12l[?25h[?12;25h[54;36H[?25l[7m9[0m[39;49m[27m[10;1H[?12l[?25h[?12;25h[54;36H[?25l[7m10[0m[39;49m[27m[11;1H[?12l[?25h[?12;25h[54;37H[?25l[7m1[0m[39;49m[27m[12;1H[?12l[?25h[?12;25h[54;37H[?25l[7m2[0m[39;49m[27m[13;1H[?12l[?25h[?12;25h[54;37H[?25l[7m3[0m[39;49m[27m[14;1H[?12l[?25h[?12;25h[54;37H[?25l[7m4[0m[39;49m[27m[15;1H[?12l[?25h[?12;25h[54;37H[?25l[7m5[0m[39;49m[27m[16;1H[?12l[?25h[?12;25h[54;37H[?25l[7m6[0m[39;49m[27m[17;1H[?12l[?25h[?12;25h[54;37H[?25l[7m7[0m[39;49m[27m[18;1H[?12l[?25h[?12;25h[54;37H[?25l[7m8[0m[39;49m[27m[19;1H[?12l[?25h[?12;25h[54;37H[?25l[7m7[0m[39;49m[27m[18;1H[?12l[?25h[?12;25h[54;37H[?25l[7m6[0m[39;49m[27m[17;1H[?12l[?25h[?12;25h[54;37H[?25l[7m5[0m[39;49m[27m[16;1H[?12l[?25h[?12;25h[54;37H[?25l[7m4[0m[39;49m[27m[15;1H[?12l[?25h[?12;25h[54;37H[?25l[7m3[0m[39;49m[27m[14;1H[?12l[?25h[?12;25h[54;37H[?25l[7m2[0m[39;49m[27m[13;1H[?12l[?25h[?12;25h[54;37H[?25l[7m1[0m[39;49m[27m[12;1H[?12l[?25h[?12;25h[54;37H[?25l[7m0[0m[39;49m[27m[11;1H[?12l[?25h[?12;25h[54;36H[?25l[7m9 [0m[39;49m[27m[10;1H[?12l[?25h[?12;25h[54;36H[?25l[7m8[0m[39;49m[27m[9;1H[?12l[?25h[?12;25h[9;6H[9;11H[9;18H[9;22H[?25l){[K[54;6H[7m**[0m[39;49m[27m[9;21H[?12l[?25h[?12;25h[55;1H[?25lSaving file /home/gaoang/Perl/4fun/prime_problems...[9;21H[?12l[?25h[?12;25h[55;1H[?25lWrote /home/gaoang/Perl/4fun/prime_problems[K[9;21H[?12l[?25h[?12;25h[54;6H[?25l[7m--[0m[39;49m[27m[9;21H[?12l[?25h[?12;25h[55;1H[K[9;21H[55;1H[?25l(No files need saving)[9;21H[?12l[?25h[?12;25h[55;1H[K[?1l>[?12l[?25h[?1049l[39;49m]0;gaoang@Gaoang: 11:33:54~/Perl/4funMargerita--[~/Perl/4fun]$ em prime_problems perl prime_problems
+9592
+Time elapsed : 1 seconds .
+]0;gaoang@Gaoang: 11:33:55~/Perl/4funMargerita--[~/Perl/4fun]$ perl prime_problems[1Pem prime_problems 
+[?1049h[?12;25h[?1h=[H[2J[55d[K[?1l>[?12l[?25h[?1049l[39;49m[H[2J[54d[?25l[7m-UUU:----F1  [0m[39;49m[27m[7m[1m*scratch*   [0m[39;49m[27m[7m   All L1     (Fundamental)--------------------------------------------[0m[39;49m[27m
+[A[H[?12l[?25h[?12;25h[55d[?25lLoading 00debian-vars...[K[H
+[?12l[?25h[?12;25h[55;25H[?25ldone[H
+[?12l[?25h[?12;25h[55;9H[?25l/etc/emacs/site-start.d/50dictionaries-common.el (source)...[H
+[?12l[?25h[?12;25h[55;9H[?25ldebian-ispell...[K[H
+[?12l[?25h[?12;25h[55;9H[?25l/var/cache/dictionaries-common/emacsen-ispell-default.el (source)...[H
+[?12l[?25h[?12;25h[55;77H[?25ldone[H
+[?12l[?25h[?12;25h[55;9H[?25ldebian-ispell...done[K[H
+[?12l[?25h[?12;25h[55;9H[?25l/var/cache/dictionaries-common/emacsen-ispell-dicts.el (source)...[H
+[?12l[?25h[?12;25h[55;75H[?25ldone[H
+[?12l[?25h[?12;25h[55;10H[?25letc/emacs/site-start.d/50dictionaries-common[6P[H
+[?12l[?25h[?12;25h[55;35H[?25llatex-cjk-common.el (source)...[K[H
+[?12l[?25h[?12;25h[55;9H[?25lcjk-enc...[K[H
+[?12l[?25h[?12;25h[55;19H[?25ldone[H
+[?12l[?25h[?12;25h[55;9H[?25l/etc/emacs/site-start.d/50latex-cjk-common.el (source)...done[H
+[?12l[?25h[?12;25h[55;45H[?25lthai.el (source)...[K[H
+[?12l[?25h[?12;25h[55;64H[?25ldone[H
+[?12l[?25h[?12;25h[55;35H[?25lthailatex.el (source)...[K[H
+[?12l[?25h[?12;25h[55;59H[?25ldone[H
+[?12l[?25h[?12;25h[>0c[55d[?25lLoading /etc/emacs/site-start.d/50thailatex.el (source)...done[K[H[7mFile Edit Options Buffers Tools Lisp-Interaction Help                                           [0m[39;49m[27m
+[A
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[7m-UUU:----F1  [0m[39;49m[27m[7m[1m*scratch*   [0m[39;49m[27m[7m   All L1     (Lisp Interaction)---------------------------------------[0m[39;49m[27m
+[A[2d[?12l[?25h[?12;25h[55d[?25lFor information about GNU Emacs and the GNU system, type C-h C-a.[H
+[?12l[?25h[?12;25h[55d[?25lLoading vc-git...[K[H
+[?12l[?25h[?12;25h[55;18H[?25ldone[H
+[?12l[?25h[?12;25h[55d[?25lLoading vc-git...done[K[H[7mFile Edit Options Buffers Tools Help                                                            [0m[39;49m[27m
+[A
+[31m#!/usr/bin/perl -w                                                                              [39;49m
+[A
+[1m[36muse[0m[39;49m [35m5[39;49m.010;[K
+[1m[36muse[0m[39;49m [35mstrict[39;49m ;[K
+[32mmy[39;49m $[33mtime[0m[39;49m = time ;[K
+[K
+[32mmy[39;49m $[33mpine[0m[39;49m = 0 ;[K
+[32mmy[39;49m $[33mbud[0m[39;49m = 2;[K
+[1m[36mwhile[0m[39;49m($[33mbud[0m[39;49m < 1000_00){[K
+    $[33mpine[0m[39;49m ++ [1m[36mif[0m[39;49m isPrime($[33mbud[0m[39;49m);[K
+    $[33mbud[0m[39;49m ++ ;[K
+}[K
+say $[33mpine[0m[39;49m;[K
+[K
+[1m[36msub[0m[39;49m [1m[34misPrime[0m[39;49m{[K
+    [32mmy[39;49m $[33mpine[0m[39;49m = shift;[K
+    [1m[36mreturn[0m[39;49m 1 [1m[36mif[0m[39;49m $[33mpine[0m[39;49m == 2 || $[33mpine[0m[39;49m == 3;[K
+    [32mmy[39;49m $[33malpaca[0m[39;49m = 0 ;[K
+[K
+    map{[K
+        [1m[36mreturn[0m[39;49m 0 [1m[36mif[0m[39;49m $[33mpine[0m[39;49m % $[33m_[0m[39;49m == 0 ;[K
+    }(2..int sqrt($[33mpine[0m[39;49m));[K
+[K
+    [1m[36mreturn[0m[39;49m 1;[K
+}[K
+[K
+[1m[36msub[0m[39;49m [1m[34mprimes_under_N[0m[39;49m{[K
+    [32mmy[39;49m $[33malpaca[0m[39;49m = shift;[K
+    [32mmy[39;49m @[4m[33mponyo[0m[39;49m;[K
+    map{[K
+        push @[4m[33mponyo[0m[39;49m, $[33m_[0m[39;49m [1m[36mif[0m[39;49m isPrime($[33m_[0m[39;49m);[K
+    }(2..$[33malpaca[0m[39;49m);[K
+    [1m[36mreturn[0m[39;49m @[4m[33mponyo[0m[39;49m;[K
+}[K
+[K
+[K
+say [32m"Time elapsed : "[39;49m, (time - $[33mtime[0m[39;49m), [32m" seconds ."[39;49m ;[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[K
+[7m-UU-:----F1  [0m[39;49m[27m[7m[1mprime_problems[0m[39;49m[27m[7m   All L1     (Perl)-------------------------------------------------[0m[39;49m[27m
+[A[2d[?12l[?25h[?12;25h[55d[K[54;36H[?25l[7m2[0m[39;49m[27m[H
+
+[?12l[?25h[?12;25h[54;36H[?25l[7m3[0m[39;49m[27m[4;1H[?12l[?25h[?12;25h[54;36H[?25l[7m4[0m[39;49m[27m[5;1H[?12l[?25h[?12;25h[54;36H[?25l[7m5[0m[39;49m[27m[6;1H[?12l[?25h[?12;25h[54;36H[?25l[7m6[0m[39;49m[27m[7;1H[?12l[?25h[?12;25h[54;36H[?25l[7m7[0m[39;49m[27m[8;1H[?12l[?25h[?12;25h[54;36H[?25l[7m8[0m[39;49m[27m[9;1H[?12l[?25h[?12;25h[54;36H[?25l[7m9[0m[39;49m[27m[10;1H[?12l[?25h[?12;25h[54;36H[?25l[7m8[0m[39;49m[27m[9;1H[?12l[?25h[?12;25h[9;6H[9;11H[9;18H[C[C[C[?25l0){[54;6H[7m**[0m[39;49m[27m[9;21H[?12l[?25h[?12;25h[55;1H[?25lSaving file /home/gaoang/Perl/4fun/prime_problems...[9;21H[?12l[?25h[?12;25h[55;1H[?25lWrote /home/gaoang/Perl/4fun/prime_problems[K[9;21H[?12l[?25h[?12;25h[54;6H[?25l[7m--[0m[39;49m[27m[9;21H[?12l[?25h[?12;25h[55;1H[K[9;21H[55;1H[?25l(No files need saving)[9;21H[?12l[?25h[?12;25h[55;1H[K[?1l>[?12l[?25h[?1049l[39;49m]0;gaoang@Gaoang: 11:34:06~/Perl/4funMargerita--[~/Perl/4fun]$ em prime_problems [K[H[2J]0;gaoang@Gaoang: 11:34:06~/Perl/4funMargerita--[~/Perl/4fun]$ em prime_problems perl prime_problems
+78498
+Time elapsed : 25 seconds .
+]0;gaoang@Gaoang: 11:34:36~/Perl/4funMargerita--[~/Perl/4fun]$ c ../intermediate-perl/
+]0;gaoang@Gaoang: 11:34:52~/Perl/intermediate-perlMargerita--[~/Perl/intermediate-perl]$ kk'[K[K[Kll
+total 928
+drwxrwxr-x  2 gaoang gaoang   4096 May 28 11:08 [0m[01;34m.[0m/
+drwxr-xr-x 10 gaoang gaoang   4096 May 27 22:38 [01;34m..[0m/
+-rw-rw-r--  1 gaoang gaoang    176 May 20 10:04 aDataFile
+-rw-rw-r--  1 gaoang gaoang    783 May 17 08:32 chapter3
+-rw-rw-r--  1 gaoang gaoang   1584 May 18 10:56 chapter4
+-rw-rw-r--  1 gaoang gaoang    985 May 20 13:11 chapter5
+-rw-rw-r--  1 gaoang gaoang   1315 May 28 10:41 chapter5.2
+-rw-rw-r--  1 gaoang gaoang   1297 May 20 14:45 chapter5.2~
+-rw-rw-r--  1 gaoang gaoang    840 May 28 11:08 chapter6
+-rw-rw-r--  1 gaoang gaoang   1315 May 28 10:45 chapter6~
+-rw-rw-r--  1 gaoang gaoang 857804 May 20 14:34 coconet.dat
+-rw-rw-r--  1 gaoang gaoang     72 May 28 11:08 ponyo
+-rw-rw-r--  1 gaoang gaoang    311 May 20 13:18 seeWhat
+-rw-rw-r--  1 gaoang gaoang  36864 May 28 11:34 typescript
+]0;gaoang@Gaoang: 11:46:12~/Perl/intermediate-perlMargerita--[~/Perl/intermediate-perl]$ less aDataFile 
+[?1049h[?1h=The Skipper
+    blue_shirt
+    hat
+    jacket
+    preserver
+    sunscreen
+Professor
+        sunscreen
+        water_bottle
+        slide_rule
+Gilligan
+        red_shirt
+        hat
+        lucky_socks
+        water_bottleBoy
+[7maDataFile (END)[27m[K[K[?1l>[?1049l]0;gaoang@Gaoang: 11:46:20~/Perl/intermediate-perlMargerita--[~/Perl/intermediate-perl]$ less aDataFile [Kcoconet.dat 
+[?1049h[?1h=professor.hut   skipper.crew.hut        8655
+ginger.girl.hut laser3.copyroom.hut     6404
+skipper.crew.hut        fileserver.copyroom.hut 8534
+gilligan.crew.hut       skipper.crew.hut        1004
+laser3.copyroom.hut     ginger.girl.hut 4366
+maryann.girl.hut        professor.hut   8454
+skipper.crew.hut        professor.hut   7475
+gilligan.crew.hut       maryann.girl.hut        8128
+gilligan.crew.hut       maryann.girl.hut        5277
+gilligan.crew.hut       fileserver.copyroom.hut 6117
+skipper.crew.hut        professor.hut   5101
+gilligan.crew.hut       gilligan.crew.hut       9973
+ginger.girl.hut fileserver.copyroom.hut 1448
+skipper.crew.hut        gilligan.crew.hut       2146
+fileserver.copyroom.hut gilligan.crew.hut       9568
+maryann.girl.hut        laser3.copyroom.hut     8024
+fileserver.copyroom.hut laser3.copyroom.hut     9574
+gilligan.crew.hut       professor.hut   1630
+professor.hut   skipper.crew.hut        1861
+ginger.girl.hut gilligan.crew.hut       2462
+gilligan.crew.hut       skipper.crew.hut        9976
+maryann.girl.hut        maryann.girl.hut        5337
+ginger.girl.hut fileserver.copyroom.hut 9562
+professor.hut   professor.hut   9573
+laser3.copyroom.hut     skipper.crew.hut        7057
+ginger.girl.hut laser3.copyroom.hut     3316
+laser3.copyroom.hut     fileserver.copyroom.hut 6607
+laser3.copyroom.hut     skipper.crew.hut        996
+professor.hut   gilligan.crew.hut       4003
+laser3.copyroom.hut     maryann.girl.hut        401
+laser3.copyroom.hut     professor.hut   3350
+gilligan.crew.hut       gilligan.crew.hut       1551
+professor.hut   professor.hut   3308
+professor.hut   skipper.crew.hut        9422
+gilligan.crew.hut       ginger.girl.hut 3233
+fileserver.copyroom.hut gilligan.crew.hut       4754
+fileserver.copyroom.hut skipper.crew.hut        7825
+professor.hut   ginger.girl.hut 9704
+skipper.crew.hut        ginger.girl.hut 1691
+skipper.crew.hut        laser3.copyroom.hut     3072
+ginger.girl.hut gilligan.crew.hut       2293
+ginger.girl.hut skipper.crew.hut        123
+fileserver.copyroom.hut laser3.copyroom.hut     1552
+skipper.crew.hut        ginger.girl.hut 7570
+fileserver.copyroom.hut ginger.girl.hut 9607
+fileserver.copyroom.hut gilligan.crew.hut       8957
+laser3.copyroom.hut     fileserver.copyroom.hut 7392
+gilligan.crew.hut       skipper.crew.hut        8298
+laser3.copyroom.hut     maryann.girl.hut        6599
+skipper.crew.hut        skipper.crew.hut        413
+fileserver.copyroom.hut ginger.girl.hut 790
+fileserver.copyroom.hut gilligan.crew.hut       209
+skipper.crew.hut        fileserver.copyroom.hut 9847
+gilligan.crew.hut       professor.hut   7315
+[7mcoconet.dat[27m[K[K [KESCESC[K[[[K66[K~~[Kfileserver.copyroom.hut ginger.girl.hut 4199
+gilligan.crew.hut       ginger.girl.hut 7463
+gilligan.crew.hut       professor.hut   7311
+professor.hut   fileserver.copyroom.hut 5223
+laser3.copyroom.hut     skipper.crew.hut        4462
+fileserver.copyroom.hut maryann.girl.hut        2632
+skipper.crew.hut        professor.hut   7734
+laser3.copyroom.hut     ginger.girl.hut 8550
+fileserver.copyroom.hut laser3.copyroom.hut     7717
+ginger.girl.hut skipper.crew.hut        3031
+professor.hut   skipper.crew.hut        8133
+skipper.crew.hut        skipper.crew.hut        9218
+laser3.copyroom.hut     laser3.copyroom.hut     6379
+laser3.copyroom.hut     gilligan.crew.hut       8468
+laser3.copyroom.hut     maryann.girl.hut        3935
+laser3.copyroom.hut     ginger.girl.hut 2212
+skipper.crew.hut        laser3.copyroom.hut     611
+skipper.crew.hut        maryann.girl.hut        8078
+fileserver.copyroom.hut maryann.girl.hut        4863
+laser3.copyroom.hut     laser3.copyroom.hut     6233
+ginger.girl.hut ginger.girl.hut 1836
+ginger.girl.hut ginger.girl.hut 6331
+gilligan.crew.hut       professor.hut   8446
+maryann.girl.hut        gilligan.crew.hut       6670
+maryann.girl.hut        gilligan.crew.hut       3451
+fileserver.copyroom.hut ginger.girl.hut 3080
+maryann.girl.hut        skipper.crew.hut        7569
+ginger.girl.hut ginger.girl.hut 9253
+professor.hut   fileserver.copyroom.hut 4453
+ginger.girl.hut professor.hut   991
+skipper.crew.hut        laser3.copyroom.hut     6969
+laser3.copyroom.hut     skipper.crew.hut        7307
+maryann.girl.hut        skipper.crew.hut        8867
+ginger.girl.hut fileserver.copyroom.hut 7421
+maryann.girl.hut        gilligan.crew.hut       8708
+ginger.girl.hut maryann.girl.hut        1238
+fileserver.copyroom.hut laser3.copyroom.hut     7809
+skipper.crew.hut        gilligan.crew.hut       1720
+professor.hut   gilligan.crew.hut       8778
+maryann.girl.hut        professor.hut   3041
+fileserver.copyroom.hut professor.hut   147
+skipper.crew.hut        gilligan.crew.hut       2937
+gilligan.crew.hut       ginger.girl.hut 6048
+laser3.copyroom.hut     gilligan.crew.hut       9906
+gilligan.crew.hut       fileserver.copyroom.hut 1824
+professor.hut   ginger.girl.hut 5375
+ginger.girl.hut ginger.girl.hut 3222
+gilligan.crew.hut       professor.hut   2595
+maryann.girl.hut        fileserver.copyroom.hut 6117
+skipper.crew.hut        fileserver.copyroom.hut 8790
+fileserver.copyroom.hut laser3.copyroom.hut     4500
+laser3.copyroom.hut     laser3.copyroom.hut     5847
+gilligan.crew.hut       gilligan.crew.hut       6876
+skipper.crew.hut        gilligan.crew.hut       7961
+:[K[K [KESCESC[K[[[K66[K~~[Kfileserver.copyroom.hut ginger.girl.hut 894
+laser3.copyroom.hut     ginger.girl.hut 8706
+laser3.copyroom.hut     professor.hut   1969
+maryann.girl.hut        professor.hut   9838
+skipper.crew.hut        gilligan.crew.hut       5974
+maryann.girl.hut        maryann.girl.hut        3048
+professor.hut   maryann.girl.hut        3826
+professor.hut   professor.hut   532
+maryann.girl.hut        fileserver.copyroom.hut 9054
+ginger.girl.hut skipper.crew.hut        3586
+skipper.crew.hut        professor.hut   783
+gilligan.crew.hut       maryann.girl.hut        4555
+fileserver.copyroom.hut fileserver.copyroom.hut 1016
+maryann.girl.hut        maryann.girl.hut        4030
+skipper.crew.hut        ginger.girl.hut 5528
+maryann.girl.hut        professor.hut   3360
+skipper.crew.hut        maryann.girl.hut        9160
+ginger.girl.hut fileserver.copyroom.hut 2594
+skipper.crew.hut        maryann.girl.hut        2694
+professor.hut   gilligan.crew.hut       3267
+ginger.girl.hut skipper.crew.hut        316
+ginger.girl.hut ginger.girl.hut 8381
+professor.hut   laser3.copyroom.hut     4994
+ginger.girl.hut gilligan.crew.hut       6274
+fileserver.copyroom.hut ginger.girl.hut 7279
+gilligan.crew.hut       ginger.girl.hut 5089
+gilligan.crew.hut       ginger.girl.hut 8113
+maryann.girl.hut        gilligan.crew.hut       3246
+professor.hut   fileserver.copyroom.hut 8241
+gilligan.crew.hut       fileserver.copyroom.hut 3475
+maryann.girl.hut        fileserver.copyroom.hut 7118
+maryann.girl.hut        skipper.crew.hut        3026
+professor.hut   maryann.girl.hut        5791
+maryann.girl.hut        professor.hut   1924
+gilligan.crew.hut       gilligan.crew.hut       7988
+professor.hut   ginger.girl.hut 3802
+fileserver.copyroom.hut professor.hut   4230
+fileserver.copyroom.hut fileserver.copyroom.hut 9611
+fileserver.copyroom.hut gilligan.crew.hut       4843
+professor.hut   maryann.girl.hut        3381
+professor.hut   fileserver.copyroom.hut 7120
+fileserver.copyroom.hut maryann.girl.hut        7961
+fileserver.copyroom.hut professor.hut   7922
+skipper.crew.hut        ginger.girl.hut 2139
+skipper.crew.hut        maryann.girl.hut        1334
+laser3.copyroom.hut     fileserver.copyroom.hut 8698
+laser3.copyroom.hut     gilligan.crew.hut       6812
+fileserver.copyroom.hut laser3.copyroom.hut     8473
+maryann.girl.hut        fileserver.copyroom.hut 7206
+laser3.copyroom.hut     fileserver.copyroom.hut 5327
+skipper.crew.hut        maryann.girl.hut        3920
+maryann.girl.hut        maryann.girl.hut        9240
+fileserver.copyroom.hut fileserver.copyroom.hut 4252
+laser3.copyroom.hut     gilligan.crew.hut       5931
+:[K[K [KESCESC[K[[[K66[K~~[Kginger.girl.hut professor.hut   1817
+laser3.copyroom.hut     fileserver.copyroom.hut 2676
+professor.hut   ginger.girl.hut 8139
+gilligan.crew.hut       maryann.girl.hut        8938
+gilligan.crew.hut       laser3.copyroom.hut     5745
+professor.hut   fileserver.copyroom.hut 4526
+gilligan.crew.hut       professor.hut   2001
+skipper.crew.hut        laser3.copyroom.hut     7655
+professor.hut   fileserver.copyroom.hut 5952
+maryann.girl.hut        professor.hut   8947
+maryann.girl.hut        skipper.crew.hut        5754
+fileserver.copyroom.hut fileserver.copyroom.hut 37
+ginger.girl.hut gilligan.crew.hut       9182
+gilligan.crew.hut       gilligan.crew.hut       8425
+fileserver.copyroom.hut maryann.girl.hut        2854
+laser3.copyroom.hut     ginger.girl.hut 5828
+maryann.girl.hut        professor.hut   1018
+fileserver.copyroom.hut gilligan.crew.hut       4195
+professor.hut   gilligan.crew.hut       9036
+gilligan.crew.hut       maryann.girl.hut        6158
+skipper.crew.hut        professor.hut   1108
+maryann.girl.hut        skipper.crew.hut        3334
+laser3.copyroom.hut     ginger.girl.hut 1294
+fileserver.copyroom.hut professor.hut   108
+fileserver.copyroom.hut gilligan.crew.hut       7660
+professor.hut   skipper.crew.hut        6813
+laser3.copyroom.hut     professor.hut   3948
+professor.hut   professor.hut   7036
+gilligan.crew.hut       professor.hut   958
+maryann.girl.hut        skipper.crew.hut        5714
+gilligan.crew.hut       ginger.girl.hut 8623
+ginger.girl.hut gilligan.crew.hut       2683
+professor.hut   maryann.girl.hut        3780
+skipper.crew.hut        fileserver.copyroom.hut 9980
+professor.hut   maryann.girl.hut        4733
+gilligan.crew.hut       fileserver.copyroom.hut 5514
+gilligan.crew.hut       laser3.copyroom.hut     9123
+ginger.girl.hut professor.hut   5295
+skipper.crew.hut        laser3.copyroom.hut     365
+gilligan.crew.hut       professor.hut   8460
+maryann.girl.hut        fileserver.copyroom.hut 8034
+laser3.copyroom.hut     maryann.girl.hut        1779
+professor.hut   laser3.copyroom.hut     863
+ginger.girl.hut skipper.crew.hut        502
+gilligan.crew.hut       professor.hut   6928
+skipper.crew.hut        maryann.girl.hut        1505
+professor.hut   laser3.copyroom.hut     4842
+fileserver.copyroom.hut fileserver.copyroom.hut 4167
+fileserver.copyroom.hut skipper.crew.hut        9690
+skipper.crew.hut        laser3.copyroom.hut     6563
+fileserver.copyroom.hut ginger.girl.hut 7626
+fileserver.copyroom.hut skipper.crew.hut        5422
+fileserver.copyroom.hut ginger.girl.hut 4125
+skipper.crew.hut        ginger.girl.hut 2319
+:[K[K [KESCESC[K[[[K66[K~~[Kfileserver.copyroom.hut gilligan.crew.hut       8198
+skipper.crew.hut        professor.hut   4335
+gilligan.crew.hut       skipper.crew.hut        9759
+skipper.crew.hut        gilligan.crew.hut       1274
+skipper.crew.hut        maryann.girl.hut        2843
+gilligan.crew.hut       gilligan.crew.hut       449
+professor.hut   ginger.girl.hut 8340
+maryann.girl.hut        fileserver.copyroom.hut 6764
+skipper.crew.hut        maryann.girl.hut        1749
+skipper.crew.hut        maryann.girl.hut        9923
+maryann.girl.hut        fileserver.copyroom.hut 4127
+fileserver.copyroom.hut maryann.girl.hut        5696
+laser3.copyroom.hut     ginger.girl.hut 1404
+maryann.girl.hut        maryann.girl.hut        159
+gilligan.crew.hut       maryann.girl.hut        6559
+ginger.girl.hut fileserver.copyroom.hut 9274
+maryann.girl.hut        skipper.crew.hut        7830
+skipper.crew.hut        fileserver.copyroom.hut 6616
+gilligan.crew.hut       laser3.copyroom.hut     7475
+skipper.crew.hut        laser3.copyroom.hut     6788
+ginger.girl.hut skipper.crew.hut        3166
+gilligan.crew.hut       fileserver.copyroom.hut 9895
+laser3.copyroom.hut     professor.hut   1637
+laser3.copyroom.hut     professor.hut   1974
+laser3.copyroom.hut     maryann.girl.hut        240
+fileserver.copyroom.hut skipper.crew.hut        4533
+ginger.girl.hut gilligan.crew.hut       6917
+gilligan.crew.hut       maryann.girl.hut        4370
+skipper.crew.hut        ginger.girl.hut 8351
+maryann.girl.hut        maryann.girl.hut        4351
+ginger.girl.hut skipper.crew.hut        6826
+fileserver.copyroom.hut skipper.crew.hut        9840
+professor.hut   skipper.crew.hut        5109
+skipper.crew.hut        professor.hut   9202
+fileserver.copyroom.hut gilligan.crew.hut       6742
+skipper.crew.hut        laser3.copyroom.hut     8474
+gilligan.crew.hut       fileserver.copyroom.hut 7815
+ginger.girl.hut maryann.girl.hut        464
+ginger.girl.hut skipper.crew.hut        8580
+ginger.girl.hut skipper.crew.hut        3433
+maryann.girl.hut        skipper.crew.hut        7295
+maryann.girl.hut        maryann.girl.hut        5246
+professor.hut   ginger.girl.hut 183
+fileserver.copyroom.hut gilligan.crew.hut       7700
+skipper.crew.hut        fileserver.copyroom.hut 3500
+maryann.girl.hut        maryann.girl.hut        3758
+professor.hut   professor.hut   2305
+gilligan.crew.hut       ginger.girl.hut 4618
+laser3.copyroom.hut     skipper.crew.hut        6487
+laser3.copyroom.hut     professor.hut   9217
+gilligan.crew.hut       maryann.girl.hut        922
+ginger.girl.hut professor.hut   2811
+gilligan.crew.hut       maryann.girl.hut        7007
+maryann.girl.hut        laser3.copyroom.hut     2752
+:[K[K [KESCESC[K[[[K66[K~~[Kprofessor.hut   skipper.crew.hut        7340
+fileserver.copyroom.hut gilligan.crew.hut       2349
+fileserver.copyroom.hut ginger.girl.hut 5905
+maryann.girl.hut        maryann.girl.hut        6480
+gilligan.crew.hut       professor.hut   5984
+ginger.girl.hut gilligan.crew.hut       699
+gilligan.crew.hut       skipper.crew.hut        1564
+skipper.crew.hut        gilligan.crew.hut       9956
+skipper.crew.hut        ginger.girl.hut 6252
+skipper.crew.hut        professor.hut   8175
+maryann.girl.hut        gilligan.crew.hut       4886
+laser3.copyroom.hut     laser3.copyroom.hut     8919
+ginger.girl.hut gilligan.crew.hut       2837
+ginger.girl.hut fileserver.copyroom.hut 644
+maryann.girl.hut        ginger.girl.hut 4620
+maryann.girl.hut        gilligan.crew.hut       353
+maryann.girl.hut        ginger.girl.hut 9514
+fileserver.copyroom.hut maryann.girl.hut        4635
+gilligan.crew.hut       maryann.girl.hut        4756
+professor.hut   professor.hut   5572
+laser3.copyroom.hut     professor.hut   6813
+fileserver.copyroom.hut professor.hut   7532
+fileserver.copyroom.hut fileserver.copyroom.hut 5033
+ginger.girl.hut ginger.girl.hut 9036
+professor.hut   ginger.girl.hut 9803
+skipper.crew.hut        maryann.girl.hut        4209
+skipper.crew.hut        laser3.copyroom.hut     5157
+professor.hut   skipper.crew.hut        7044
+professor.hut   gilligan.crew.hut       517
+skipper.crew.hut        laser3.copyroom.hut     5402
+gilligan.crew.hut       gilligan.crew.hut       175
+gilligan.crew.hut       fileserver.copyroom.hut 8894
+fileserver.copyroom.hut laser3.copyroom.hut     532
+skipper.crew.hut        laser3.copyroom.hut     1852
+maryann.girl.hut        skipper.crew.hut        5469
+laser3.copyroom.hut     ginger.girl.hut 6776
+gilligan.crew.hut       maryann.girl.hut        4562
+maryann.girl.hut        fileserver.copyroom.hut 9272
+professor.hut   gilligan.crew.hut       4326
+skipper.crew.hut        fileserver.copyroom.hut 6945
+gilligan.crew.hut       professor.hut   765
+professor.hut   ginger.girl.hut 504
+fileserver.copyroom.hut fileserver.copyroom.hut 3155
+laser3.copyroom.hut     skipper.crew.hut        7833
+ginger.girl.hut skipper.crew.hut        8892
+ginger.girl.hut ginger.girl.hut 3791
+fileserver.copyroom.hut professor.hut   522
+fileserver.copyroom.hut maryann.girl.hut        3953
+ginger.girl.hut ginger.girl.hut 3402
+fileserver.copyroom.hut gilligan.crew.hut       6231
+ginger.girl.hut skipper.crew.hut        7643
+gilligan.crew.hut       professor.hut   3007
+maryann.girl.hut        ginger.girl.hut 6016
+laser3.copyroom.hut     laser3.copyroom.hut     3733
+:[K[K [KESCESC[K[[[K66[K~~[Klaser3.copyroom.hut     gilligan.crew.hut       3415
+fileserver.copyroom.hut professor.hut   6578
+ginger.girl.hut fileserver.copyroom.hut 5443
+maryann.girl.hut        laser3.copyroom.hut     7866
+maryann.girl.hut        ginger.girl.hut 4959
+fileserver.copyroom.hut laser3.copyroom.hut     8483
+ginger.girl.hut gilligan.crew.hut       1746
+professor.hut   ginger.girl.hut 3779
+skipper.crew.hut        maryann.girl.hut        868
+fileserver.copyroom.hut fileserver.copyroom.hut 4229
+maryann.girl.hut        ginger.girl.hut 8276
+professor.hut   gilligan.crew.hut       5185
+professor.hut   gilligan.crew.hut       4496
+fileserver.copyroom.hut gilligan.crew.hut       7310
+skipper.crew.hut        skipper.crew.hut        5487
+fileserver.copyroom.hut maryann.girl.hut        3430
+professor.hut   gilligan.crew.hut       6800
+maryann.girl.hut        skipper.crew.hut        4238
+fileserver.copyroom.hut maryann.girl.hut        2178
+fileserver.copyroom.hut skipper.crew.hut        9705
+maryann.girl.hut        skipper.crew.hut        5241
+maryann.girl.hut        ginger.girl.hut 8265
+laser3.copyroom.hut     fileserver.copyroom.hut 787
+laser3.copyroom.hut     laser3.copyroom.hut     7164
+gilligan.crew.hut       laser3.copyroom.hut     7304
+professor.hut   gilligan.crew.hut       8824
+fileserver.copyroom.hut ginger.girl.hut 2778
+ginger.girl.hut gilligan.crew.hut       3266
+fileserver.copyroom.hut fileserver.copyroom.hut 4361
+gilligan.crew.hut       fileserver.copyroom.hut 8558
+gilligan.crew.hut       maryann.girl.hut        7648
+maryann.girl.hut        professor.hut   216
+skipper.crew.hut        gilligan.crew.hut       6252
+professor.hut   maryann.girl.hut        5586
+laser3.copyroom.hut     laser3.copyroom.hut     7829
+professor.hut   ginger.girl.hut 1465
+laser3.copyroom.hut     laser3.copyroom.hut     6339
+fileserver.copyroom.hut skipper.crew.hut        5047
+skipper.crew.hut        professor.hut   1158
+ginger.girl.hut laser3.copyroom.hut     6546
+laser3.copyroom.hut     professor.hut   5482
+fileserver.copyroom.hut gilligan.crew.hut       20
+laser3.copyroom.hut     gilligan.crew.hut       563
+fileserver.copyroom.hut ginger.girl.hut 1976
+professor.hut   professor.hut   5828
+maryann.girl.hut        laser3.copyroom.hut     8364
+professor.hut   ginger.girl.hut 6177
+skipper.crew.hut        fileserver.copyroom.hut 7655
+laser3.copyroom.hut     maryann.girl.hut        8209
+maryann.girl.hut        professor.hut   3701
+laser3.copyroom.hut     professor.hut   903
+laser3.copyroom.hut     ginger.girl.hut 1554
+ginger.girl.hut maryann.girl.hut        2029
+skipper.crew.hut        fileserver.copyroom.hut 7466
+:[K[K [KESCESC[K[[[K66[K~~[Kgilligan.crew.hut       maryann.girl.hut        5224
+laser3.copyroom.hut     ginger.girl.hut 8993
+professor.hut   maryann.girl.hut        2583
+maryann.girl.hut        skipper.crew.hut        5391
+fileserver.copyroom.hut laser3.copyroom.hut     8071
+laser3.copyroom.hut     skipper.crew.hut        371
+skipper.crew.hut        maryann.girl.hut        6782
+laser3.copyroom.hut     laser3.copyroom.hut     8700
+laser3.copyroom.hut     laser3.copyroom.hut     6279
+laser3.copyroom.hut     skipper.crew.hut        4684
+ginger.girl.hut maryann.girl.hut        5224
+ginger.girl.hut ginger.girl.hut 4351
+maryann.girl.hut        skipper.crew.hut        7546
+laser3.copyroom.hut     ginger.girl.hut 7978
+skipper.crew.hut        laser3.copyroom.hut     2533
+gilligan.crew.hut       gilligan.crew.hut       3497
+fileserver.copyroom.hut ginger.girl.hut 8981
+skipper.crew.hut        ginger.girl.hut 1214
+laser3.copyroom.hut     skipper.crew.hut        2222
+professor.hut   laser3.copyroom.hut     5647
+professor.hut   skipper.crew.hut        1931
+gilligan.crew.hut       maryann.girl.hut        1889
+maryann.girl.hut        gilligan.crew.hut       137
+fileserver.copyroom.hut ginger.girl.hut 2225
+skipper.crew.hut        ginger.girl.hut 1681
+maryann.girl.hut        maryann.girl.hut        6625
+ginger.girl.hut fileserver.copyroom.hut 7374
+skipper.crew.hut        maryann.girl.hut        6116
+laser3.copyroom.hut     laser3.copyroom.hut     9101
+laser3.copyroom.hut     fileserver.copyroom.hut 7343
+laser3.copyroom.hut     maryann.girl.hut        9786
+gilligan.crew.hut       gilligan.crew.hut       8655
+ginger.girl.hut gilligan.crew.hut       7908
+gilligan.crew.hut       gilligan.crew.hut       3537
+professor.hut   gilligan.crew.hut       4458
+fileserver.copyroom.hut gilligan.crew.hut       7057
+fileserver.copyroom.hut fileserver.copyroom.hut 1976
+maryann.girl.hut        ginger.girl.hut 5327
+professor.hut   laser3.copyroom.hut     1515
+fileserver.copyroom.hut skipper.crew.hut        9792
+laser3.copyroom.hut     gilligan.crew.hut       9185
+skipper.crew.hut        skipper.crew.hut        2083
+gilligan.crew.hut       ginger.girl.hut 2019
+fileserver.copyroom.hut fileserver.copyroom.hut 5458
+gilligan.crew.hut       maryann.girl.hut        2448
+gilligan.crew.hut       ginger.girl.hut 5418
+maryann.girl.hut        laser3.copyroom.hut     4478
+fileserver.copyroom.hut ginger.girl.hut 9569
+fileserver.copyroom.hut laser3.copyroom.hut     1613
+professor.hut   skipper.crew.hut        2507
+maryann.girl.hut        fileserver.copyroom.hut 5526
+gilligan.crew.hut       skipper.crew.hut        9828
+gilligan.crew.hut       ginger.girl.hut 7340
+fileserver.copyroom.hut gilligan.crew.hut       396
+:[K[K [KESCESC[K[[[K66[K~~[Kmaryann.girl.hut        skipper.crew.hut        6665
+professor.hut   skipper.crew.hut        2155
+maryann.girl.hut        laser3.copyroom.hut     6362
+gilligan.crew.hut       skipper.crew.hut        6814
+fileserver.copyroom.hut laser3.copyroom.hut     2811
+laser3.copyroom.hut     maryann.girl.hut        9370
+skipper.crew.hut        skipper.crew.hut        6841
+maryann.girl.hut        skipper.crew.hut        916
+maryann.girl.hut        ginger.girl.hut 8912
+laser3.copyroom.hut     ginger.girl.hut 1180
+maryann.girl.hut        professor.hut   9100
+fileserver.copyroom.hut professor.hut   4399
+gilligan.crew.hut       professor.hut   4473
+fileserver.copyroom.hut skipper.crew.hut        6300
+laser3.copyroom.hut     skipper.crew.hut        5581
+gilligan.crew.hut       gilligan.crew.hut       795
+skipper.crew.hut        professor.hut   8873
+professor.hut   skipper.crew.hut        5343
+professor.hut   maryann.girl.hut        472
+laser3.copyroom.hut     maryann.girl.hut        8089
+maryann.girl.hut        fileserver.copyroom.hut 1352
+gilligan.crew.hut       laser3.copyroom.hut     715
+skipper.crew.hut        laser3.copyroom.hut     3441
+ginger.girl.hut ginger.girl.hut 6708
+fileserver.copyroom.hut laser3.copyroom.hut     2170
+laser3.copyroom.hut     ginger.girl.hut 8297
+laser3.copyroom.hut     professor.hut   8995
+maryann.girl.hut        laser3.copyroom.hut     4455
+professor.hut   ginger.girl.hut 6316
+maryann.girl.hut        gilligan.crew.hut       5331
+ginger.girl.hut fileserver.copyroom.hut 7307
+skipper.crew.hut        skipper.crew.hut        213
+ginger.girl.hut skipper.crew.hut        9160
+fileserver.copyroom.hut skipper.crew.hut        1710
+skipper.crew.hut        ginger.girl.hut 9209
+maryann.girl.hut        ginger.girl.hut 5628
+fileserver.copyroom.hut skipper.crew.hut        7405
+professor.hut   fileserver.copyroom.hut 3874
+gilligan.crew.hut       laser3.copyroom.hut     6269
+laser3.copyroom.hut     gilligan.crew.hut       5111
+professor.hut   maryann.girl.hut        6652
+maryann.girl.hut        gilligan.crew.hut       4759
+maryann.girl.hut        gilligan.crew.hut       1564
+skipper.crew.hut        skipper.crew.hut        9149
+gilligan.crew.hut       professor.hut   3899
+maryann.girl.hut        skipper.crew.hut        1736
+professor.hut   gilligan.crew.hut       1257
+skipper.crew.hut        professor.hut   9210
+gilligan.crew.hut       gilligan.crew.hut       4526
+maryann.girl.hut        skipper.crew.hut        1140
+professor.hut   ginger.girl.hut 6330
+ginger.girl.hut skipper.crew.hut        7646
+gilligan.crew.hut       fileserver.copyroom.hut 6044
+professor.hut   gilligan.crew.hut       814
+:[K[K [KESCESC[K[[[K66[K~~[Kprofessor.hut   gilligan.crew.hut       5781
+fileserver.copyroom.hut gilligan.crew.hut       6460
+ginger.girl.hut gilligan.crew.hut       7468
+maryann.girl.hut        maryann.girl.hut        5939
+skipper.crew.hut        ginger.girl.hut 1869
+ginger.girl.hut maryann.girl.hut        1284
+ginger.girl.hut gilligan.crew.hut       3068
+gilligan.crew.hut       maryann.girl.hut        2150
+maryann.girl.hut        skipper.crew.hut        7298
+laser3.copyroom.hut     fileserver.copyroom.hut 3397
+ginger.girl.hut professor.hut   2011
+laser3.copyroom.hut     gilligan.crew.hut       9413
+fileserver.copyroom.hut laser3.copyroom.hut     7787
+skipper.crew.hut        ginger.girl.hut 3080
+skipper.crew.hut        gilligan.crew.hut       2655
+fileserver.copyroom.hut laser3.copyroom.hut     208
+skipper.crew.hut        ginger.girl.hut 8781
+professor.hut   gilligan.crew.hut       2623
+fileserver.copyroom.hut ginger.girl.hut 8743
+gilligan.crew.hut       ginger.girl.hut 2839
+fileserver.copyroom.hut laser3.copyroom.hut     5886
+skipper.crew.hut        skipper.crew.hut        226
+maryann.girl.hut        skipper.crew.hut        8340
+fileserver.copyroom.hut ginger.girl.hut 1169
+gilligan.crew.hut       maryann.girl.hut        7304
+professor.hut   ginger.girl.hut 5838
+professor.hut   skipper.crew.hut        8864
+maryann.girl.hut        laser3.copyroom.hut     3212
+fileserver.copyroom.hut fileserver.copyroom.hut 6421
+laser3.copyroom.hut     maryann.girl.hut        3533
+skipper.crew.hut        maryann.girl.hut        9176
+maryann.girl.hut        gilligan.crew.hut       4707
+professor.hut   professor.hut   877
+skipper.crew.hut        ginger.girl.hut 9660
+skipper.crew.hut        fileserver.copyroom.hut 3337
+professor.hut   laser3.copyroom.hut     8511
+skipper.crew.hut        skipper.crew.hut        3923
+professor.hut   maryann.girl.hut        2084
+professor.hut   skipper.crew.hut        8697
+fileserver.copyroom.hut professor.hut   4167
+ginger.girl.hut skipper.crew.hut        6375
+professor.hut   skipper.crew.hut        9118
+ginger.girl.hut professor.hut   1573
+gilligan.crew.hut       ginger.girl.hut 3774
+laser3.copyroom.hut     gilligan.crew.hut       5817
+maryann.girl.hut        ginger.girl.hut 1007
+ginger.girl.hut ginger.girl.hut 7483
+fileserver.copyroom.hut ginger.girl.hut 3993
+maryann.girl.hut        professor.hut   205
+maryann.girl.hut        fileserver.copyroom.hut 6277
+gilligan.crew.hut       maryann.girl.hut        5009
+professor.hut   gilligan.crew.hut       51
+professor.hut   laser3.copyroom.hut     8187
+fileserver.copyroom.hut skipper.crew.hut        7129
+:[K[K [KESCESC[K[[[K66[K~~[Kskipper.crew.hut        skipper.crew.hut        5656
+ginger.girl.hut professor.hut   5610
+maryann.girl.hut        gilligan.crew.hut       9353
+gilligan.crew.hut       gilligan.crew.hut       4997
+gilligan.crew.hut       gilligan.crew.hut       9043
+maryann.girl.hut        fileserver.copyroom.hut 3661
+skipper.crew.hut        professor.hut   6404
+fileserver.copyroom.hut fileserver.copyroom.hut 9972
+professor.hut   maryann.girl.hut        8312
+laser3.copyroom.hut     skipper.crew.hut        3724
+ginger.girl.hut laser3.copyroom.hut     3605
+ginger.girl.hut maryann.girl.hut        7283
+fileserver.copyroom.hut professor.hut   4549
+ginger.girl.hut professor.hut   1912
+professor.hut   maryann.girl.hut        3811
+laser3.copyroom.hut     professor.hut   4275
+skipper.crew.hut        laser3.copyroom.hut     8272
+gilligan.crew.hut       fileserver.copyroom.hut 4287
+gilligan.crew.hut       fileserver.copyroom.hut 107
+ginger.girl.hut laser3.copyroom.hut     2081
+gilligan.crew.hut       fileserver.copyroom.hut 7691
+gilligan.crew.hut       maryann.girl.hut        3668
+laser3.copyroom.hut     maryann.girl.hut        9387
+maryann.girl.hut        skipper.crew.hut        4821
+skipper.crew.hut        ginger.girl.hut 6621
+skipper.crew.hut        laser3.copyroom.hut     2990
+fileserver.copyroom.hut professor.hut   8995
+fileserver.copyroom.hut skipper.crew.hut        3716
+gilligan.crew.hut       ginger.girl.hut 3902
+skipper.crew.hut        skipper.crew.hut        8762
+fileserver.copyroom.hut fileserver.copyroom.hut 5208
+fileserver.copyroom.hut skipper.crew.hut        4904
+gilligan.crew.hut       professor.hut   2210
+gilligan.crew.hut       professor.hut   9277
+ginger.girl.hut gilligan.crew.hut       3531
+professor.hut   professor.hut   4444
+skipper.crew.hut        maryann.girl.hut        8731
+maryann.girl.hut        gilligan.crew.hut       9331
+ginger.girl.hut fileserver.copyroom.hut 6588
+ginger.girl.hut laser3.copyroom.hut     6279
+maryann.girl.hut        maryann.girl.hut        6793
+professor.hut   skipper.crew.hut        5403
+laser3.copyroom.hut     skipper.crew.hut        124
+ginger.girl.hut ginger.girl.hut 3810
+skipper.crew.hut        gilligan.crew.hut       4812
+fileserver.copyroom.hut gilligan.crew.hut       8657
+fileserver.copyroom.hut skipper.crew.hut        2058
+fileserver.copyroom.hut laser3.copyroom.hut     861
+laser3.copyroom.hut     ginger.girl.hut 2545
+gilligan.crew.hut       skipper.crew.hut        3051
+professor.hut   skipper.crew.hut        2734
+gilligan.crew.hut       laser3.copyroom.hut     6623
+ginger.girl.hut professor.hut   421
+fileserver.copyroom.hut gilligan.crew.hut       9057
+:[K[K [KESCESC[K[[[K66[K~~[Kskipper.crew.hut        ginger.girl.hut 6800
+ginger.girl.hut maryann.girl.hut        2804
+ginger.girl.hut fileserver.copyroom.hut 3565
+laser3.copyroom.hut     ginger.girl.hut 1422
+professor.hut   ginger.girl.hut 2428
+ginger.girl.hut skipper.crew.hut        1505
+ginger.girl.hut skipper.crew.hut        990
+professor.hut   gilligan.crew.hut       9736
+ginger.girl.hut fileserver.copyroom.hut 1786
+laser3.copyroom.hut     laser3.copyroom.hut     3910
+laser3.copyroom.hut     skipper.crew.hut        2432
+maryann.girl.hut        ginger.girl.hut 568
+ginger.girl.hut skipper.crew.hut        6373
+maryann.girl.hut        maryann.girl.hut        2925
+gilligan.crew.hut       maryann.girl.hut        551
+professor.hut   skipper.crew.hut        8339
+skipper.crew.hut        skipper.crew.hut        1718
+professor.hut   gilligan.crew.hut       5550
+professor.hut   fileserver.copyroom.hut 7102
+ginger.girl.hut gilligan.crew.hut       2054
+laser3.copyroom.hut     ginger.girl.hut 1206
+fileserver.copyroom.hut professor.hut   1658
+professor.hut   laser3.copyroom.hut     5362
+skipper.crew.hut        skipper.crew.hut        6214
+skipper.crew.hut        skipper.crew.hut        7854
+fileserver.copyroom.hut ginger.girl.hut 6464
+maryann.girl.hut        laser3.copyroom.hut     2297
+fileserver.copyroom.hut ginger.girl.hut 5721
+skipper.crew.hut        ginger.girl.hut 3589
+gilligan.crew.hut       skipper.crew.hut        1467
+laser3.copyroom.hut     ginger.girl.hut 6940
+fileserver.copyroom.hut gilligan.crew.hut       7072
+laser3.copyroom.hut     fileserver.copyroom.hut 7052
+laser3.copyroom.hut     laser3.copyroom.hut     7938
+fileserver.copyroom.hut gilligan.crew.hut       3095
+professor.hut   professor.hut   6525
+gilligan.crew.hut       fileserver.copyroom.hut 5808
+fileserver.copyroom.hut skipper.crew.hut        3647
+ginger.girl.hut ginger.girl.hut 6385
+skipper.crew.hut        laser3.copyroom.hut     1891
+maryann.girl.hut        ginger.girl.hut 5709
+professor.hut   skipper.crew.hut        5884
+laser3.copyroom.hut     maryann.girl.hut        6701
+laser3.copyroom.hut     professor.hut   9016
+fileserver.copyroom.hut fileserver.copyroom.hut 6508
+maryann.girl.hut        skipper.crew.hut        5886
+fileserver.copyroom.hut gilligan.crew.hut       6216
+laser3.copyroom.hut     professor.hut   9450
+professor.hut   skipper.crew.hut        6896
+professor.hut   maryann.girl.hut        3388
+professor.hut   professor.hut   1296
+ginger.girl.hut skipper.crew.hut        9053
+gilligan.crew.hut       ginger.girl.hut 6070
+professor.hut   laser3.copyroom.hut     7539
+:[K[K [KESCESC[K[[[K66[K~~[Kprofessor.hut   maryann.girl.hut        9986
+fileserver.copyroom.hut fileserver.copyroom.hut 1933
+ginger.girl.hut ginger.girl.hut 723
+fileserver.copyroom.hut skipper.crew.hut        7162
+fileserver.copyroom.hut gilligan.crew.hut       8513
+gilligan.crew.hut       laser3.copyroom.hut     2846
+ginger.girl.hut gilligan.crew.hut       2778
+gilligan.crew.hut       fileserver.copyroom.hut 143
+maryann.girl.hut        professor.hut   3657
+maryann.girl.hut        professor.hut   8438
+maryann.girl.hut        maryann.girl.hut        1944
+skipper.crew.hut        professor.hut   7277
+gilligan.crew.hut       maryann.girl.hut        8375
+skipper.crew.hut        skipper.crew.hut        2331
+fileserver.copyroom.hut fileserver.copyroom.hut 9683
+professor.hut   ginger.girl.hut 9514
+laser3.copyroom.hut     laser3.copyroom.hut     6122
+maryann.girl.hut        professor.hut   6162
+maryann.girl.hut        laser3.copyroom.hut     4953
+laser3.copyroom.hut     gilligan.crew.hut       1288
+maryann.girl.hut        maryann.girl.hut        2558
+fileserver.copyroom.hut ginger.girl.hut 3215
+fileserver.copyroom.hut professor.hut   3085
+ginger.girl.hut maryann.girl.hut        4353
+ginger.girl.hut skipper.crew.hut        9361
+ginger.girl.hut laser3.copyroom.hut     9312
+gilligan.crew.hut       maryann.girl.hut        4636
+fileserver.copyroom.hut ginger.girl.hut 1667
+professor.hut   fileserver.copyroom.hut 3513
+skipper.crew.hut        professor.hut   7851
+ginger.girl.hut maryann.girl.hut        1726
+skipper.crew.hut        maryann.girl.hut        5711
+professor.hut   ginger.girl.hut 1501
+laser3.copyroom.hut     fileserver.copyroom.hut 9590
+gilligan.crew.hut       ginger.girl.hut 2076
+ginger.girl.hut skipper.crew.hut        9103
+skipper.crew.hut        gilligan.crew.hut       3372
+professor.hut   professor.hut   9306
+professor.hut   maryann.girl.hut        1123
+fileserver.copyroom.hut professor.hut   2075
+laser3.copyroom.hut     fileserver.copyroom.hut 8518
+ginger.girl.hut maryann.girl.hut        9258
+professor.hut   gilligan.crew.hut       6824
+professor.hut   fileserver.copyroom.hut 3860
+gilligan.crew.hut       laser3.copyroom.hut     7613
+gilligan.crew.hut       skipper.crew.hut        5666
+skipper.crew.hut        laser3.copyroom.hut     64
+ginger.girl.hut maryann.girl.hut        6189
+professor.hut   fileserver.copyroom.hut 2480
+laser3.copyroom.hut     gilligan.crew.hut       8461
+gilligan.crew.hut       professor.hut   2305
+fileserver.copyroom.hut fileserver.copyroom.hut 2949
+ginger.girl.hut fileserver.copyroom.hut 4225
+gilligan.crew.hut       ginger.girl.hut 4725
+:[K[K [KESCESC[K[[[K66[K~~[Kgilligan.crew.hut       maryann.girl.hut        5973
+fileserver.copyroom.hut professor.hut   1977
+fileserver.copyroom.hut fileserver.copyroom.hut 6069
+professor.hut   skipper.crew.hut        2530
+ginger.girl.hut skipper.crew.hut        8044
+fileserver.copyroom.hut fileserver.copyroom.hut 2341
+professor.hut   fileserver.copyroom.hut 9544
+skipper.crew.hut        gilligan.crew.hut       8724
+laser3.copyroom.hut     gilligan.crew.hut       2824
+maryann.girl.hut        fileserver.copyroom.hut 3164
+laser3.copyroom.hut     fileserver.copyroom.hut 4668
+maryann.girl.hut        professor.hut   2517
+laser3.copyroom.hut     gilligan.crew.hut       1654
+fileserver.copyroom.hut fileserver.copyroom.hut 914
+ginger.girl.hut maryann.girl.hut        7056
+fileserver.copyroom.hut maryann.girl.hut        6826
+gilligan.crew.hut       professor.hut   9355
+ginger.girl.hut gilligan.crew.hut       9329
+fileserver.copyroom.hut fileserver.copyroom.hut 8504
+laser3.copyroom.hut     gilligan.crew.hut       3143
+ginger.girl.hut maryann.girl.hut        4969
+skipper.crew.hut        skipper.crew.hut        6155
+gilligan.crew.hut       maryann.girl.hut        5298
+fileserver.copyroom.hut fileserver.copyroom.hut 9385
+professor.hut   laser3.copyroom.hut     6659
+laser3.copyroom.hut     laser3.copyroom.hut     228
+professor.hut   professor.hut   8250
+fileserver.copyroom.hut fileserver.copyroom.hut 6745
+gilligan.crew.hut       gilligan.crew.hut       2366
+ginger.girl.hut laser3.copyroom.hut     984
+skipper.crew.hut        professor.hut   5457
+professor.hut   professor.hut   2952
+laser3.copyroom.hut     skipper.crew.hut        2707
+professor.hut   professor.hut   5233
+professor.hut   maryann.girl.hut        8096
+skipper.crew.hut        skipper.crew.hut        9607
+ginger.girl.hut maryann.girl.hut        5145
+laser3.copyroom.hut     professor.hut   6281
+laser3.copyroom.hut     professor.hut   8480
+fileserver.copyroom.hut gilligan.crew.hut       8236
+maryann.girl.hut        professor.hut   7015
+professor.hut   maryann.girl.hut        1705
+ginger.girl.hut ginger.girl.hut 563
+gilligan.crew.hut       fileserver.copyroom.hut 8347
+skipper.crew.hut        laser3.copyroom.hut     3845
+laser3.copyroom.hut     gilligan.crew.hut       4899
+professor.hut   skipper.crew.hut        5384
+fileserver.copyroom.hut laser3.copyroom.hut     4976
+gilligan.crew.hut       skipper.crew.hut        1566
+professor.hut   skipper.crew.hut        4026
+gilligan.crew.hut       professor.hut   7326
+ginger.girl.hut fileserver.copyroom.hut 8696
+gilligan.crew.hut       ginger.girl.hut 589
+gilligan.crew.hut       fileserver.copyroom.hut 50
+:[K[K [KESCESC[K[[[K66[K~~[Kginger.girl.hut fileserver.copyroom.hut 3007
+laser3.copyroom.hut     maryann.girl.hut        7827
+skipper.crew.hut        professor.hut   4106
+fileserver.copyroom.hut fileserver.copyroom.hut 3833
+laser3.copyroom.hut     laser3.copyroom.hut     9947
+gilligan.crew.hut       maryann.girl.hut        7174
+ginger.girl.hut ginger.girl.hut 5939
+fileserver.copyroom.hut maryann.girl.hut        4022
+maryann.girl.hut        gilligan.crew.hut       705
+fileserver.copyroom.hut professor.hut   6008
+maryann.girl.hut        ginger.girl.hut 7195
+maryann.girl.hut        skipper.crew.hut        1795
+gilligan.crew.hut       maryann.girl.hut        3786
+maryann.girl.hut        gilligan.crew.hut       7723
+ginger.girl.hut skipper.crew.hut        9327
+professor.hut   professor.hut   2165
+maryann.girl.hut        fileserver.copyroom.hut 1430
+maryann.girl.hut        laser3.copyroom.hut     6438
+maryann.girl.hut        professor.hut   814
+maryann.girl.hut        skipper.crew.hut        1964
+skipper.crew.hut        laser3.copyroom.hut     7384
+maryann.girl.hut        professor.hut   356
+maryann.girl.hut        laser3.copyroom.hut     8887
+skipper.crew.hut        professor.hut   2027
+laser3.copyroom.hut     ginger.girl.hut 3265
+laser3.copyroom.hut     gilligan.crew.hut       5634
+maryann.girl.hut        maryann.girl.hut        7928
+skipper.crew.hut        professor.hut   1417
+laser3.copyroom.hut     ginger.girl.hut 8319
+fileserver.copyroom.hut maryann.girl.hut        7349
+skipper.crew.hut        gilligan.crew.hut       5474
+professor.hut   fileserver.copyroom.hut 8381
+fileserver.copyroom.hut ginger.girl.hut 4777
+professor.hut   fileserver.copyroom.hut 9501
+skipper.crew.hut        ginger.girl.hut 1221
+ginger.girl.hut professor.hut   436
+fileserver.copyroom.hut laser3.copyroom.hut     4968
+laser3.copyroom.hut     fileserver.copyroom.hut 4387
+gilligan.crew.hut       maryann.girl.hut        6796
+laser3.copyroom.hut     maryann.girl.hut        1705
+fileserver.copyroom.hut gilligan.crew.hut       9602
+skipper.crew.hut        professor.hut   2545
+professor.hut   ginger.girl.hut 5190
+skipper.crew.hut        laser3.copyroom.hut     2069
+gilligan.crew.hut       professor.hut   1686
+gilligan.crew.hut       professor.hut   9374
+laser3.copyroom.hut     gilligan.crew.hut       927
+maryann.girl.hut        professor.hut   394
+laser3.copyroom.hut     professor.hut   2302
+gilligan.crew.hut       skipper.crew.hut        8790
+professor.hut   professor.hut   979
+professor.hut   laser3.copyroom.hut     4317
+gilligan.crew.hut       professor.hut   2706
+skipper.crew.hut        fileserver.copyroom.hut 400
+:[K[K [KESCESC[K[[[K66[K~~[Kprofessor.hut   gilligan.crew.hut       3955
+maryann.girl.hut        professor.hut   5702
+professor.hut   gilligan.crew.hut       8964
+maryann.girl.hut        gilligan.crew.hut       5943
+gilligan.crew.hut       maryann.girl.hut        1657
+gilligan.crew.hut       maryann.girl.hut        3627
+fileserver.copyroom.hut ginger.girl.hut 7522
+skipper.crew.hut        maryann.girl.hut        6548
+gilligan.crew.hut       professor.hut   4267
+gilligan.crew.hut       gilligan.crew.hut       2996
+ginger.girl.hut maryann.girl.hut        2054
+maryann.girl.hut        laser3.copyroom.hut     1996
+gilligan.crew.hut       ginger.girl.hut 3248
+fileserver.copyroom.hut ginger.girl.hut 4699
+laser3.copyroom.hut     skipper.crew.hut        7695
+professor.hut   ginger.girl.hut 864
+laser3.copyroom.hut     ginger.girl.hut 5837
+professor.hut   fileserver.copyroom.hut 3483
+fileserver.copyroom.hut professor.hut   9776
+laser3.copyroom.hut     skipper.crew.hut        9566
+professor.hut   laser3.copyroom.hut     1508
+professor.hut   laser3.copyroom.hut     8891
+laser3.copyroom.hut     skipper.crew.hut        1853
+professor.hut   maryann.girl.hut        3857
+fileserver.copyroom.hut gilligan.crew.hut       4951
+skipper.crew.hut        skipper.crew.hut        7055
+fileserver.copyroom.hut professor.hut   5660
+skipper.crew.hut        ginger.girl.hut 7808
+laser3.copyroom.hut     fileserver.copyroom.hut 6387
+gilligan.crew.hut       professor.hut   1711
+skipper.crew.hut        fileserver.copyroom.hut 2183
+maryann.girl.hut        fileserver.copyroom.hut 8465
+skipper.crew.hut        maryann.girl.hut        9129
+professor.hut   ginger.girl.hut 9334
+maryann.girl.hut        skipper.crew.hut        4204
+professor.hut   ginger.girl.hut 4727
+ginger.girl.hut skipper.crew.hut        5242
+maryann.girl.hut        maryann.girl.hut        9060
+gilligan.crew.hut       maryann.girl.hut        1962
+professor.hut   gilligan.crew.hut       3295
+ginger.girl.hut ginger.girl.hut 3377
+fileserver.copyroom.hut ginger.girl.hut 4363
+professor.hut   laser3.copyroom.hut     3209
+professor.hut   laser3.copyroom.hut     4115
+maryann.girl.hut        fileserver.copyroom.hut 2127
+skipper.crew.hut        professor.hut   1937
+ginger.girl.hut skipper.crew.hut        9545
+ginger.girl.hut gilligan.crew.hut       398
+maryann.girl.hut        skipper.crew.hut        7615
+maryann.girl.hut        maryann.girl.hut        8702
+maryann.girl.hut        ginger.girl.hut 2971
+skipper.crew.hut        ginger.girl.hut 1210
+gilligan.crew.hut       gilligan.crew.hut       4011
+professor.hut   maryann.girl.hut        390
+:[K[K [KESCESC[K[[[K66[K~~[Kfileserver.copyroom.hut laser3.copyroom.hut     9858
+maryann.girl.hut        laser3.copyroom.hut     6614
+ginger.girl.hut fileserver.copyroom.hut 9921
+skipper.crew.hut        skipper.crew.hut        2923
+professor.hut   professor.hut   6655
+skipper.crew.hut        fileserver.copyroom.hut 9443
+maryann.girl.hut        laser3.copyroom.hut     5430
+fileserver.copyroom.hut laser3.copyroom.hut     9421
+laser3.copyroom.hut     skipper.crew.hut        9696
+laser3.copyroom.hut     gilligan.crew.hut       3813
+gilligan.crew.hut       laser3.copyroom.hut     3250
+professor.hut   maryann.girl.hut        2687
+maryann.girl.hut        fileserver.copyroom.hut 5068
+ginger.girl.hut fileserver.copyroom.hut 7399
+fileserver.copyroom.hut professor.hut   933
+gilligan.crew.hut       laser3.copyroom.hut     2467
+gilligan.crew.hut       laser3.copyroom.hut     8132
+professor.hut   ginger.girl.hut 3033
+gilligan.crew.hut       professor.hut   8513
+gilligan.crew.hut       fileserver.copyroom.hut 3712
+gilligan.crew.hut       gilligan.crew.hut       2622
+gilligan.crew.hut       professor.hut   246
+laser3.copyroom.hut     laser3.copyroom.hut     9752
+fileserver.copyroom.hut professor.hut   1936
+laser3.copyroom.hut     fileserver.copyroom.hut 7962
+maryann.girl.hut        fileserver.copyroom.hut 668
+ginger.girl.hut skipper.crew.hut        4266
+gilligan.crew.hut       gilligan.crew.hut       2973
+fileserver.copyroom.hut gilligan.crew.hut       9501
+professor.hut   ginger.girl.hut 3519
+laser3.copyroom.hut     gilligan.crew.hut       9349
+professor.hut   professor.hut   1014
+professor.hut   gilligan.crew.hut       8483
+skipper.crew.hut        maryann.girl.hut        1416
+maryann.girl.hut        ginger.girl.hut 2857
+maryann.girl.hut        ginger.girl.hut 2495
+skipper.crew.hut        maryann.girl.hut        8016
+gilligan.crew.hut       professor.hut   9178
+gilligan.crew.hut       maryann.girl.hut        3908
+laser3.copyroom.hut     professor.hut   6700
+maryann.girl.hut        gilligan.crew.hut       3939
+maryann.girl.hut        professor.hut   2723
+gilligan.crew.hut       professor.hut   4647
+professor.hut   maryann.girl.hut        2025
+maryann.girl.hut        maryann.girl.hut        8741
+professor.hut   maryann.girl.hut        4332
+professor.hut   laser3.copyroom.hut     481
+skipper.crew.hut        maryann.girl.hut        679
+laser3.copyroom.hut     ginger.girl.hut 5659
+laser3.copyroom.hut     gilligan.crew.hut       8891
+laser3.copyroom.hut     gilligan.crew.hut       5863
+skipper.crew.hut        laser3.copyroom.hut     2721
+laser3.copyroom.hut     fileserver.copyroom.hut 4342
+maryann.girl.hut        skipper.crew.hut        1944
+:[K[K [KESCESC[K[[[K66[K~~[Kgilligan.crew.hut       ginger.girl.hut 9259
+skipper.crew.hut        maryann.girl.hut        2205
+ginger.girl.hut professor.hut   9355
+fileserver.copyroom.hut ginger.girl.hut 9912
+skipper.crew.hut        fileserver.copyroom.hut 1799
+professor.hut   gilligan.crew.hut       5835
+skipper.crew.hut        fileserver.copyroom.hut 6012
+ginger.girl.hut maryann.girl.hut        180
+fileserver.copyroom.hut maryann.girl.hut        5454
+ginger.girl.hut gilligan.crew.hut       5717
+professor.hut   skipper.crew.hut        2120
+professor.hut   maryann.girl.hut        414
+laser3.copyroom.hut     ginger.girl.hut 5395
+professor.hut   skipper.crew.hut        8075
+maryann.girl.hut        gilligan.crew.hut       9121
+fileserver.copyroom.hut ginger.girl.hut 2863
+fileserver.copyroom.hut gilligan.crew.hut       8436
+professor.hut   gilligan.crew.hut       5363
+skipper.crew.hut        fileserver.copyroom.hut 6463
+professor.hut   skipper.crew.hut        7849
+fileserver.copyroom.hut fileserver.copyroom.hut 1762
+ginger.girl.hut fileserver.copyroom.hut 9041
+ginger.girl.hut gilligan.crew.hut       1060
+fileserver.copyroom.hut fileserver.copyroom.hut 7718
+fileserver.copyroom.hut ginger.girl.hut 9141
+laser3.copyroom.hut     fileserver.copyroom.hut 9006
+ginger.girl.hut skipper.crew.hut        1172
+skipper.crew.hut        ginger.girl.hut 6276
+gilligan.crew.hut       skipper.crew.hut        1902
+fileserver.copyroom.hut gilligan.crew.hut       5736
+maryann.girl.hut        gilligan.crew.hut       5313
+professor.hut   skipper.crew.hut        1754
+laser3.copyroom.hut     laser3.copyroom.hut     9301
+gilligan.crew.hut       maryann.girl.hut        5627
+professor.hut   professor.hut   987
+fileserver.copyroom.hut professor.hut   2700
+skipper.crew.hut        gilligan.crew.hut       3789
+skipper.crew.hut        laser3.copyroom.hut     4707
+gilligan.crew.hut       laser3.copyroom.hut     1575
+professor.hut   maryann.girl.hut        4236
+gilligan.crew.hut       laser3.copyroom.hut     5797
+laser3.copyroom.hut     maryann.girl.hut        2320
+laser3.copyroom.hut     laser3.copyroom.hut     8857
+professor.hut   gilligan.crew.hut       7025
+skipper.crew.hut        ginger.girl.hut 6034
+professor.hut   laser3.copyroom.hut     3884
+ginger.girl.hut maryann.girl.hut        2133
+fileserver.copyroom.hut skipper.crew.hut        7263
+maryann.girl.hut        professor.hut   359
+gilligan.crew.hut       professor.hut   274
+gilligan.crew.hut       maryann.girl.hut        6151
+maryann.girl.hut        professor.hut   4164
+gilligan.crew.hut       maryann.girl.hut        8644
+ginger.girl.hut fileserver.copyroom.hut 3581
+:[K[K [KESCESC[K[[[K66[K~~[Klaser3.copyroom.hut     laser3.copyroom.hut     9886
+ginger.girl.hut gilligan.crew.hut       1896
+professor.hut   maryann.girl.hut        8932
+skipper.crew.hut        skipper.crew.hut        3298
+professor.hut   laser3.copyroom.hut     7366
+skipper.crew.hut        gilligan.crew.hut       7818
+professor.hut   gilligan.crew.hut       6825
+maryann.girl.hut        ginger.girl.hut 9534
+skipper.crew.hut        skipper.crew.hut        3172
+fileserver.copyroom.hut fileserver.copyroom.hut 4250
+fileserver.copyroom.hut laser3.copyroom.hut     6344
+ginger.girl.hut skipper.crew.hut        7535
+skipper.crew.hut        maryann.girl.hut        6801
+ginger.girl.hut ginger.girl.hut 9811
+skipper.crew.hut        fileserver.copyroom.hut 7436
+laser3.copyroom.hut     skipper.crew.hut        128
+laser3.copyroom.hut     gilligan.crew.hut       7095
+professor.hut   fileserver.copyroom.hut 788
+fileserver.copyroom.hut professor.hut   400
+fileserver.copyroom.hut laser3.copyroom.hut     7024
+gilligan.crew.hut       professor.hut   5261
+ginger.girl.hut professor.hut   6681
+fileserver.copyroom.hut professor.hut   3516
+ginger.girl.hut gilligan.crew.hut       5222
+professor.hut   skipper.crew.hut        207
+maryann.girl.hut        gilligan.crew.hut       5346
+ginger.girl.hut fileserver.copyroom.hut 5170
+skipper.crew.hut        maryann.girl.hut        6745
+gilligan.crew.hut       ginger.girl.hut 5153
+professor.hut   professor.hut   6514
+ginger.girl.hut fileserver.copyroom.hut 337
+fileserver.copyroom.hut gilligan.crew.hut       5150
+gilligan.crew.hut       ginger.girl.hut 9300
+professor.hut   ginger.girl.hut 2157
+fileserver.copyroom.hut professor.hut   6150
+maryann.girl.hut        ginger.girl.hut 2669
+fileserver.copyroom.hut gilligan.crew.hut       2258
+gilligan.crew.hut       skipper.crew.hut        3669
+skipper.crew.hut        gilligan.crew.hut       6627
+laser3.copyroom.hut     skipper.crew.hut        5625
+fileserver.copyroom.hut laser3.copyroom.hut     3615
+ginger.girl.hut laser3.copyroom.hut     9308
+skipper.crew.hut        maryann.girl.hut        9971
+laser3.copyroom.hut     ginger.girl.hut 7194
+ginger.girl.hut fileserver.copyroom.hut 2195
+gilligan.crew.hut       professor.hut   7214
+maryann.girl.hut        ginger.girl.hut 7019
+skipper.crew.hut        professor.hut   7286
+ginger.girl.hut fileserver.copyroom.hut 3038
+laser3.copyroom.hut     skipper.crew.hut        5658
+professor.hut   ginger.girl.hut 8608
+laser3.copyroom.hut     laser3.copyroom.hut     8096
+skipper.crew.hut        maryann.girl.hut        8864
+maryann.girl.hut        fileserver.copyroom.hut 429
+:[K[K [KESCESC[K[[[K66[K~~[Kginger.girl.hut fileserver.copyroom.hut 6341
+ginger.girl.hut maryann.girl.hut        7657
+fileserver.copyroom.hut maryann.girl.hut        2770
+ginger.girl.hut professor.hut   1286
+maryann.girl.hut        laser3.copyroom.hut     2441
+professor.hut   fileserver.copyroom.hut 9860
+professor.hut   ginger.girl.hut 1250
+professor.hut   professor.hut   3773
+skipper.crew.hut        laser3.copyroom.hut     3142
+professor.hut   professor.hut   8213
+fileserver.copyroom.hut gilligan.crew.hut       9618
+ginger.girl.hut professor.hut   7033
+gilligan.crew.hut       professor.hut   8148
+gilligan.crew.hut       laser3.copyroom.hut     7889
+gilligan.crew.hut       ginger.girl.hut 3638
+gilligan.crew.hut       fileserver.copyroom.hut 2145
+fileserver.copyroom.hut maryann.girl.hut        8804
+laser3.copyroom.hut     fileserver.copyroom.hut 90
+skipper.crew.hut        laser3.copyroom.hut     2338
+fileserver.copyroom.hut ginger.girl.hut 2603
+laser3.copyroom.hut     professor.hut   6181
+laser3.copyroom.hut     professor.hut   8702
+professor.hut   laser3.copyroom.hut     2744
+ginger.girl.hut skipper.crew.hut        9143
+ginger.girl.hut maryann.girl.hut        9729
+professor.hut   laser3.copyroom.hut     8835
+professor.hut   professor.hut   480
+maryann.girl.hut        fileserver.copyroom.hut 5042
+ginger.girl.hut fileserver.copyroom.hut 8615
+ginger.girl.hut maryann.girl.hut        2712
+gilligan.crew.hut       gilligan.crew.hut       3333
+professor.hut   ginger.girl.hut 6372
+gilligan.crew.hut       fileserver.copyroom.hut 3414
+maryann.girl.hut        laser3.copyroom.hut     1268
+laser3.copyroom.hut     ginger.girl.hut 2865
+fileserver.copyroom.hut maryann.girl.hut        201
+ginger.girl.hut maryann.girl.hut        1260
+fileserver.copyroom.hut maryann.girl.hut        700
+ginger.girl.hut skipper.crew.hut        1681
+maryann.girl.hut        laser3.copyroom.hut     4598
+professor.hut   gilligan.crew.hut       4768
+maryann.girl.hut        gilligan.crew.hut       6281
+gilligan.crew.hut       laser3.copyroom.hut     8225
+fileserver.copyroom.hut skipper.crew.hut        9053
+gilligan.crew.hut       gilligan.crew.hut       4362
+ginger.girl.hut maryann.girl.hut        437
+skipper.crew.hut        fileserver.copyroom.hut 3721
+professor.hut   fileserver.copyroom.hut 5731
+ginger.girl.hut gilligan.crew.hut       6693
+professor.hut   gilligan.crew.hut       5960
+maryann.girl.hut        skipper.crew.hut        6544
+professor.hut   professor.hut   8329
+professor.hut   gilligan.crew.hut       3713
+skipper.crew.hut        fileserver.copyroom.hut 6303
+:[K[K [KESCESC[K[[[K66[K~~[Kgilligan.crew.hut       ginger.girl.hut 1868
+laser3.copyroom.hut     gilligan.crew.hut       280
+fileserver.copyroom.hut fileserver.copyroom.hut 8878
+ginger.girl.hut fileserver.copyroom.hut 4005
+gilligan.crew.hut       professor.hut   479
+gilligan.crew.hut       maryann.girl.hut        1127
+gilligan.crew.hut       fileserver.copyroom.hut 8753
+ginger.girl.hut fileserver.copyroom.hut 1972
+maryann.girl.hut        fileserver.copyroom.hut 1344
+professor.hut   laser3.copyroom.hut     3979
+laser3.copyroom.hut     professor.hut   824
+skipper.crew.hut        skipper.crew.hut        4909
+laser3.copyroom.hut     maryann.girl.hut        1578
+laser3.copyroom.hut     fileserver.copyroom.hut 7616
+gilligan.crew.hut       professor.hut   6173
+ginger.girl.hut ginger.girl.hut 4493
+ginger.girl.hut skipper.crew.hut        3399
+professor.hut   maryann.girl.hut        9785
+ginger.girl.hut gilligan.crew.hut       9363
+professor.hut   professor.hut   9792
+skipper.crew.hut        laser3.copyroom.hut     6227
+laser3.copyroom.hut     professor.hut   8981
+laser3.copyroom.hut     fileserver.copyroom.hut 6608
+gilligan.crew.hut       maryann.girl.hut        7216
+fileserver.copyroom.hut laser3.copyroom.hut     8989
+skipper.crew.hut        skipper.crew.hut        7429
+ginger.girl.hut laser3.copyroom.hut     7440
+maryann.girl.hut        laser3.copyroom.hut     3134
+skipper.crew.hut        fileserver.copyroom.hut 1022
+fileserver.copyroom.hut maryann.girl.hut        9149
+maryann.girl.hut        skipper.crew.hut        8362
+maryann.girl.hut        professor.hut   9114
+ginger.girl.hut gilligan.crew.hut       2435
+ginger.girl.hut fileserver.copyroom.hut 2041
+skipper.crew.hut        professor.hut   9505
+professor.hut   skipper.crew.hut        8995
+laser3.copyroom.hut     gilligan.crew.hut       6766
+skipper.crew.hut        ginger.girl.hut 8697
+fileserver.copyroom.hut skipper.crew.hut        5535
+maryann.girl.hut        professor.hut   9070
+skipper.crew.hut        gilligan.crew.hut       146
+skipper.crew.hut        gilligan.crew.hut       6227
+fileserver.copyroom.hut professor.hut   9754
+laser3.copyroom.hut     ginger.girl.hut 5529
+ginger.girl.hut fileserver.copyroom.hut 4516
+ginger.girl.hut laser3.copyroom.hut     3645
+professor.hut   maryann.girl.hut        8639
+maryann.girl.hut        ginger.girl.hut 5672
+fileserver.copyroom.hut maryann.girl.hut        4784
+maryann.girl.hut        skipper.crew.hut        6225
+professor.hut   skipper.crew.hut        2426
+fileserver.copyroom.hut professor.hut   2772
+ginger.girl.hut gilligan.crew.hut       5933
+skipper.crew.hut        laser3.copyroom.hut     8531
+:[K[K[?1l>[?1049l]0;gaoang@Gaoang: 11:48:17~/Perl/intermediate-perlMargerita--[~/Perl/intermediate-perl]$ exit
+
+Script done on Tue 28 May 2013 12:04:51 PM CST

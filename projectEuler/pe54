@@ -1,0 +1,161 @@
+#!/usr/bin/perl -w
+use strict ;
+use 5.014;
+use diagnostics ;
+
+print "================ HEAD =================\n\n";
+my $time = time();
+#Poker hands How many hands does Player 1 win ?
+#open FILE ,'<',"poker.txt" or die "Oopes $!";
+my $pine = 0 ;
+while(<>){
+    my (@player1 ,@player2) ;
+    push @player1 ,(split(/\s/))[0..4];
+    push @player2, (split(/\s/))[5..9];
+    $pine ++ if who_wins(\@player1, \@player2) eq 'player1' ;
+    say " Winner = : " , who_wins(\@player1, \@player2);
+}
+say "Player1 wins for ", $pine, " times" ;
+
+sub who_wins{
+    my ($player1, $player2) = (shift, shift);
+    my $score1 = score($player1);
+    my $score2 = score($player2);
+    return "player1" if $score1 > $score2;
+    return "player2";
+}
+
+
+=kcut
+my @hands = ("TH", "QH", "JM", "KM", "AS");
+say score(\@hands);
+my @values;
+map {
+    push @values, (split(//))[0];
+}@hands;
+say consecutive(\@values);
+=cut
+
+sub score{
+    my $player = shift ;
+    my (@value, @suit);
+    map{
+	push @value,(split(//))[0];
+	push @suit,(split(//))[1];
+    }sort @$player;
+
+    my @egg ;
+    map{
+	given($_){
+	    when($_ ~~ 'A'){push @egg, 14}
+	    when($_ ~~ 'K'){push @egg, 13}
+	    when($_ ~~ 'Q'){push @egg, 12}
+	    when($_ ~~ 'J'){push @egg, 11}
+	    when($_ ~~ 'T'){push @egg, 10}
+	    default        {push @egg, $_}
+	}
+    }@value;
+    @egg = sort{$a <=> $b} @egg;
+    #say @egg; #del
+    
+    if(scalar(grep{ $_ eq $suit[0]} @suit) == 5){ #All five are in the same suit .
+	return 130 if((join "",@value) eq 'AJKQT');
+	return 120 + $egg[0] if consecutive(\@value) == 5 ;
+	my $ten = 1 ; my $res = 60 ;
+	map{
+	    $res += $_/$ten ;
+	    $ten *= 14 ;
+	}reverse @egg;
+	return $res ;
+ 
+    }
+
+    if($egg[0] == $egg[3] || $egg[1] == $egg[4]){
+	return 100 + $egg[0] + ($egg[-1]/14) if $egg[0] == $egg[3];
+	return 100 + $egg[-1] + ($egg[0]/14) if $egg[1] == $egg[4]; 
+    }
+
+    if(($egg[0] == $egg[2] && $egg[3] == $egg[4]) || ($egg[2] == $egg[4] && $egg[0] == $egg[1])){
+	return 80 + $egg[0] + ($egg[-1]/14) if $egg[0] == $egg[2];
+	return 80 + $egg[-1] + ($egg[0]/13) if $egg[4] == $egg[2];
+    }
+
+    if (consecutive(\@value) == 5){
+	my ($res, $ten) = (40, 1);
+	map{
+	    $res += $_/$ten;
+	    $ten *= 14; 
+	}reverse @egg ;
+	return $res ;
+    }
+
+    if($egg[0] == $egg[2] || $egg[1] == $egg[3] || $egg[2] == $egg[4]){# There are 3 cards of the same value .
+	my $res = 20 ;
+	return $res + $egg[0] + $egg[4]/14 + $egg[3]/140 if $egg[0] == $egg[2];	
+	return $res + $egg[1] + $egg[4]/14 + $egg[0]/140 if $egg[1] == $egg[3];
+	return $res + $egg[2] + $egg[1]/14 + $egg[0]/140 if $egg[2] == $egg[4];
+    }
+
+    if (($egg[0] == $egg[1] && $egg[2] == $egg[3]) ||
+	($egg[0] == $egg[1] && $egg[3] == $egg[4]) ||
+	($egg[1] == $egg[2] && $egg[3] == $egg[4]) ){
+	my $res = 7 ;
+	return $res + $egg[3] + $egg[0]/14 + $egg[4]/140 if $egg[4] > $egg[3] ;
+	return $res + $egg[3] + $egg[1]/14 + $egg[0]/140 if $egg[1] > $egg[0] ;
+	return $res + $egg[4] + $egg[0]/14 + $egg[2]/140 ;
+    }
+
+    if($egg[0] == $egg[1] || $egg[1] == $egg[2] || $egg[2] == $egg[3] || $egg[3] == $egg[4]){
+	my $res = 4 ;
+	return $res + $egg[1]/14 + $egg[4]/140 + $egg[3]/1400 + $egg[2]/14000 if $egg[0] == $egg[1];
+	return $res + $egg[2]/14 + $egg[4]/140 + $egg[3]/1400 + $egg[0]/14000 if $egg[1] == $egg[2];
+	return $res + $egg[3]/14 + $egg[4]/140 + $egg[1]/1400 + $egg[0]/14000 if $egg[2] == $egg[3];
+	return $res + $egg[4]/14 + $egg[2]/140 + $egg[1]/1400 + $egg[0]/14000 if $egg[3] == $egg[4];
+    }
+    
+    my $res = 1 ; my $ten = 14 ;
+    map{
+	$res += $_/$ten;
+	$ten *= 10;
+    }reverse @egg ;
+    return $res;
+
+
+}
+
+
+sub consecutive{
+    #return the max num of consecutive values 
+    my $values = shift ;
+    return 5 if ((join "", (sort @$values)) eq 'AJKQT');
+    
+    my @egg ;
+    map{
+	given($_){
+	    when($_ ~~ 'K'){push @egg, 13}
+	    when($_ ~~ 'Q'){push @egg, 12}
+	    when($_ ~~ 'J'){push @egg, 11}
+	    when($_ ~~ 'T'){push @egg, 10}
+	    when($_ ~~ 'A'){push @egg, 1 }
+	    default        {push @egg, $_}
+	}
+    }@$values;
+    @egg = sort{$a <=> $b} @egg;
+    my ($cons, $rec) = (1,0) ;
+    for(0..3){
+	if($egg[$_] + 1 ==  $egg[$_+1]){
+	    $cons ++ ;
+	    $rec = ($rec > $cons) ? $rec : $cons ;
+	}else{
+	    $cons = 1 ;
+	}
+    }
+    return $rec;
+}
+
+
+
+
+print "\n================ TAIL == ", "Time : ", time() - $time, " seconds ================\n";
+
+

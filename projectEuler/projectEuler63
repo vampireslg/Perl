@@ -1,0 +1,50 @@
+#!/usr/bin/perl -w 
+use strict ;
+use 5.010;
+=block
+The 5-digit number, 16807=7^5, is also a fifth power. Similarly, the 9-digit number, 134217728=8^9, is a ninth power.
+
+How many n-digit positive integers exist which are also an nth power?
+=cut
+say "---------------------------------------------- Section Test .";
+my $pine = 0 ;
+
+map{
+    $pine += power_nums($_);
+    say "Number $_ has power number : " , power_nums($_);
+}(1..9);
+
+# ------------------------------------------------- To get how many power nums one has ";
+sub power_nums{
+    my $narcissus = shift ;
+    my $pine = 0 ;
+    for my $index (1..30){
+	my $digits ;
+	{
+	    my @ponyo = split (//, $narcissus);
+	    map{
+		my @rose;push @rose,  @ponyo;
+		@ponyo = ();
+		my ($decade, $unit) = (0,0);
+		while(scalar(@rose) > 0){
+		    my $this_num = shift(@rose);
+		    $unit = ($this_num * $narcissus + $decade) % 10 ;
+		    $decade = int (($this_num * $narcissus + $decade) / 10 );
+		    #say "decade and unit: ", $decade, " and ", $unit ;
+		    push @ponyo, $unit ;
+
+		}
+		push @ponyo , $decade if $decade > 0 ;
+	    }(1..$index-1);
+
+	    $digits = scalar(@ponyo);
+	    #say "$narcissus ^ $index  is : " , (reverse @ponyo);
+	}
+	$pine ++ if $digits == $index;# && say"------------ Hit:", $index;
+    }
+    return $pine ;
+}
+
+
+say "Fianl result : ", $pine;
+

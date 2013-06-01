@@ -1,0 +1,96 @@
+#!/usr/bin/perl -w 
+use strict ;
+use threads;
+use 5.010;
+use Storable ;
+=block
+Euler's Totient function, φ(n) [sometimes called the phi function], is used to determine the number of numbers less than n which are relatively prime to n. For example, as 1, 2, 4, 5, 7, and 8, are all less than nine and relatively prime to nine, φ(9)=6.
+
+    nRelatively Primeφ(n)n/φ(n)
+    2112
+    31,221.5
+    41,322
+    51,2,3,441.25
+    61,523
+    71,2,3,4,5,661.1666...
+    81,3,5,742
+    91,2,4,5,7,861.5
+    101,3,7,942.5
+It can be seen that n=6 produces a maximum n/φ(n) for n  10.
+
+Find the value of n  1,000,000 for which n/φ(n) is a maximum.
+=cut
+say "---------------------------------------------- Section 1" ;
+my $time = time ;
+
+my @Primes ;
+exit if(!defined(@ARGV)) && say "Name a argument !" ;
+given($ARGV[0]){
+    when($_ == 1){my @Primes = grep{is_prime($_)}(1..1000000);
+    store[\@Primes], 'primes';}
+    default {
+	@Primes = @{retrieve 'primes'};
+    };
+}
+
+my @primes = @{$Primes[0]};
+my @ponyo ;
+my %lavender ; # Just to save some time in computing primes 
+map{
+    $lavender{$_} = 0;
+}@primes ;
+
+my $max_n = 2;
+my $max_primes = 1 ;
+my $sections = 100 ;
+
+say "---------------------------------------------- Inited,time ", time - $time, " seconds";
+
+for my $sakura (1..1000000){
+    next if ($sakura < 1000000/2 && $sakura % 2 == 1);
+    next if defined($lavender{$sakura});
+    my $power = $sakura/getPhi($sakura);
+    $max_n = ($power > $max_primes) ? $sakura : $max_n;
+    $max_primes = ($power > $max_primes) ? $power : $max_primes;
+}
+
+say "---- < Max_primes ,Max n > : < ",$max_primes , ", " , $max_n ." >";
+
+
+
+
+#-------------------------------------------------- Section 2
+sub getPhi{
+    my $this_num = shift ;
+    my $phi = 1 ;
+    #return $this_num - 1 if is_prime($this_num);# defined($lavender{$this_num});
+    my %ponyo;
+    for my$prime (@primes){
+	last if $prime > $this_num ;	
+	while($this_num % $prime == 0){
+	    $ponyo{$prime} += 1;
+	    $this_num /= $prime;
+	}
+    }
+
+    for (keys %ponyo){
+	$phi *= ($_ - 1);
+	$phi *= $_ ** ($ponyo{$_}-1);
+    }
+    return $phi ;
+}
+
+#----------------------------------------------- Primes
+sub is_prime{
+    my $num = shift ;
+    my $pine = 0 ;
+    return 0 if $num == 1 ;
+    return 1 if $num == 2 || $num == 3 ;
+    map{
+	return 0 if $num % $_ == 0 ;
+    }(2..int(sqrt($num)));
+}
+
+#--------------------------------------------- Section last
+say "Time elapsed : ", time - $time, " seconds ";
+say "---------------------------------------------- Section End" ;

@@ -1,0 +1,37 @@
+#! /usr/bin/perl -w
+#use diagnostics;
+use strict;
+use 5.010;
+use Data::Dumper;
+use YAML;
+use Storable;
+use File::Find;
+my $lone_line = "---------------------------------------------";
+
+#-------------------------------------------------Section 1 
+say $lone_line,"Section1";
+open LOG_FH, '>> cataways.log' or die "Could not open cataways.log $!";
+log_message(*LOG_FH, 'The Globetrotters with us');
+log_message(*LOG_FH, 'An astronaut passes overhead');
+
+sub log_message{
+    local *FH = shift ;
+
+    print FH @_, "\n";
+}
+
+
+
+#-------------------------------------------------Section 2
+say $lone_line,"Section2";
+use IO::Scalar;
+
+my $string_log = '';
+my $scalar_fh = IO::Scalar->new(\$string_log);
+print $scalar_fh "The Howells' private beach club is closed\n";
+
+while(<$scalar_fh>){
+    next if /Gilligan/;
+    print;
+}
+

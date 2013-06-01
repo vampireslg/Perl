@@ -1,0 +1,53 @@
+#!/usr/bin/perl -w 
+# To be a billionaire;
+use strict ;
+use 5.014;
+no warnings "recursion";
+
+say "================ HEAD ";
+my $time = time();
+my $pro = 0.16656;
+my $toss = 1000;
+my $su = 0 ;
+my $chance = (0.5) ** $toss;
+my $welth = 1000_000_000;
+
+my ($old_res, $new_res, $smallest_id, $tem, $final_pro) = (0,0,10000,0,0);
+
+for(1..$toss){
+    $old_res = $new_res;
+    $new_res = (1+2*$pro)**($_) * (1-$pro) ** ($toss-$_);
+    last if ($old_res < $welth && $new_res >= $welth) &&
+	($tem = $_) &&
+	(say "=== First index for over one :  $_ ") ;
+}
+
+
+sub cnk{
+    my ($k, $n) = (shift, shift);
+    factional($n)/(factional($k) * factional($n-$k));
+    
+}
+
+sub factional{
+    my $res = 1 ;
+    map{
+	$res *= $_
+    }(1..shift);
+    return $res;
+}
+
+
+
+
+say "=================== END " ;
+say "== Time : ", time() - $time ;
+
+say combination(345,1000);
+
+sub combination{
+    my ($k, $n) = (shift, shift);
+    $k = ($n-$k) > $k ? $k:($n-$k);
+    return $n if ($k ~~ 1 || $n ~~ 1);
+    return combination($k, $n-1) + combination($k-1, $n-1);
+}

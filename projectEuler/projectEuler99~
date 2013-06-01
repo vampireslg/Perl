@@ -1,0 +1,50 @@
+#!/usr/bin/perl -w 
+use strict ;
+use 5.010;
+=block
+Comparing two numbers written in index form like 211 and 37 is not difficult, as any calculator would confirm that 211 = 2048  37 = 2187.
+
+However, confirming that 632382518061  519432525806 would be much more difficult, as both numbers contain over three million digits.
+
+Using base_exp.txt (right click and 'Save Link/Target As...'), a 22K text file containing one thousand lines with a base/exponent pair on each line, determine which line number has the greatest numerical value.
+
+NOTE: The first two lines in the file represent the numbers in the example given above.
+=cut
+say "---------------------------------------------- Section Test .";
+my $pine = 0 ;
+
+map{
+    my @rray = process($_, 3);
+    say ($rray[0]);
+}(128..129);
+
+# ------------------------------------------------- To get exp in array form ;
+sub process{
+    my ($narcissus,$exp) = (shift, shift) ;
+    my @ponyo; 
+    my $digits ;
+    {
+	@ponyo = split (//, $narcissus);
+	my @rose;
+	push @rose, reverse @ponyo;
+	map{
+	    @ponyo = ();
+	    my ($decade, $unit) = (0,0);
+	    while(scalar(@rose) > 0){
+		my $this_num = shift(@rose);
+		$unit = ($this_num * $narcissus + $decade) % 10 ;
+		$decade = int (($this_num * $narcissus + $decade) / 10 );
+		#say "decade and unit: ", $decade, " and ", $unit ;
+		push @ponyo, $unit ;
+	    }
+	    push @ponyo , $decade if $decade > 0 ;
+	    push @rose,  @ponyo;
+	}(1..$exp-1);
+	#say "$narcissus ^ $index  is : " , (reverse @ponyo);
+    }
+    return reverse @ponyo;
+}
+
+
+say "Fianl result : ", $pine;
+

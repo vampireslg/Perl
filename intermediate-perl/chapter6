@@ -1,0 +1,39 @@
+#! /usr/bin/perl -w
+#use diagnostics;
+use strict;
+use 5.010;
+use Data::Dumper;
+use YAML;
+use Storable;
+my $lone_line = "---------------------------------------------";
+
+#-------------------------------------------------Section 1 
+say $lone_line,"Section1";
+$Data::Dumper::Purity = 1 ;
+
+my @ponyo1 = qw(one won);
+my @ponyo2 = qw(two too to);
+
+push @ponyo2, \@ponyo1;
+push @ponyo1, \@ponyo2;
+
+say Dumper(\@ponyo1, \@ponyo2);
+
+
+#-------------------------------------------------Section 2
+say $lone_line,"Section2";
+my %narcissus ;
+while(<>){
+    my ($source, $destination, $bytes) = split ;
+    $narcissus{$source}{$destination} += $bytes;
+}
+
+say Dump(\%narcissus);
+
+
+#-------------------------------------------------Section 3
+say $lone_line,"Section3";
+
+store [\@ponyo1, \@ponyo2], 'ponyo';
+my $willow = retrieve 'ponyo';
+say Dump($willow);

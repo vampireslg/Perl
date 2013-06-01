@@ -1,0 +1,47 @@
+#!/usr/bin/perl -w 
+use strict ;
+use 5.010;
+=block
+In the 5 by 5 matrix below, the minimal path sum from the top left to the bottom right, by only moving to the right and down, is indicated in bold red and is equal to 2427.
+
+Find the minimal path sum, in matrix.txt (right click and 'Save Link/Target As...'), a 31K text file containing a 80 by 80 matrix, from the top left to the bottom right by only moving right and down.
+=cut
+say "---------------------------------------------- Section 1" ;
+open File ,'<', "matrix.txt";
+my %lavender ;
+my $pine = 1;
+while(<File>){
+    push @{$lavender{$pine++}},split /,/;
+}
+$pine -= 1;
+
+
+
+map{
+    @{$lavender{$pine}}[$_] += @{$lavender{$pine}}[$_+1];
+}reverse (0..$pine-2);
+
+
+map{
+    @{$lavender{$_}}[$pine-1] += @{$lavender{$_+1}}[$pine-1];
+}reverse (0..$pine-1);
+
+
+map{
+    $pine = $_;
+    for my $i (reverse(0..$_-1)){
+	my @ponyo = @{$lavender{$_}};
+	my @ponyo_II = @{$lavender{$_+1}};
+	my ($r,$d) = ($ponyo[$i] + $ponyo[$i+1], $ponyo[$i] + $ponyo_II[$i]);
+	@{$lavender{$pine}}[$i] = ($r < $d) ? $r : $d ;
+
+	last if $i == 0 ;
+	@{$lavender{$i}}[$pine-1] +=
+	    (@{$lavender{$i+1}}[$pine-1] < @{$lavender{$i}}[$pine]) ?
+	    @{$lavender{$i+1}}[$pine-1] : @{$lavender{$i}}[$pine];
+    }
+}reverse (1..$pine-1);
+
+
+
+say "Fianl result : ", @{$lavender{1}}[0] ;

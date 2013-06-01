@@ -1,0 +1,184 @@
+#!/usr/bin/perl -w
+use strict ;
+use 5.014;
+use diagnostics ;
+
+print "================ HEAD =================\n\n";
+my $time = time();
+use Math::Prime::XS qw(primes is_prime);
+=ccut
+By replacing the 1st digit of *3, it turns out that six of the nine possible values: 13, 23, 43, 53, 73, and 83, are all prime.
+
+By replacing the 3rd and 4th digits of 56**3 with the same digit, this 5-digit number is the first example having seven primes among the ten generated numbers, yielding the family: 56003, 56113, 56333, 56443, 56663, 56773, and 56993. Consequently 56003, being the first member of this family, is the smallest prime with this property.
+
+Find the smallest prime which, by replacing part of the number (not necessarily adjacent digits) with the same digit, is part of an eight prime value family.
+=cut
+my $digit = 8 ;    
+my $MISS_LIMIT = 11 - $digit ;
+
+##AND THE ANSWER IS 121313 222323 ,change with the 1,3,5 number .
+
+
+my $kkk = 0;
+my @banana = (2);
+my @abcd = Choose_k_from_n($kkk,\@banana);
+
+map{
+    map{print $_, " "}@$_;
+    say "";
+}@abcd;
+
+say "scalar";
+say scalar(Choose_many(1,\@banana));
+
+for my$thisItem (3..8){
+    my $mark = 0 ;
+    my @array = reverse (2..$thisItem);
+    my @allarray = Choose_many($thisItem-2, \@array);
+    for my$this (@allarray){
+	my @thisarray;
+	push @thisarray, @$this;
+	#say " = This item = ",$thisItem,"  thisarray = ", @thisarray;
+	map{
+	    print "";
+	    $mark = 1 if (WaterMellon($thisItem, \@thisarray, $_) == 1);
+	}(1,3,7,9);
+    }
+    last if $mark == 1 ;
+}
+
+
+sub Choose_many{
+    my ($at_most, $rray) = (shift, shift);
+    my @result ;
+    while($at_most > 0){
+	push @result , Choose_k_from_n($at_most, $rray);
+	$at_most -- ;
+    }
+    my @null = ();
+    push @result, \@null;
+    return @result;
+}
+
+sub Choose_k_from_n{
+    my ($k, $rray) = (shift, shift);
+    my @all ;
+    map{
+	my @egg; 
+	push @egg, $_;
+	push @all, \@egg;
+    }@$rray if $k == 1 ;
+
+    if($k > 1){
+	my @egg ;
+	my @this_array; push @this_array, @$rray; 
+	while(scalar(@this_array) >= $k){
+	    if(scalar(@this_array) == $k){
+		push @all, \@this_array;
+		last ;
+	    }else{
+		my $headitem = shift @this_array; 
+		map{
+		    my @egg ;
+		    push @egg ,$headitem ;
+		    push @egg, @$_;
+		    my @newegg; push @newegg, @egg;
+		    push @all, \@newegg;
+		    @egg = ();
+		}Choose_k_from_n($k-1, \@this_array);
+	    }
+	}
+    }
+
+    return @all ;
+}
+
+
+sub WaterMellon{
+    my ($arg1,$array,$pine,$first_num) = (shift, shift, shift);
+    my $len = scalar (@$array);
+    if($len > 0){
+    $first_num = (@$array[0] == $arg1) ? (10**($len-1)) : 0 ;
+    }else{
+	$first_num = 0 ;
+    }
+    
+    my $last_num = 10**($len) - 1;
+    my (@blist , @another_array);
+    for my $some_num ($first_num..$last_num){
+	map{
+	    $blist[$_] = -1;
+	}(0..$arg1-1);
+	$blist[$arg1-1] = $pine ;
+	
+	push @another_array, @$array;
+	my @orange = divide($some_num , $len);
+	
+	map{
+	    @blist[$arg1 - (shift @another_array)] = shift @orange ;
+	}@orange;
+	#say @blist;
+        if (Apple(\@blist) == 1){
+	    say "Hit : see follow  "; 
+	    my $i = ($blist[0] == -1) ? 1:0;
+	    for( ; $i <= 9 ; $i ++){
+		my @list = ();
+		map{
+		    push @list, $_ if $_ >=0 ;
+		    push @list, $i if $_ < 0 ;
+		}@blist;
+		printf "%6s " ,Grape(\@list) if (is_prime(Grape(\@list)));
+	    }
+	    say "" ;
+	    return 1 ;
+	}
+
+    }
+    return 0 ;
+}
+
+sub divide{
+    my ($num, $len) = (shift, shift);
+    my @return_array ;
+
+    while($num > 0){
+	unshift  @return_array, ($num % 10) ;
+	$num = int($num / 10) ;
+    }
+    unshift @return_array, 0 while(scalar @return_array < $len);
+    return @return_array; 
+}
+
+sub Apple{
+    my $list = shift;
+    my $i = (@$list[0] == -1)? 1:0;
+    my $miss = ($i == 1) ? 1:0;
+    my @blist;
+    for( ; $i <= 9 && $miss < $MISS_LIMIT ; $i++){
+	@blist = ();
+	my $j = 0 ;
+	map{
+	    push @blist, $_ if $_ >=0 ;
+	    push @blist, $i if $_ < 0 ;
+	}@$list;
+	$miss ++ if (!is_prime(Grape(\@blist)));
+    }
+    
+    return 1 if $miss < $MISS_LIMIT;
+    return 0 ;
+}
+
+sub Grape{
+    my $fruit = shift;
+    my $apple = 0;
+    map{
+	$_ = 0 if $_ == -1 ;
+	$apple = $apple*10 + $_;
+    }@$fruit;
+    return $apple;
+}
+
+
+print "\n================ TAIL == ", "Time : ", time() - $time, " seconds ================\n";
+
+

@@ -1,0 +1,43 @@
+#! /usr/bin/perl
+use strict ;
+use 5.010;
+use Try::Tiny;
+require List::Util;
+
+say "================ chapter3";
+eval {my $res = 5 /0 };
+#my $ave = eval { 5/0 };
+print "Continuing after error: $@" if $@;
+
+my $ave = try{ 5/0 } catch {"NaN"};
+
+foreach my $operator (qw(+ - * /)){
+    my $result = eval "2 $operator 2";
+    say "2 $operator 2 is $result";
+}
+
+say 'the quotient is ' ,eval '5/';
+warn $@ if $@;
+
+
+my $file_contents = do {
+    local $/;
+    local @ARGV = ("chapter3");
+    <>
+};
+
+    
+#do "chapter3";
+
+#say $file_contents;
+
+say map{"    $_\n"} grep { -s $_< 1000} @ARGV;
+
+
+say "Give a regular expression as a pattern please ." ;
+while(chomp (my $pat = <STDIN>)){
+    last unless(length $pat && defined $pat);
+
+    say 
+	map{"   $_\n"} grep{eval{/$pat/}} glob("../.* ../*");
+}

@@ -1,0 +1,73 @@
+#! /usr/bin/perl -w
+#use diagnostics;
+use strict;
+use 5.010;
+use Data::Dumper;
+use YAML;
+use Storable;
+use File::Find;
+my $lone_line = "---------------------------------------------";
+
+#-------------------------------------------------Section 1 
+say $lone_line,"Section1";
+
+my $ginger = sub{
+    my $person = shift;
+    say "Ginger :(in a sultry voice) well hello, $person";
+};
+$ginger -> ('Skipper');
+
+
+#-------------------------------------------------Section 2
+say $lone_line,"Section3";
+
+sub what_to_do{
+    say "$File::Find::name found";
+}
+
+my @starting_directories = qw(.);
+find(\&what_to_do, @starting_directories);
+
+#-------------------------------------------------Section 3
+say $lone_line,"Section3";
+
+find(
+    sub{
+	say "$File::Find::name found";
+    },
+    @starting_directories,
+    );
+
+#-------------------------------------------------Section 4
+say $lone_line,"Section4";
+
+my $total_size = 0 ;
+find(
+    sub{
+	$total_size += -s if -f;
+    },'.'
+    );
+say "Total_Size: ",$total_size;
+
+
+my $callback;
+{
+    my $pine = 0 ;
+    $callback = sub{
+	say ++$pine, ": File::Find::name";
+    }
+
+}
+sub call_back_II{
+    my $total_size = 0;
+    return (sub{
+	$total_size += -s if -f ;
+	printf"%15s %5s\n", $_, "found";
+	    }, sub{
+		return $total_size
+	    });
+}
+my($count_tem, $get_results) = call_back_II( );
+find($count_tem, '.');
+say "Total_Size: ", &$get_results();;
+

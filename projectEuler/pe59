@@ -1,0 +1,154 @@
+#!/usr/bin/perl -w
+use strict ;
+use 5.014;
+use diagnostics ;
+
+print "================ HEAD =================\n\n";
+my $time = time();
+=mit
+Each character on a computer is assigned a unique code and the preferred standard is ASCII (American Standard Code for Information Interchange). For example, uppercase A = 65, asterisk (*) = 42, and lowercase k = 107.
+
+    A modern encryption method is to take a text file, convert the bytes to ASCII, then XOR each byte with a given value, taken from a secret key. The advantage with the XOR function is that using the same encryption key on the cipher text, restores the plain text; for example, 65 XOR 42 = 107, then 107 XOR 42 = 65.
+
+For unbreakable encryption, the key is the same length as the plain text message, and the key is made up of random bytes. The user would keep the encrypted message and the encryption key in different locations, and without both "halves", it is impossible to decrypt the message.
+
+Unfortunately, this method is impractical for most users, so the modified method is to use a password as a key. If the password is shorter than the message, which is likely, the key is repeated cyclically throughout the message. The balance for this method is using a sufficiently long password key for security, but short enough to be memorable.
+
+Your task has been made easy, as the encryption key consists of three lower case characters. Using cipher1.txt (right click and 'Save Link/Target As...'), a file containing the encrypted ASCII codes, and the knowledge that the plain text must contain common English words, decrypt the message and find the sum of the ASCII values in the original text.
+=cut
+
+say "================ This section is for Test ========== ";
+my @binary = decimal2binary(1);
+say decimal2binary(1);
+say binary2decimal(\@binary);
+say XOR(111,7), " ......... cutline 1 ";
+say "================ This is the end for Test ========== \n";
+
+my @numbers;
+while(<>){
+    @numbers = split(/,/,$_);
+}
+
+my $lag = 0 ;my $space_num = 0 ;
+my @keys = findKEY();
+say "\nThe original text is as below : \n";
+map {
+    $lag %= 3;
+    my $word = ASCII2Character(XOR($_,$keys[$lag])) ;
+    print $word;
+    $lag ++ ;
+}@numbers;
+
+print "\n\nThe results sum of the Ascii values if the original text is :";
+{
+    my ($sum, $lag) = (0,0);
+    map{
+	$lag %= 3;
+	$sum += XOR($_,$keys[$lag]);
+	$lag ++;
+    }@numbers;
+    say $sum ;
+}
+
+sub findKEY{
+    my @encrypted_the = findTHE();
+    my @the = (116,104,101);
+    my @key ;
+    map{
+	push @key, XOR($the[$_], $encrypted_the[$_])
+    }(0..2);
+    say "The KEY in english is ::=  ",map{ASCII2Character($_)}@key ;
+    return @key;
+    #------ I AM THE EVAL CUTTINT LINE -----------
+    
+    sub findTHE{#find the 5 consequential number occur most frequently which must be " the ".
+	open FILE , '<', "cipher1.txt" or die "Oops ! I am dying : $!";
+	my $pine = 0 ;
+	my %hash;
+	my @ponyo;
+	while(<FILE>){
+	    @ponyo = split(/,/, $_);
+	}
+
+	map{
+	    my $key = join "_",(@ponyo[$_..$_+4]) ;
+	    if(defined($hash{$key})){
+		$hash{$key} += 1;
+	    }else{
+		$hash{$key} = 1 ;
+	    }
+	    $pine = 0 ;
+	}(0..scalar(@ponyo)-5);
+
+	%hash = reverse %hash;
+
+	@ponyo = split(/\_/,$hash{((sort keys %hash)[-1])});
+	return (@ponyo[1,2,3]);
+    }
+}
+
+sub ASCII2Character{
+    my $n = shift;
+    my @ASCII = (97..122);
+    push @ASCII,(65..90);
+    #push @ASCII,32;
+    my @char = ("a".."z");
+    push @char,("A".."Z");
+    #push @char, "";
+    my %hash;
+    map{
+	$hash{$ASCII[$_]} = $char[$_];
+    }(0..scalar(@char)-1);
+    return $hash{$n} if defined($hash{$n});
+    return ' ';
+}
+
+
+sub XOR{
+    my ($n1, $n2) = (shift, shift);
+    
+    my @y1 = reverse decimal2binary($n1);
+    my @y2 = reverse decimal2binary($n2);
+    my ($len1, $len2, $max_len) = (scalar(@y1), scalar(@y2),0);
+    $max_len = ($len2 < $len1) ? $len1 : $len2 ;
+    exit if $max_len <=0 && say "Illegal number for XOR !" ;
+    
+    map{
+	push @y1, 0 if !defined($y1[$_]);
+	push @y2, 0 if !defined($y2[$_]);
+    }(0..$max_len-1);
+    
+    my @res ;
+    for(0..$max_len-1){
+	next if $y1[$_] == $y2[$_] && unshift @res, 0 ;
+	unshift @res, 1 ;
+    }
+    return binary2decimal(\@res);
+}
+
+sub binary2decimal{
+    my $binary = shift;
+    my $decimal = 0 ;
+    map{
+	$decimal *= 2 ;
+	$decimal += $_;
+    }@$binary;
+    return $decimal;
+}
+
+sub decimal2binary{
+    my $decimal = shift;
+    my @binary ;
+    while($decimal > 0){
+	unshift @binary, $decimal % 2;
+	$decimal = int $decimal/2;
+    }
+    return @binary ;
+}
+
+
+
+
+print "\n================ TAIL == ", "Time : ", time() - $time, " seconds ================\n";
+
+

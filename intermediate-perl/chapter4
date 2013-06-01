@@ -1,0 +1,70 @@
+#! /usr/bin/perl
+use strict ;
+use 5.010;
+use Try::Tiny;
+require List::Util;
+
+say "================ chapter4"; 
+
+sub check_required_items{
+    my $who = shift ;
+    my @required  = qw/preserver sunscreen water_bottle jacket/;
+    say "Members in \@_ : "; map{print $_, " "} @_; say "" ;
+    for my $item(@required){
+	unless (grep $item eq $_, @_){
+	    say "$who is missing $item .";
+	}
+    }
+}
+
+my @skipper = qw /blue_shirt hat jacket preserver sunscreen/;
+check_required_items('skipper', @skipper, "water_bottle");
+check_required_items_2('skipper', \@skipper);
+
+
+sub check_required_items_2{
+    my $who = shift ;
+    my $rr = shift;
+    my @missing = ();
+    my @required  = qw/preserver sunscreen water_bottle jacket/;
+    say "Members in \@_ : "; map{print $_, " "} @$rr; say "" ;
+    for my $item(@required){
+	unless (grep $item eq $_, @$rr){
+	    say "$who is missing $item .";
+	    push @missing, $item; 
+	}
+    }
+    if(@missing) { say "Adding @missing to @$rr for $who" ;
+    push @$rr, @missing ;
+    } ;
+}
+
+say "\n============== Here is cutting line ";
+for(@skipper){
+    say $_ ;
+}
+
+say "\n============== Here is cutting line ";
+
+my %gilliagan_info = (
+    name => 'Gilligan' ,
+    hat => 'Write',
+    shirt => 'Red',
+    position => 'Fisrt Mate',
+    );
+
+my %skipper_info = (
+    name => 'Skipper' ,
+    hat => 'black',
+    shirt => 'Blue',
+    position => 'Captain',
+    );
+
+my @crew = (\%gilliagan_info, \%skipper_info);
+my $format = "%-15s %-7s %-7s %-15s\n";
+for my $crewmember (@crew){
+    printf $format ,@$crewmember{qw/name hat shirt position/}; #Hash slice 
+}
+
+
+

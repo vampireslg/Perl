@@ -1,0 +1,36 @@
+#!/usr/bin/perl -w
+use 5.010;
+use strict ;
+my $time = time ;
+
+my $pine = 0 ;
+my $bud = 2;
+while($bud < 1000_000){
+    $pine ++ if isPrime($bud);
+    $bud ++ ;
+}
+say $pine;
+
+sub isPrime{
+    my $pine = shift;
+    return 1 if $pine == 2 || $pine == 3;
+    my $alpaca = 0 ;
+    
+    map{
+	return 0 if $pine % $_ == 0 ;
+    }(2..int sqrt($pine));
+
+    return 1;
+}
+
+sub primes_under_N{
+    my $alpaca = shift;
+    my @ponyo;
+    map{
+	push @ponyo, $_ if isPrime($_);
+    }(2..$alpaca);
+    return @ponyo;
+}
+
+
+say "Time elapsed : ", (time - $time), " seconds ." ;

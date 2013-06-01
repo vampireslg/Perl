@@ -1,0 +1,25 @@
+#!/use/bin/perl -w 
+use strict ;
+use threads ;
+use 5.010;
+use Math::Prime::XS qw(primes is_prime);
+
+my $sum1 = threads->new(\&process, 1, 100);
+my $sum2 = threads->new(\&process, 100, 1000);
+my $sum3 = threads->new(\&process, 10000, 10000);
+
+
+sub process{
+    my $pine = 0 ;
+    my ($l, $r) = @_;
+    for($l..$r){
+	$pine ++ if is_prime($_);
+    }
+    return $pine ;
+}
+
+my $res = $sum1->join;
+my $res2 = $sum2->join;
+$sum3->join;
+
+say $res2;

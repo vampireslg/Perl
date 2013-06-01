@@ -1,0 +1,65 @@
+#! /usr/bin/perl -w
+#use diagnostics;
+use strict;
+use 5.010;
+use Data::Dumper;
+
+my %total_bytes;
+my %source_mac;
+my %des_mac;
+{
+    # Exercise 2
+    while(<>){
+	my ($source, $destination, $bytes) = split;
+	$total_bytes{$source}{$destination} += $bytes;
+	$source_mac{$source} += $bytes;
+    }
+
+    %source_mac = reverse %source_mac ;
+    for my $keykey (sort{$b <=> $a} keys %source_mac){
+	%des_mac = ();
+	for my $destination(keys %{$total_bytes{$source_mac{$keykey}}}){
+	    $des_mac{$destination} = $total_bytes{$source_mac{$keykey}}{$destination};
+	}
+	%des_mac = reverse %des_mac;
+	for my $l(sort {$b <=> $a} keys  %des_mac){
+	    say "$source_mac{$keykey} => $des_mac{$l}: ", "$l";
+	}
+
+	say "" ;
+    }
+}
+
+say "=========================== I am the evil cutting line .\n";
+{
+    # Exercise 3
+ 
+    for my $keykey (sort keys %total_bytes){
+	say $keykey;
+	for my $destination(sort keys %{$total_bytes{$keykey}}){
+	    say "\t $destination} ", "$total_bytes{$keykey}{$destination}";
+	}
+
+	say "" ;
+    }
+}
+
+
+my %passernger_1 = (
+    name  => 'Ginger',
+    age => 22,
+    occupation => 'Movie Star',
+    real_age => 35,
+    hat => undef,
+    );
+
+my %passernger_2 = (
+    name  => 'Mary Ann',
+    age => 19,
+    hat => 'bonnet',
+    favorite_food => 'corn',
+    );
+
+my @passerngers = (\%passernger_1, \%passernger_2);
+
+

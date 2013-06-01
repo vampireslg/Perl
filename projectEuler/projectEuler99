@@ -1,0 +1,39 @@
+#!/usr/bin/perl -w 
+use strict ;
+use 5.010;
+=block
+Comparing two numbers written in index form like 211 and 37 is not difficult, as any calculator would confirm that 211 = 2048  37 = 2187.
+
+However, confirming that 632382518061  519432525806 would be much more difficult, as both numbers contain over three million digits.
+
+Using base_exp.txt (right click and 'Save Link/Target As...'), a 22K text file containing one thousand lines with a base/exponent pair on each line, determine which line number has the greatest numerical value.
+
+NOTE: The first two lines in the file represent the numbers in the example given above.
+=cut
+say "---------------------------------------------- Section Test .";
+my $pine = 1 ;
+my %ponyo;
+
+open my $file ,'<',"base_exp.txt";
+while(<$file>){
+    my @rray = split(/,|\s/);
+    $ponyo{$pine++} = \@rray;
+}
+
+my $max_line = 1 ;
+map{
+    my @rray = @{$ponyo{$max_line}};
+    my @this_rray = @{$ponyo{$_}}; 
+    $max_line = ($rray[1] > ($this_rray[1])*general_log($rray[0], $this_rray[0])) ? $max_line : $_;
+}(sort{$a <=> $b} keys %ponyo);
+
+sub general_log{
+    my ($base, $value) = @_;
+    return log($value)/log($base);
+}
+# ------------------------------------------------- To get exp in array form ;
+
+
+
+say "Fianl result : ", $max_line;
+

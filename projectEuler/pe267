@@ -1,0 +1,76 @@
+#!/usr/bin/perl -w 
+# To be a billionaire;
+use strict ;
+
+print "================ HEAD =================\n\n";
+my $time = time();
+my $pro = 0.015;
+my $toss = 1000;
+my $su = 0 ;
+my $chance = (0.5) ** $toss;
+my $welth = 1000_000_000;
+
+my ($old_res, $new_res, $smallest_id, $tem, $final_pro) = (0,0,10000,0,0);
+while($pro < 1){
+    $tem = getIndex($toss, $old_res, $new_res, $pro, $welth, $tem);
+    $final_pro = $pro if ($tem < $smallest_id && ($smallest_id = $tem)) ;
+    $pro += 0.0001; #record the maximum pro .
+}
+
+
+
+printf "%30s %1s\n", "First pro : " , $final_pro;
+printf "%30s %2s\n", "Smallest index: ", $smallest_id;
+
+
+my %com_set; 
+for my $row (1..$toss){
+    for my $col (0..$row){
+	next if ($row == 1 || $col == 0) && ($com_set{$row."_".$col} = 1);
+	next if ($row == $col) && ($com_set{$row."_".$col} = 1);
+	$com_set{$row."_".$col} = $com_set{($row-1)."_".$col} + $com_set{($row-1)."_".($col-1)};
+    }
+}
+
+# $maxpro produce the maximum probability to be a billionaire ;
+my $maxpro = 0 ;
+map{
+    $maxpro += $com_set{"1000_$_"};
+}($smallest_id..$toss);
+$maxpro *= $chance ; 
+printf"%30s", "Final result of this problem: "; printf " %0.12f \n", $maxpro ;
+
+sub getIndex{
+    my ($toss, $old_res, $new_res, $pro, $welth, $tem) =
+	(shift, shift, shift, shift, shift, shift);
+    for(1..$toss){
+        $old_res = $new_res;
+        $new_res = (1+2*$pro)**($_) * (1-$pro) ** ($toss-$_);
+        last if ($old_res < $welth && $new_res >= $welth) &&
+            ($tem = $_) ;
+    }
+    return $tem;
+}
+
+sub cnk{
+    my ($k, $n) = (shift, shift);
+    factional($n)/(factional($k) * factional($n-$k));
+    
+}
+
+sub factional{
+    my $res = 1 ;
+    map{
+	$res *= $_
+    }(1..shift);
+    return $res;
+}
+
+
+
+
+
+
+print "\n================ TAIL == ", "Time : ", time() - $time, " seconds ================\n";
+
+

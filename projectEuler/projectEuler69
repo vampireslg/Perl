@@ -1,0 +1,85 @@
+#!/usr/bin/perl -w 
+use strict ;
+use threads;
+use 5.010;
+=block
+Euler's Totient function, φ(n) [sometimes called the phi function], is used to determine the number of numbers less than n which are relatively prime to n. For example, as 1, 2, 4, 5, 7, and 8, are all less than nine and relatively prime to nine, φ(9)=6.
+
+    nRelatively Primeφ(n)n/φ(n)
+    2112
+    31,221.5
+    41,322
+    51,2,3,441.25
+    61,523
+    71,2,3,4,5,661.1666...
+    81,3,5,742
+    91,2,4,5,7,861.5
+    101,3,7,942.5
+It can be seen that n=6 produces a maximum n/φ(n) for n  10.
+
+Find the value of n  1,000,000 for which n/φ(n) is a maximum.
+=cut
+say "---------------------------------------------- Section 1" ;
+my $time = time ;
+
+my @ponyo ;
+my $times = 1000;
+for(1..$times){
+    $ponyo[$_] = threads->new(\&thread,100 * ($_-1), 100 * $_);
+}
+
+my @tulip;
+my ($n, $power) = (0,0);
+map{
+    $tulip[$_] = $ponyo[$_]->join ;
+    $power = ($power > $tulip[$_]->[1]) ? $power : $tulip[$_]->[1] ;
+    $n = ($power > $tulip[$_]->[1]) ? $n : $tulip[$_]->[0] ;
+}(1..$times);
+
+
+say "\nMax power with its corresponding number : < " , $power ,", ", $n." >"; 
+
+
+#-------------------------------------------------- Subroutine ;
+
+
+sub thread{
+    my ($l, $r) = @_;
+    my $max_n = 2;
+    my $max_primes = 1 ;
+    my $ratio = 1 ;
+    for my $sakura ($l..$r){
+	next if ($sakura % 2 == 1 || $sakura % 4 == 0);
+	$ratio = $sakura / $max_primes ;
+
+	my $this_primes = relatively_primes($sakura, $ratio);
+	$max_n = $sakura if $this_primes > $max_primes
+	    && ($max_primes = $this_primes );
+    }
+    say "max_primes: ", $max_primes ;
+    my @ret = ($max_n, $max_primes);
+    return \@ret ;
+}
+
+
+sub relatively_primes{
+    my ($me, $ratio) = (shift, shift) ;
+    #return relatively_primes($me/2, $ratio) if $me % 2 == 0 && ($me % 4 != 0);
+    my $pine = 1 ;
+    map{
+	$pine ++ if gcd($me, $_) == 1;
+	return 0 if $pine > $ratio ;
+    }(2..$me-1);
+    return $me/$pine ;
+}
+
+sub gcd{
+    my ($tulip, $lavender) = sort{$a <=> $b}(shift, shift);
+    return $tulip if $lavender  % $tulip == 0 ;
+    return gcd($tulip, ($lavender % $tulip ));
+}
+
+
+#say "Solution : ", $max_n ;
+say "Time elapsed : ", time - $time, " seconds ";
+say "---------------------------------------------- Section End" ;

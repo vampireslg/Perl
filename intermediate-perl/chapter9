@@ -1,0 +1,59 @@
+#! /usr/bin/perl -w
+#use diagnostics;
+use strict;
+use 5.010;
+use Data::Dumper;
+use YAML;
+use Storable;
+use File::Find;
+my $lone_line = "---------------------------------------------";
+
+#-------------------------------------------------Section 1 
+say $lone_line,"Section1";
+my @ponyo = qw(Giligan Skipper Professor Ginger Mary_Ann);
+my @sorted_positions = sort{$ponyo[$a] cmp $ponyo[$b]}0..$#ponyo;
+say @sorted_positions ;
+
+
+#-------------------------------------------------Section 2
+say $lone_line,"Section2";
+
+dump_data_for_path('.', data_to_path('.'));
+
+sub dump_data_for_path{
+    my $path = shift ;
+    my $data = shift ;
+
+    if(not defined $data){
+	say $path;
+	return ;
+    }
+
+    my %directory = %$data;
+    for(sort keys %directory){
+	dump_data_for_path("$path/$_", $directory{$_});
+    }
+}
+
+
+sub data_to_path{
+    my $path = shift;
+    if(-f $path or -l $path){
+	return undef ;
+    }
+    if(-d $path){
+	my %directory;
+	opendir PATH, $path or die "Cannot opendir $path: $!";
+	my @names = readdir PATH;
+	closedir PATH;
+	#ay @names;
+	for(@names){
+	    next if $_ eq '.' or $_ eq '..';
+	    $directory{$_} = data_to_path("$path/$_");
+	}
+	return \%directory;
+    }
+    warn "$path is neither a file nor a directory\n";
+    return undef ;
+}
+

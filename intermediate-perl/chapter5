@@ -1,0 +1,56 @@
+#! /usr/bin/perl
+use strict ;
+use 5.010;
+use Try::Tiny;
+require List::Util;
+
+say "================ chapter5"; 
+
+my $ref;
+my @skipper = qw /blue_shirt hat jacket preserver sunscreen/;
+$ref = \@skipper;
+{
+    my @skipper = qw /blue_shirt hat jacket preserver sunscreen/;
+    my $ref = \@skipper;
+    say $ref->[0];
+}
+
+@skipper = ();
+say $ref->[0];
+
+
+#----
+my %provisions;
+my $person;
+
+while(<>){
+    if(/^(\S.*)/){
+	$person = $1;
+    }elsif(/^\s+(\S.*)/){
+	die 'No person yet !' unless defined $person;
+	push @{$provisions{$person}}, $1;
+    }else{
+	die "I don't understand : $_";
+    }
+}
+
+my $ct = 0 ;
+map {
+    say "Person's Name : $_" if ($ct % 2 ~~ 0);
+    if ($ct % 2 ~~ 1){
+	say "Provisions:";
+	my $ct2 = 0 ;
+	printf "%3s  %1s\n"," ", $_ ->[$ct2 ++] while(defined $_->[$ct2]);
+    }
+    $ct ++ ;
+}%provisions;
+
+my $not_yet;
+@$not_yet = (1,2,3);
+
+=ccut
+my %total_bytes;
+while(<>){
+    my ($source, $destination, $bytes) = split;
+    $total_bytes{$source}{$destination} += $bytes;
+}

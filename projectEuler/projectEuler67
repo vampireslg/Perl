@@ -1,0 +1,34 @@
+#!/usr/bin/perl -w 
+use strict ;
+use 5.010;
+=block
+By starting at the top of the triangle below and moving to adjacent numbers on the row below, the maximum total from top to bottom is 23.
+
+3
+7 4
+2 4 6
+8 5 9 3
+
+That is, 3 + 7 + 4 + 9 = 23.
+
+Find the maximum total from top to bottom in triangle.txt (right click and 'Save Link/Target As...'), a 15K text file containing a triangle with one-hundred rows.
+=cut
+say "---------------------------------------------- Section Test .";
+open File ,'<', "triangle.txt";
+my %lavender ;
+my $pine = 1;
+while(<File>){
+    push @{$lavender{$pine++}},split /\s/;
+}
+
+map{
+    $pine = $_;
+    my @ponyo = @{$lavender{$_}};
+    my @ponyo_II = @{$lavender{$_+1}};
+    for my $i (0..scalar(@ponyo)-1){
+	my ($l,$r) = ($ponyo[$i] + $ponyo_II[$i], $ponyo[$i] + $ponyo_II[$i+1]);
+	@{$lavender{$pine}}[$i] = ($l > $r) ? $l : $r ;
+    }
+}reverse (1..$pine-2);
+
+say "Fianl result : ", @{$lavender{1}}->[0] ;
